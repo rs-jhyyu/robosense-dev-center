@@ -60,4 +60,3 @@ For offline PCAP playback:
 * Point Cloud Visualization
 * Point Cloud Analysis
 * Export Point Cloud Data
-* Playback Controls
