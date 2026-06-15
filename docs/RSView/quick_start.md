@@ -1,3 +1,7 @@
+---
+title: Quick Start
+sidebar_position: 1
+---
 # Quick Start
 
 RSView is a visualization and analysis tool for RoboSense LiDAR point cloud data. It supports both online LiDAR devices and offline PCAP file playback.
@@ -9,6 +13,7 @@ Before viewing point cloud data, make sure:
 * RSView is installed
 * The LiDAR is powered on and connected to the network
 * The PC network configuration matches the LiDAR network segment
+---
 
 
 ## Step 1: Select data source
@@ -20,6 +25,7 @@ Click **Open Sensor** to connect to a live LiDAR.
 ### Open PCAP File
 
 Click **Open PCAP File** and select the recorded file.
+---
 
 
 ## Step 2: Select LiDAR Type
@@ -29,6 +35,8 @@ Click **Open PCAP File** and select the recorded file.
 3. Optionally load an external calibration file
 
 ![Sensor Type Configuration](./images/sensor_type_and_configuration.png)
+
+---
 
 
 ## Step 3: Configure Network Options
@@ -54,9 +62,10 @@ For offline PCAP playback:
 
 ![Offline Ethernet Configuration](./images/offline_eth_config.png)
 
+---
+
 
 ## Next Steps
 
 * Point Cloud Visualization
 * Point Cloud Analysis
-* Export Point Cloud Data
