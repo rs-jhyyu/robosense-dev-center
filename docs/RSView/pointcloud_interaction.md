@@ -77,6 +77,19 @@ These attributes can be used for detailed analysis and debugging.
 
 ---
 
+## Export Selected Points
+The toolbar item below will save the current point cloud frame to a CSV file.
+
+![Print Selected Points](./images/print_selected_points.png)
+
+The opened dialog box is as follows.
+
+![Print Dialog](./images/print_dialog.png)
+
+Click OK and select the path to the CSV file.
+
+---
+
 ## Visualization Settings
 
 ### Point Size
@@ -107,7 +120,3 @@ You can toggle the grid in:
 View → Measurement Grid
 
 ![Grid Display](./images/grid_display.png)
-
----
-
-## Next Steps

@@ -22,9 +22,14 @@ Before viewing point cloud data, make sure:
 
 Click **Open Sensor** to connect to a live LiDAR.
 
+![Open Sensor](./images/open_sensor.png)
+
 ### Open PCAP File
 
 Click **Open PCAP File** and select the recorded file.
+
+![Open Pcap](./images/open_pcap.png)
+
 ---
 
 
@@ -61,11 +66,3 @@ For offline PCAP playback:
 * Specify ports when multiple LiDAR streams exist in the same PCAP file
 
 ![Offline Ethernet Configuration](./images/offline_eth_config.png)
-
----
-
-
-## Next Steps
-
-* Point Cloud Visualization
-* Point Cloud Analysis
