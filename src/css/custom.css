@@ -28,3 +28,21 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* shell-session: color the prompt (user@host:path$) differently from the command */
+.token.command .token.info,
+.token.command .token.shell-symbol {
+  color: #6a737d !important;
+}
+
+[data-theme='dark'] .token.command .token.info,
+[data-theme='dark'] .token.command .token.shell-symbol {
+  color: #8b949e !important;
+}
+
+/* Hide pages flagged with sidebar_class_name: sidebar-hidden from the sidebar
+   while keeping their routes reachable via in-page links. */
+.menu__list-item.sidebar-hidden {
+  display: none;
+}
+
