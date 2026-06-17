@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Robosense Development Center',
+  title: 'RoboSense Development Center',
   tagline: 'LiDAR Information and Step-by-step Guidelines',
   favicon: 'img/robosense_icon.ico',
 
@@ -75,7 +75,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Robosense',
+      title: 'RoboSense',
       logo: {
         alt: 'My Site Logo',
         src: 'img/robosense.png',
