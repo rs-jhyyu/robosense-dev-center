@@ -1,9 +1,7 @@
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -13,17 +11,12 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+        <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
+          RoboSense Developer Center
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
+        <p className={clsx('hero__subtitle', styles.heroSubtitle)}>
+          {siteConfig.tagline}
+        </p>
       </div>
     </header>
   );
@@ -37,7 +30,7 @@ export default function Home(): ReactNode {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        {/* 在这里添加自定义首页内容 */}
       </main>
     </Layout>
   );

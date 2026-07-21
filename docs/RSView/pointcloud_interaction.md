@@ -120,3 +120,9 @@ You can toggle the grid in:
 View → Measurement Grid
 
 ![Grid Display](./images/grid_display.png)
+
+---
+## Playback of PCAP Files
+When opening a PCAP file, RSView will iterate through the file to find all frames. When you dragthe slider to the far right, the combobox on the right will show the number of frames, the file inthe picture below has 117 frames.
+
+![PCAP playback](./images/pcap_playback.png)

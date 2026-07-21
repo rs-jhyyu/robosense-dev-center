@@ -89,6 +89,10 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
+          type: 'search',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/RoboSense-LiDAR/rslidar_sdk',
           label: 'GitHub',
           position: 'right',
@@ -111,16 +115,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/robosense',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Website',
+              href: 'https://www.robosense.cn/en/',
             },
           ],
         },
