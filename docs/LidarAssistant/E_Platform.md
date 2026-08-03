@@ -13,7 +13,7 @@ sidebar_position: 1
 
 ## 2. Introduction to Tool Interface Areas
 
-![Tool Interface Overview](./images/tool_interface_overview.png)
+![Tool Interface Overview](./images/tool_interface_overview_e.png)
 
 ### Area 1: Project Selection Area
 
@@ -53,17 +53,17 @@ sidebar_position: 1
 
 ## 3. Modify IP Parameters
 
-![Modify IP Parameters](./images/modify_ip_parameters.png)
+![Modify IP Parameters](./images/modify_ip_parameters_e.png)
 
 ## 4. Firmware Upgrade
 
-![Firmware Upgrade](./images/firmware_upgrade.png)
+![Firmware Upgrade](./images/firmware_upgrade_e.png)
 
 ## 5. DID Service
 
 **Interface Function Overview**: Supports read and write operations for DID. This view contains the DIDs commonly used in this project; click **Read** and **Write** to perform corresponding read and write operations, and the read and write data will be displayed in the edit box on the right.
 
-![DID Service](./images/did_service.png)
+![DID Service](./images/did_service_e.png)
 
 ## 6. Precautions
 
