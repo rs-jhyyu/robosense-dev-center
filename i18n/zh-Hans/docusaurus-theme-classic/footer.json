@@ -1,0 +1,38 @@
+{
+  "link.title.Docs": {
+    "message": "文档",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Tutorial": {
+    "message": "教程",
+    "description": "The label of footer link with label=Tutorial linking to /docs/intro"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "领英",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/company/robosense"
+  },
+  "link.item.label.Website": {
+    "message": "官网",
+    "description": "The label of footer link with label=Website linking to https://www.robosense.cn/en/"
+  },
+  "link.item.label.Blog": {
+    "message": "博客",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/RoboSense-LiDAR/rslidar_sdk"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 My Project, Inc. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}

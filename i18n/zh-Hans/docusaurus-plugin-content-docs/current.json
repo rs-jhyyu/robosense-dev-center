@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "下一版本",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Airy API": {
+    "message": "Airy API",
+    "description": "The label for category Airy API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.LidarAssistant": {
+    "message": "雷达助手",
+    "description": "The label for category LidarAssistant in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.RSView": {
+    "message": "RSView",
+    "description": "The label for category RSView in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Time Synchronization": {
+    "message": "时间同步",
+    "description": "The label for category Time Synchronization in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.rslidar_sdk & rs_driver": {
+    "message": "rslidar_sdk & rs_driver",
+    "description": "The label for category rslidar_sdk & rs_driver in sidebar tutorialSidebar"
+  }
+}
