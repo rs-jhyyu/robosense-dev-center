@@ -1,42 +1,42 @@
 ---
-title: rslidar_sdk User Guide
+title: rslidar_sdk 用户指南
 sidebar_position: 3
 ---
-# rslidar_sdk User Guide
+# rslidar_sdk 用户指南
 
-This guide walks through the environment dependencies, compilation, LiDAR connection, and parameter configuration required to run `rslidar_sdk`.
+本指南介绍运行 `rslidar_sdk` 所需的环境依赖、编译、激光雷达连接以及参数配置。
 
 ---
 
-## Environment Dependencies
+## 环境依赖
 
 ### ROS
 
-To use the SDK in a ROS environment, the ROS dependency libraries need to be installed.
+要在 ROS 环境中使用 SDK，需要安装 ROS 依赖库。
 
-| Ubuntu Version | ROS Distribution |
+| Ubuntu 版本 | ROS 发行版 |
 | --- | --- |
 | Ubuntu 16.04 | ROS Kinetic desktop |
 | Ubuntu 18.04 | ROS Melodic desktop |
 | Ubuntu 20.04 | ROS Noetic desktop |
 
-For installation instructions, refer to: [ROS Installation](http://wiki.ros.org).
+安装说明请参考：[ROS Installation](http://wiki.ros.org)。
 
 ### ROS2
 
-To use the SDK in a ROS2 environment, the ROS2 dependency libraries need to be installed.
+要在 ROS2 环境中使用 SDK，需要安装 ROS2 依赖库。
 
-| Ubuntu Version | ROS2 Distribution |
+| Ubuntu 版本 | ROS2 发行版 |
 | --- | --- |
 | Ubuntu 18.04 | ROS2 Eloquent desktop |
 | Ubuntu 20.04 | ROS2 Galactic desktop |
 | Ubuntu 22.04 | ROS2 Humble desktop |
 
-For installation instructions, refer to: [ROS2 Installation](https://docs.ros.org/en/humble/Installation.html).
+安装说明请参考：[ROS2 Installation](https://docs.ros.org/en/humble/Installation.html)。
 
 ### yaml
 
-The installed dependency package must meet **version ≥ v0.5.2**. If **ROS desktop-full** is already installed, this step can be skipped. The installation command is as follows:
+所安装的依赖包必须满足**版本 ≥ v0.5.2**。如果已安装 **ROS desktop-full**，则可跳过此步骤。安装命令如下：
 
 ```shell-session
 user@user:~$ sudo apt-get update
@@ -45,17 +45,17 @@ user@user:~$ sudo apt-get install -y libyaml-cpp-dev
 
 ### libpcap
 
-The installed dependency package must meet **version ≥ v1.7.4**. The installation command is as follows:
+所安装的依赖包必须满足**版本 ≥ v1.7.4**。安装命令如下：
 
 ```shell-session
 user@user:~$ sudo apt-get update
 user@user:~$ sudo apt-get install -y libpcap-dev
 ```
 
-### Notes
+### 注意事项
 
-1. It is recommended to install the **ROS desktop-full** version. This installation process will automatically install compatible versions of dependency libraries (e.g., PCL). This avoids issues such as missing necessary dependencies or spending significant time on independent installations.
-2. **Ubuntu 22.04** no longer supports ROS. Therefore, on this system version, users can compile by executing the following command:
+1. 建议安装 **ROS desktop-full** 版本。该安装过程会自动安装兼容版本的依赖库（例如 PCL）。这样可以避免缺少必要依赖或在独立安装上耗费大量时间等问题。
+2. **Ubuntu 22.04** 不再支持 ROS。因此，在该系统版本上，用户可以通过执行以下命令进行编译：
 
    ```shell-session
    user@user:~$ echo "deb [trusted=yes arch=amd64] http://deb.repo.autolabor.com.cn jammy main" | sudo tee /etc/apt/sources.list.d/autolabor.list
@@ -63,18 +63,18 @@ user@user:~$ sudo apt-get install -y libpcap-dev
    user@user:~$ sudo apt install ros-noetic-autolabor
    ```
 
-   or use ROS2 (suggested).
-3. **Please do not install both ROS and ROS2 on the same computer.**
-4. **Ubuntu 24.04** has been tested to support `rslidar_sdk` based on ROS2, but Ubuntu 22.04 or earlier versions are still recommended.
-5. All third-party libraries that `rslidar_sdk` depends on provide versions supported under the ARM architecture, allowing compilation, installation, and usage on ARM.
+   或者使用 ROS2（建议）。
+3. **请勿在同一台计算机上同时安装 ROS 和 ROS2。**
+4. **Ubuntu 24.04** 经测试可支持基于 ROS2 的 `rslidar_sdk`，但仍建议使用 Ubuntu 22.04 或更早的版本。
+5. `rslidar_sdk` 所依赖的所有第三方库均提供 ARM 架构下支持的版本，可在 ARM 上编译、安装和使用。
 
 ---
 
-## Compilation and Run
+## 编译与运行
 
-### Obtaining the project files
+### 获取项目文件
 
-It is recommended to use the `git` command to pull the project files directly from the GitHub repository to ensure the timeliness and completeness of the project version.
+建议使用 `git` 命令直接从 GitHub 仓库拉取项目文件，以确保项目版本的时效性和完整性。
 
 ```shell-session
 user@user:~/workspace$ git clone https://github.com/RoboSense-LiDAR/rslidar_sdk.git
@@ -83,15 +83,15 @@ user@user:~/workspace$ git submodule init
 user@user:~/workspace$ git submodule update
 ```
 
-In addition to the above method, users can directly visit the [Official Repository](https://github.com/RoboSense-LiDAR/rslidar_sdk/releases) to download the latest version of the software package `rslidar_sdk.tar.gz`.
+除上述方法外，用户还可以直接访问[官方仓库](https://github.com/RoboSense-LiDAR/rslidar_sdk/releases)下载最新版本的软件包 `rslidar_sdk.tar.gz`。
 
-> **Note:** Downloading the Source Code directly will result in a missing submodule `rs_driver`, leading to compilation and installation failure.
+> **注意：** 直接下载 Source Code 会导致子模块 `rs_driver` 缺失，从而引起编译和安装失败。
 
-### Compilation and run based on ROS
+### 基于 ROS 的编译与运行
 
-It is recommended to create a new folder in the home directory of the local machine as a workspace, and then create a `src` folder within that workspace. Place the pulled `rslidar_sdk` project files into the `src` folder: `~/workspace/src/rslidar_sdk`.
+建议在本机的主目录下新建一个文件夹作为工作空间，然后在该工作空间内创建一个 `src` 文件夹。将拉取到的 `rslidar_sdk` 项目文件放入 `src` 文件夹中：`~/workspace/src/rslidar_sdk`。
 
-Return to the workspace directory (e.g., `~/workspace`) and execute the following commands to compile and install. Please ensure being in a ROS environment during execution.
+返回工作空间目录（例如 `~/workspace`），执行以下命令进行编译和安装。执行期间请确保处于 ROS 环境中。
 
 ```shell-session
 user@user:~/workspace$ catkin_make
@@ -99,13 +99,13 @@ user@user:~/workspace$ source devel/setup.bash
 user@user:~/workspace$ roslaunch rslidar_sdk start.launch
 ```
 
-> **Note:** If using zsh, replace the second command with `source devel/setup.zsh`.
+> **注意：** 如果使用 zsh，请将第二条命令替换为 `source devel/setup.zsh`。
 
-### Compilation and run based on ROS2
+### 基于 ROS2 的编译与运行
 
-For compilation and installation based on ROS2, the `rslidar_msg` project files need to be additionally obtained to define the LiDAR packet messages in the ROS2 environment. The download link is: [rslidar_msg](https://github.com/RoboSense-LiDAR/rslidar_msg). After downloading, place it in the `src` folder, alongside the `rslidar_sdk` project files.
+对于基于 ROS2 的编译和安装，需要额外获取 `rslidar_msg` 项目文件，以定义 ROS2 环境中的激光雷达数据包消息。下载链接为：[rslidar_msg](https://github.com/RoboSense-LiDAR/rslidar_msg)。下载后，将其与 `rslidar_sdk` 项目文件一起放入 `src` 文件夹中。
 
-Return to the workspace directory (e.g., `~/workspace`) and execute the following commands to compile and run. Ensure that you are in a ROS2 environment during execution.
+返回工作空间目录（例如 `~/workspace`），执行以下命令进行编译和运行。执行期间请确保处于 ROS2 环境中。
 
 ```shell-session
 user@user:~/workspace$ colcon build
@@ -113,47 +113,47 @@ user@user:~/workspace$ source install/setup.bash
 user@user:~/workspace$ ros2 launch rslidar_sdk start.py
 ```
 
-> **Note:** If using zsh, replace the second command with `source install/setup.zsh`.
+> **注意：** 如果使用 zsh，请将第二条命令替换为 `source install/setup.zsh`。
 
-**Before running the SDK, first ensure that the LiDAR is connected correctly and the common parameters are entered correctly.**
+**运行 SDK 之前，请先确保激光雷达已正确连接，且常用参数已正确填写。**
 
 ---
 
-## LiDAR Connection
+## 激光雷达连接
 
-Download and install **Wireshark** to view network port packets.
+下载并安装 **Wireshark** 以查看网络端口数据包。
 
 ```shell-session
 user@user:~$ sudo apt-get install wireshark
 user@user:~$ sudo wireshark
 ```
 
-Select the corresponding network interface card to view packet status. The common network interface card name under Ubuntu is `eno1` (**Figure 3.1**).
+选择相应的网卡以查看数据包状态。Ubuntu 下常见的网卡名称为 `eno1`（**图 3.1**）。
 
-![Home Page Options Area of Wireshark](./images/figure_3_1.png)
+![Wireshark 首页选项区域](./images/figure_3_1.png)
 
-*Figure 3.1 — Home page options area of Wireshark*
+*图 3.1 —— Wireshark 首页选项区域*
 
-Enter the capture interface of the corresponding network port. If no UDP data is visible, check the LiDAR ARP packets. Based on the content prompt (*Who has...*), modify the static IP of the host's network interface card to the destination IP of the LiDAR data.
+进入相应网口的抓包界面。如果看不到 UDP 数据，请检查激光雷达的 ARP 数据包。根据内容提示（*Who has...*），将主机网卡的静态 IP 修改为激光雷达数据的目标 IP。
 
-![Wireshark packet capture interface — ARP packets](./images/figure_3_2.png)
+![Wireshark 抓包界面 —— ARP 数据包](./images/figure_3_2.png)
 
-*Figure 3.2 — Wireshark packet capture interface (ARP packets)*
+*图 3.2 —— Wireshark 抓包界面（ARP 数据包）*
 
-Modify the host static address to the LiDAR destination address, and check whether the modified parameters take effect. An example of the modification command is as follows:
+将主机静态地址修改为激光雷达目标地址，并检查修改后的参数是否生效。修改命令示例如下：
 
 ```shell-session
 user@user:~$ sudo ifconfig eno1 192.168.1.102
 user@user:~$ ifconfig
 ```
 
-![Modify and Check Host Static Address](./images/figure_3_3.png)
+![修改并检查主机静态地址](./images/figure_3_3.png)
 
-*Figure 3.3 — Modify and check host static address*
+*图 3.3 —— 修改并检查主机静态地址*
 
-In the input box of the Wireshark capture interface, enter a command to view the MSOP/DIFOP/IMU port numbers of the LiDAR UDP data.
+在 Wireshark 抓包界面的输入框中，输入命令以查看激光雷达 UDP 数据的 MSOP/DIFOP/IMU 端口号。
 
-By default, the LiDAR MSOP port number is **6699**, the DIFOP port number is **7788**, and the IMU port number is **6688** (Airy/Fairy Only). Users can also filter and lock the MSOP/DIFOP/IMU data entries using the following commands.
+默认情况下，激光雷达 MSOP 端口号为 **6699**，DIFOP 端口号为 **7788**，IMU 端口号为 **6688**（仅 Airy/Fairy）。用户也可以使用以下命令筛选并锁定 MSOP/DIFOP/IMU 数据条目。
 
 ```text
 data.data[0:1] == 55     # Filter MSOP Data
@@ -161,31 +161,31 @@ data.data[0:1] == a5     # Filter DIFOP Data
 data.data[0:1] == aa     # Filter IMU Data (Airy/Fairy Only)
 ```
 
-![Filtering only DIFOP data for the LiDAR](./images/figure_3_4.png)
+![仅筛选激光雷达的 DIFOP 数据](./images/figure_3_4.png)
 
-*Figure 3.4 — Filtering only DIFOP data for the LiDAR based on the command*
+*图 3.4 —— 基于命令仅筛选激光雷达的 DIFOP 数据*
 
 ---
 
-## Parameter Configuration
+## 参数配置
 
-Before starting the driver, users need to configure the correct `lidar_type`, `MSOP port`, and `DIFOP port` in the `src/rslidar_sdk/config/config.yaml` file. The port numbers can be obtained using the methods described above.
+启动驱动之前，用户需要在 `src/rslidar_sdk/config/config.yaml` 文件中配置正确的 `lidar_type`、`MSOP port` 和 `DIFOP port`。端口号可通过上述方法获取。
 
-### Mechanical LiDAR
+### 机械式激光雷达
 
-Mechanical LiDARs include the **RS series**, **Ruby series**, **Helios series**, **Bpearl series**, **Airy series**, **Fairy**, and other products.
+机械式激光雷达包括 **RS 系列**、**Ruby 系列**、**Helios 系列**、**Bpearl 系列**、**Airy 系列**、**Fairy** 等产品。
 
-The default port values are **6699** (MSOP) and **7788** (DIFOP), respectively.
+默认端口值分别为 **6699**（MSOP）和 **7788**（DIFOP）。
 
-> **Note:**
+> **注意：**
 >
-> 1. The Airy LiDAR additionally supports the acquisition of **IMU calibration data** (quaternions & offsets). For details, refer to the [FAQ](./faq.md).
-> 2. For **AiryLite**, the `lidar_type` should be **RSAIRYLITE_ETH**.
+> 1. Airy 激光雷达额外支持获取 **IMU 标定数据**（四元数与偏移量）。详情请参考 [FAQ](./faq.md)。
+> 2. 对于 **AiryLite**，`lidar_type` 应为 **RSAIRYLITE_ETH**。
 
-### Non-mechanical LiDAR
+### 非机械式激光雷达
 
-Non-mechanical LiDARs include the **MEMS series**, **E series**, and **EM series**.
+非机械式激光雷达包括 **MEMS 系列**、**E 系列** 和 **EM 系列**。
 
-Regarding parameter configuration before starting the driver, non-mechanical LiDARs are essentially the same as mechanical LiDARs, but an additional note is needed:
+在启动驱动前的参数配置方面，非机械式激光雷达与机械式激光雷达基本相同，但需要额外注意一点：
 
-> For **EM series** products, when filling in the DIFOP port number, the default parameter value is **7766** instead of 7788. A wrong DIFOP port number can lead to point cloud display failure.
+> 对于 **EM 系列** 产品，填写 DIFOP 端口号时，默认参数值为 **7766** 而非 7788。DIFOP 端口号错误会导致点云显示失败。

@@ -1,26 +1,26 @@
 ---
-title: Introduction
+title: 简介
 sidebar_position: 1
 ---
-# Introduction
+# 简介
 
-`rslidar_sdk` is a LiDAR driver software package developed by RoboSense for the Ubuntu environment. It is the recommended way to integrate RoboSense LiDARs into a robotics software stack.
+`rslidar_sdk` 是 RoboSense 为 Ubuntu 环境开发的激光雷达驱动软件包。它是将 RoboSense 激光雷达集成到机器人软件栈中的推荐方式。
 
-The package includes:
+该软件包包含：
 
-* The driver kernel: **rs_driver**
-* ROS extension features (supports Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04)
-* ROS2 extension features (supports Ubuntu 18.04, Ubuntu 20.04, Ubuntu 22.04)
+* 驱动内核：**rs_driver**
+* ROS 扩展功能（支持 Ubuntu 16.04、Ubuntu 18.04、Ubuntu 20.04）
+* ROS2 扩展功能（支持 Ubuntu 18.04、Ubuntu 20.04、Ubuntu 22.04）
 
-The SDK and driver versions in the current GitHub repository only support the LiDAR products listed in **Table 1.1**. For SDK usage requirements with other LiDAR products in **Table 1.2**, please contact RoboSense technical support to obtain the corresponding version of the software package.
+当前 GitHub 仓库中的 SDK 和驱动版本仅支持 **表 1.1** 中列出的激光雷达产品。若需将 SDK 用于 **表 1.2** 中的其他激光雷达产品，请联系 RoboSense 技术支持以获取相应版本的软件包。
 
 ---
 
-## Supported LiDAR Models
+## 支持的激光雷达型号
 
-### Table 1.1 — LiDAR models supported by the SDK in GitHub
+### 表 1.1 —— GitHub 中的 SDK 支持的激光雷达型号
 
-| Mechanical / General | MEMS / Solid-State |
+| 机械式 / 通用型 | MEMS / 固态 |
 | --- | --- |
 | RS-LiDAR-16 | RS-Ruby-80 |
 | RS-LiDAR-32 | RS-Ruby-Plus-128 |
@@ -32,22 +32,24 @@ The SDK and driver versions in the current GitHub repository only support the Li
 | RS-LiDAR-Airy | RS-LiDAR-MX |
 | RS-LiDAR-Fairy | RS-LiDAR-EMX |
 
-### Table 1.2 — Additional supported LiDAR models
+### 表 1.2 —— 额外支持的激光雷达型号
 
-| Model | Model |
+| 型号 | 型号 |
 | --- | --- |
 | RS-LiDAR-EM4 | RS-LiDAR-AiryLite |
+| RS-LiDAR-E1R | |
 
 ---
 
-## Architecture Overview
+## 架构概览
 
-`rslidar_sdk` is layered on top of the core driver `rs_driver`:
+`rslidar_sdk` 构建于核心驱动 `rs_driver` 之上：
 
-* **rs_driver** — the decoding kernel. It receives MSOP/DIFOP/IMU packets from the LiDAR (online) or PCAP files (offline), decodes them into point clouds, and exposes the data through callbacks. It can be used standalone as a C++ library or as a submodule.
-* **rslidar_sdk** — wraps `rs_driver` and provides ROS / ROS2 integration, a YAML-based configuration interface, and ready-to-run launch files.
+* **rs_driver** —— 解码内核。它接收来自激光雷达的 MSOP/DIFOP/IMU 数据包（在线）或 PCAP 文件（离线），将其解码为点云，并通过回调函数暴露数据。它可以作为独立的 C++ 库使用，也可以作为子模块使用。
+* **rslidar_sdk** —— 对 `rs_driver` 进行封装，提供 ROS / ROS2 集成、基于 YAML 的配置接口，以及开箱即用的 launch 文件。
 
-Choose the layer that fits your use case:
+请根据你的使用场景选择合适的层级：
 
-* Use **rslidar_sdk** when you work inside a ROS / ROS2 ecosystem and want point clouds published as topics.
-* Use **rs_driver** directly when you want a lightweight, ROS-free C++ integration, or when you need the bundled command-line tools (`rs_driver_viewer`, `rs_driver_pcdsaver`).
+* 当你在 ROS / ROS2 生态系统中工作并希望将点云作为话题发布时，使用 **rslidar_sdk**。
+* 当你需要轻量、无 ROS 依赖的 C++ 集成，或需要随附的命令行工具（`rs_driver_viewer`、`rs_driver_pcdsaver`）时，直接使用 **rs_driver**。
+* 当你无需编写任何代码、只想快速可视化点云时，使用 **RSView**。

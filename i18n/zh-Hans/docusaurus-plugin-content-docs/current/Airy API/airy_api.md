@@ -5,9 +5,9 @@ sidebar_position: 1
 
 # Airy API
 
-## CMake and Build
+## CMake 与构建
 
-### Demo Lib Example
+### Demo Lib 示例
 
 ```bash
 user@user:~$ cd example
@@ -15,18 +15,18 @@ user@user:~/example$ ./build.sh
 user@user:~/example$ ./airy3
 ```
 
-If it pops an error like this:
+如果弹出类似如下的错误：
 
-![Build error](./images/img1.png)
+![构建错误](./images/img1.png)
 
-It is caused by an Ubuntu version mismatch. The solution is as follows:
+这是由 Ubuntu 版本不匹配引起的。解决方法如下：
 
-1. Copy the package to any directory of Ubuntu 20.04.
-2. Go to `linux-lib-namespace/linux-build` and execute `./linux-build-lib.sh`, then go to `example` and execute `./build.sh`.
+1. 将安装包复制到 Ubuntu 20.04 的任意目录下。
+2. 进入 `linux-lib-namespace/linux-build` 并执行 `./linux-build-lib.sh`，然后进入 `example` 并执行 `./build.sh`。
 
-## Example of Configuration Changes (using Airy as reference)
+## 配置修改示例（以 Airy 为参考）
 
-### IMU Parameter Acquisition / Modification
+### IMU 参数获取 / 修改
 
 ```cpp
 // Initialize and get imu parameters
@@ -56,18 +56,18 @@ printf("getImuParams() imu.lpf = %d\n",  imu.lpf);
 ```
 
 :::note
-You need to get the IMU parameters first and modify the corresponding values before writing back.
+您需要先获取 IMU 参数并修改相应的值，然后再写回。
 :::
 
-The result of the terminal run shows:
+终端运行结果如下：
 
-![IMU terminal result](./images/img2.png)
+![IMU 终端结果](./images/img2.png)
 
-|  | Before | After |
+|  | 修改前 | 修改后 |
 |---|---|---|
-| IMU parameter modification | ![IMU before](./images/img3.png) | ![IMU after](./images/img4.png) |
+| IMU 参数修改 | ![IMU 修改前](./images/img3.png) | ![IMU 修改后](./images/img4.png) |
 
-**ImuParam Definition**
+**ImuParam 定义**
 
 ```cpp
 typedef struct ImuParam
@@ -85,9 +85,9 @@ typedef struct ImuParam
 } ImuParam_st;
 ```
 
-### Network Parameter Acquisition / Modification
+### 网络参数获取 / 修改
 
-1. Network parameter acquisition and printing:
+1. 网络参数获取与打印：
 
 ```cpp
 ConfigPara params;
@@ -101,9 +101,9 @@ printf("getConfigParams() remoteIp is %d.%d.%d.%d\n", params.r4info.netInfo.remo
     params.r4info.netInfo.remoteIp[2], params.r4info.netInfo.remoteIp[3]);
 ```
 
-![Network parameters](./images/img5.png)
+![网络参数](./images/img5.png)
 
-2. Modification of network parameters:
+2. 网络参数修改：
 
 ```cpp
 NetParam_st net_params = params.r4info.netInfo;
@@ -129,13 +129,13 @@ rst = pCtrl->setLidarNetInfo(net_params);   // Send new parameters to the Lidar
 printf("setConfigParams() rst = %d\n", (int)rst);
 ```
 
-### Firmware Update
+### 固件更新
 
-Firmware files need to be in the same path as the demo application.
+固件文件需要与 demo 应用程序位于同一路径下。
 
-![Firmware update](./images/img6.png)
+![固件更新](./images/img6.png)
 
-**File Naming Rules**
+**文件命名规则**
 
 ```text
 Airy uses 3 update files: 3, 5, 7. File name needs to begin with "airy".
@@ -144,7 +144,7 @@ NET_CMD_BOT_BIN_UPDATE,   "airy_b1_bot_fpga_xxxxxxxx_sign.bit"
 NET_CMD_LINUX_APP_UPDATE, "airy_app_final.release_ps_xxx_mot_xxx.appimage.hs_fs"
 ```
 
-**Demo Code**
+**示例代码**
 
 ```cpp
 unsigned char type = 0;
@@ -180,13 +180,13 @@ if(!rst)
 printf("update()  %s  finished.\n", fileName3);
 ```
 
-**Result**
+**结果**
 
-![Firmware update result](./images/img7.png)
+![固件更新结果](./images/img7.png)
 
-### Advanced Parameter Acquisition / Setting
+### 高级参数获取 / 设置
 
-This function can read and modify the following parameters:
+此功能可以读取和修改以下参数：
 
 - Frame Start Angle
 - topCh81858393En
@@ -199,7 +199,7 @@ This function can read and modify the following parameters:
 - Blockage Detection Sensitivity
 - gpsBaud
 
-**Get Parameters**
+**获取参数**
 
 ```cpp
 NetInfo2_st get_suparam;
@@ -223,7 +223,7 @@ else
 }
 ```
 
-**Modify Parameters**
+**修改参数**
 
 ```cpp
 set_suparam.ptpNum = get_suparam.ptpNum;
@@ -299,6 +299,6 @@ if(rst) { printf("setBlockDetectSensitivity() success.\n"); }
 else    { printf("setBlockDetectSensitivity() failed.\n"); }
 ```
 
-**Results**
+**结果**
 
-![Advanced parameter results](./images/img8.png)
+![高级参数结果](./images/img8.png)

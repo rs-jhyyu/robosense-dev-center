@@ -1,6 +1,6 @@
 ---
-title: Introduction
+title: 简介
 sidebar_position: 1
 ---
 
-Welcome to RoboSense Developer Center.
+欢迎来到 RoboSense 开发者中心。

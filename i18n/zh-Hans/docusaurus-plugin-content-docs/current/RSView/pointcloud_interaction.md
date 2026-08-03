@@ -1,128 +1,128 @@
 ---
-title: Point Cloud Interaction
+title: 点云交互
 sidebar_position: 2
 ---
 
-# Point Cloud Interaction
+# 点云交互
 
-This section introduces how to interact with point cloud data in RSView, including navigation, selection, and visualization controls.
-
----
-
-## Navigation Controls
-
-RSView supports standard 3D navigation using mouse operations.
-
-### Rotate View
-- **Left mouse button + drag**
-- Rotate the point cloud in 3D space
-
-### Pan View
-- **Mouse middle button (scroll wheel) + drag**
-- Move the scene horizontally and vertically
-
-### Zoom
-- **Mouse scroll wheel**
-- Zoom in or out of the point cloud
+本节介绍如何在 RSView 中与点云数据进行交互，包括导航、选择和可视化控制。
 
 ---
 
-## View Control
+## 导航控制
 
-### Reset View
-Restore the default LiDAR forward-facing view using the reset button.
+RSView 支持使用鼠标操作进行标准的 3D 导航。
 
-### Preset Views
-RSView provides several predefined perspectives:
+### 旋转视图
+- **鼠标左键 + 拖动**
+- 在 3D 空间中旋转点云
 
-- Front View
-- Top View
-- Side View
+### 平移视图
+- **鼠标中键（滚轮）+ 拖动**
+- 水平和垂直移动场景
 
-These views help inspect geometry from different angles quickly.
-
-![View Control](./images/view_control.png)
-
----
-
-## Point Selection
-
-You can select points with the points selection tool.
-
-### Select a Point
-- Click the point selection tool
-- Left mouse button + drag to select a portion of the pointcloud
-- Selected points will be highlighted
-
-Selected points can be inspected in the data table.
-
-![Point Selection](./images/point_selection.png)
+### 缩放
+- **鼠标滚轮**
+- 放大或缩小点云
 
 ---
 
-## Point Attributes
+## 视图控制
 
-After a group of points is selected, you can check the point attributes by clicking the spreadsheet button.
+### 重置视图
+使用重置按钮恢复默认的 LiDAR 正向视图。
 
-Each point contains multiple attributes, you can toggle the visibility of each field:
+### 预设视图
+RSView 提供了多种预定义视角：
 
-- X, Y, Z (position)
-- Intensity
-- Ring (laser channel index)
-- Timestamp
+- 前视图
+- 顶视图
+- 侧视图
 
-These attributes can be used for detailed analysis and debugging.
+这些视图有助于快速从不同角度检查几何结构。
 
-![Point Attributes](./images/point_attributes_display.png)
-
----
-
-## Export Selected Points
-The toolbar item below will save the current point cloud frame to a CSV file.
-
-![Print Selected Points](./images/print_selected_points.png)
-
-The opened dialog box is as follows.
-
-![Print Dialog](./images/print_dialog.png)
-
-Click OK and select the path to the CSV file.
+![视图控制](./images/view_control.png)
 
 ---
 
-## Visualization Settings
+## 点选择
 
-### Point Size
-Adjust point size to improve visibility in dense scenes.
+你可以使用点选择工具选择点。
 
-### Color Modes
-RSView supports multiple coloring modes:
+### 选择点
+- 点击点选择工具
+- 鼠标左键 + 拖动以选择部分点云
+- 选中的点将被高亮显示
 
-- Intensity (default)
-- Distance
-- Height (Z-axis)
-- Timestamp
+选中的点可以在数据表中进行查看。
 
-Switching color modes helps highlight different spatial features.
-
-![Visualization Setting](./images/visualization_setting.png)
+![点选择](./images/point_selection.png)
 
 ---
 
-## Grid Display
+## 点属性
 
-A reference grid is available to help estimate scale and distance.
+选择一组点后，你可以点击表格按钮查看点的属性。
 
-- Each grid cell represents a fixed spatial unit
-- Useful for object size estimation and scene understanding
+每个点包含多个属性，你可以切换各字段的可见性：
 
-You can toggle the grid in:
+- X、Y、Z（位置）
+- Intensity（强度）
+- Ring（激光通道索引）
+- Timestamp（时间戳）
+
+这些属性可用于详细的分析和调试。
+
+![点属性](./images/point_attributes_display.png)
+
+---
+
+## 导出选中的点
+下面的工具栏项会将当前点云帧保存为 CSV 文件。
+
+![打印选中的点](./images/print_selected_points.png)
+
+打开的对话框如下所示。
+
+![打印对话框](./images/print_dialog.png)
+
+点击 OK 并选择 CSV 文件的保存路径。
+
+---
+
+## 可视化设置
+
+### 点大小
+调整点大小以提升密集场景中的可见性。
+
+### 颜色模式
+RSView 支持多种着色模式：
+
+- Intensity（强度，默认）
+- Distance（距离）
+- Height（高度，Z 轴）
+- Timestamp（时间戳）
+
+切换颜色模式有助于突出不同的空间特征。
+
+![可视化设置](./images/visualization_setting.png)
+
+---
+
+## 网格显示
+
+提供参考网格以帮助估算尺度和距离。
+
+- 每个网格单元代表一个固定的空间单位
+- 可用于物体尺寸估算和场景理解
+
+你可以在以下位置切换网格：
 View → Measurement Grid
 
-![Grid Display](./images/grid_display.png)
+![网格显示](./images/grid_display.png)
 
 ---
-## Playback of PCAP Files
-When opening a PCAP file, RSView will iterate through the file to find all frames. When you dragthe slider to the far right, the combobox on the right will show the number of frames, the file inthe picture below has 117 frames.
+## PCAP 文件回放
+打开 PCAP 文件时，RSView 会遍历文件以查找所有帧。当你将滑块拖动到最右端时，右侧的组合框会显示帧数，下图中的文件共有 117 帧。
 
-![PCAP playback](./images/pcap_playback.png)
+![PCAP 回放](./images/pcap_playback.png)

@@ -1,69 +1,69 @@
 ---
-title: Time Synchronization Guide
+title: 时间同步指南
 sidebar_position: 4
 ---
 
-# RS-LiDAR Time Synchronization Guide
+# RS-LiDAR 时间同步指南
 
-## 1. Time Synchronization Confirmation and Configuration
+## 1. 时间同步确认与配置
 
-### 1.1 Confirm the supported types of current LiDAR time synchronization methods
+### 1.1 确认当前 LiDAR 支持的时间同步方式类型
 
-Users can refer to the user manual to check the corresponding LiDAR time synchronization method. For **example**, the following are the product specifications of E1R, containing the time synchronization method it supports.
-
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig0.PNG').default} alt="E1R product specification showing supported time synchronization methods" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Example of Configuration</figcaption>
-</figure>
-
-### 1.2 How to configure the time synchronization method for the current LiDAR
-
-#### Mechanical LiDAR
-
-After the user confirms that the LiDAR is connected to the host, enter the **LiDAR IP address (default address: 192.168.1.200)** in the web interface to access the LiDAR web page. Then go to **Setting → Time Sync** to view and configure the specific time synchronization mode (Mechanical LiDARs without a web interface only support GPS time synchronization).
+用户可以参考用户手册查看对应 LiDAR 的时间同步方式。**例如**，以下是 E1R 的产品规格书，其中包含它所支持的时间同步方式。
 
 <figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig1.PNG').default} alt="LiDAR web interface Time Sync configuration page" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Genaral Web Interface of Mechanical LiDAR</figcaption>
+  <img src={require('./images/Fig0.PNG').default} alt="E1R 产品规格书，展示所支持的时间同步方式" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
+  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 1：配置示例</figcaption>
 </figure>
 
-#### Solid-State LiDAR
+### 1.2 如何为当前 LiDAR 配置时间同步方式
 
-Modifying the time synchronization method for solid-state LiDAR requires using a corresponding tool. Please contact RoboSense technical support to obtain the tool and refer to the tool's SOP for usage.
+#### 机械式 LiDAR
 
-## 2. Time Synchronization Method Verification
-
-### 2.1 GPS time synchronization
-
-1. The user must first complete the connection of the GPS synchronization signal harness according to the pin definitions of the aviation plug interface in the **[Interface Description]** section of the product manual.
-
-2. The user needs to complete the GPS time synchronization settings for the LiDAR (refer to Section 1.2 of this SOP).
-
-3. Verify the time synchronization status of the LiDAR (refer to Section 3 of this SOP).
-
-***Note****: If users need to synchronize a LiDAR that does not support direct GPS signal synchronization with a GPS module, the GPS module must first provide time to the gPTP Master. The specific interface and time synchronization method needs to be clarified with the gPTP Master provider.*
-
-### 2.2 PTP/gPTP Time Synchronization
-
-This SOP only provides a **Linuxptp** synchronization tutorial, which can be used to verify whether time synchronization can be achieved for the LiDAR in the current environment. **If using another PTP Master**, please consult the corresponding supplier.
-
-(**Linuxptp** source code address: *https://github.com/richardcochran/linuxptp/tree/master*)
-
-i. According to the method shown in the figure below, complete the connection of the LiDAR with the host computer, synchronization box, and other devices.
+在用户确认 LiDAR 已连接到主机后，在浏览器中输入 **LiDAR IP 地址（默认地址：192.168.1.200）** 以访问 LiDAR 网页。然后进入 **Setting → Time Sync** 查看并配置具体的时间同步模式（不带网页界面的机械式 LiDAR 仅支持 GPS 时间同步）。
 
 <figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig2.JPEG').default} alt="Connection diagram of LiDAR, host computer and synchronization box" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: Examples of connecting LiDAR for Time Synchronization</figcaption>
+  <img src={require('./images/Fig1.PNG').default} alt="LiDAR 网页界面的 Time Sync 配置页面" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
+  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 2：机械式 LiDAR 的通用网页界面</figcaption>
 </figure>
 
-ii. Users can use the ethtool command to view the network interface information of the host computer.
+#### 固态 LiDAR
+
+修改固态 LiDAR 的时间同步方式需要使用相应的工具。请联系 RoboSense 技术支持获取工具，并参考工具的 SOP 进行使用。
+
+## 2. 时间同步方式验证
+
+### 2.1 GPS 时间同步
+
+1. 用户必须首先根据产品手册 **[接口说明]** 部分中航空插头接口的引脚定义，完成 GPS 同步信号线束的连接。
+
+2. 用户需要完成 LiDAR 的 GPS 时间同步设置（参考本 SOP 的第 1.2 节）。
+
+3. 验证 LiDAR 的时间同步状态（参考本 SOP 的第 3 节）。
+
+***注意****：如果用户需要将不支持直接 GPS 信号同步的 LiDAR 与 GPS 模块进行同步，则 GPS 模块必须首先向 gPTP Master 提供时间。具体的接口和时间同步方式需要与 gPTP Master 提供方确认。*
+
+### 2.2 PTP/gPTP 时间同步
+
+本 SOP 仅提供 **Linuxptp** 同步教程，可用于验证当前环境下 LiDAR 是否能够实现时间同步。**如果使用其他 PTP Master**，请咨询相应的供应商。
+
+（**Linuxptp** 源代码地址：*https://github.com/richardcochran/linuxptp/tree/master*）
+
+i. 按照下图所示的方法，完成 LiDAR 与上位机、同步盒及其他设备的连接。
+
+<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
+  <img src={require('./images/Fig2.JPEG').default} alt="LiDAR、上位机与同步盒的连接示意图" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
+  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 3：LiDAR 时间同步连接示例</figcaption>
+</figure>
+
+ii. 用户可以使用 ethtool 命令查看上位机的网卡信息。
 
 ```bash
 user@user:~$ sudo apt-get install ethtool
 user@user:~$ ethtool -T eno1
 ```
 
-The printed information is as follows:
+打印信息如下：
 
 ```text
 Capabilities:
@@ -75,10 +75,10 @@ Capabilities:
           hardware-system-clock  (SOF TIMESTAMPING HARDWARE)
 ```
 
-During PTP time synchronization, PTP network packets need to be exchanged. `transmit` refers to sending, `receive` refers to receiving, and `system-clock` refers to the system clock.
-`hardware` refers to the hardware clock, which supports hardware system clock timestamping, allowing the hardware to use the system clock to generate timestamps. This is specified using the `-H` option. `software` refers to the software clock, which supports software system clock timestamping, allowing the software to use the system clock to generate timestamps. This is specified using the `-S` option. The network interface card must support one of these clock types in order to perform PTP time synchronization.
+在 PTP 时间同步过程中，需要交换 PTP 网络报文。`transmit` 指发送，`receive` 指接收，`system-clock` 指系统时钟。
+`hardware` 指硬件时钟，它支持硬件系统时钟时间戳，允许硬件使用系统时钟生成时间戳。这通过 `-H` 选项指定。`software` 指软件时钟，它支持软件系统时钟时间戳，允许软件使用系统时钟生成时间戳。这通过 `-S` 选项指定。网卡必须支持这两种时钟类型中的一种，才能进行 PTP 时间同步。
 
-iii. Install **Linuxptp**, start the master clock according to the synchronization method, and verify the LiDAR time synchronization function. The following uses the **eno1** network interface card as an example.
+iii. 安装 **Linuxptp**，根据同步方式启动主时钟，并验证 LiDAR 时间同步功能。下面以 **eno1** 网卡为例。
 
 ```bash
 user@user:~$ sudo ptp4l -S -P -4 -m -i eno1 #L4-P2P
@@ -87,22 +87,22 @@ user@user:~$ sudo ptp4l -S -E -4 -m -i eno1 #L4-E2E
 user@user:~/linuxptp/configs$ sudo ptp4l -H -m -i eno1 -f automotive-master.cfg #gPTP
 ```
 
-iv. Verify the time synchronization status of LiDAR. (Refer to the content in Section 3 of this SOP.)
+iv. 验证 LiDAR 的时间同步状态。（参考本 SOP 第 3 节的内容。）
 
-## 3. Methods for verifying time synchronization status
+## 3. 时间同步状态验证方法
 
-### 3.1 RSView Verification
+### 3.1 RSView 验证
 
-After RSView reads the LiDAR data, the LiDAR timestamp will be displayed in the bottom information bar. If the LiDAR timestamp matches the clock source time, it indicates that time synchronization is successful.
+RSView 读取 LiDAR 数据后，LiDAR 时间戳将显示在底部信息栏中。如果 LiDAR 时间戳与时钟源时间一致，则表明时间同步成功。
 
 <figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig3.PNG').default} alt="RSView bottom information bar showing the LiDAR timestamp" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: Schematic diagram of timestamp in RSView</figcaption>
+  <img src={require('./images/Fig3.PNG').default} alt="RSView 底部信息栏显示 LiDAR 时间戳" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
+  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 4：RSView 中时间戳示意图</figcaption>
 </figure>
 
-### 3.2 SDK Verification
+### 3.2 SDK 验证
 
-Open the `rslidar_sdk/config/config.yaml` configuration file, set the `use_lidar_clock` switch to `true`, compile and run the driver, and then use a command to view the topic timestamps as shown below.
+打开 `rslidar_sdk/config/config.yaml` 配置文件，将 `use_lidar_clock` 开关设置为 `true`，编译并运行驱动，然后使用命令查看话题时间戳，如下所示。
 
 ```bash
 #ROS1
@@ -113,52 +113,52 @@ user@user:~$ ros2 topic echo /rslidar_points
 ```
 
 <figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig4.png').default} alt="ROS topic timestamp output for time synchronization verification" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: Schematic diagram of point cloud topic timestamp</figcaption>
+  <img src={require('./images/Fig4.png').default} alt="用于时间同步验证的 ROS 话题时间戳输出" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
+  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 5：点云话题时间戳示意图</figcaption>
 </figure>
 
-***Note****: The time output in the message is in **`s.ns`** format. Users can search for an online timestamp tool to convert it into year-month-day hour:minute:second format for viewing.*
+***注意****：消息中输出的时间为 **`s.ns`** 格式。用户可以搜索在线时间戳工具，将其转换为年-月-日 时:分:秒的格式进行查看。*
 
-### 3.3 Web Verification(Mechanical LiDAR Only)
+### 3.3 网页验证（仅限机械式 LiDAR）
 
-For mechanical LiDAR, users can check the LiDAR time synchronization status on the Diagnostic interface of the web page using the time synchronization status bits:
+对于机械式 LiDAR，用户可以在网页的 Diagnostic 界面上通过时间同步状态位查看 LiDAR 的时间同步状态：
 
-"**Absent**" indicates no signal input; "**Unlock**" indicates an unstable signal; "**Locked**" indicates that the signal is synchronized.
+"**Absent**" 表示无信号输入；"**Unlock**" 表示信号不稳定；"**Locked**" 表示信号已同步。
 
-**GPS synchronization status:** GPS/GPRMC Status and PPS Status status bits are Locked;
+**GPS 同步状态：** GPS/GPRMC Status 和 PPS Status 状态位为 Locked；
 
-**PTP/gPTP synchronization status:** PTP Status status bit is Locked.
+**PTP/gPTP 同步状态：** PTP Status 状态位为 Locked。
 
 <figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig5.JPEG').default} alt="Web Diagnostic interface showing time synchronization status bits" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: Schematic diagram of successful time synchronization</figcaption>
+  <img src={require('./images/Fig5.JPEG').default} alt="网页 Diagnostic 界面显示时间同步状态位" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
+  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 6：时间同步成功示意图</figcaption>
 </figure>
 
-### 3.4 UDP Packet Verification
+### 3.4 UDP 数据包验证
 
-According to the analysis of the LiDAR UDP packets in the **[Device Information Output Protocol (DIFOP)]** section of the product manual, locate the corresponding bytes in **Wireshark** to view the current **LiDAR synchronization mode, synchronization status, and timestamp information**. The following uses the M1P LiDAR as an **example**.
+根据产品手册 **[设备信息输出协议（DIFOP）]** 部分对 LiDAR UDP 数据包的解析，在 **Wireshark** 中定位相应的字节，即可查看当前 **LiDAR 同步模式、同步状态和时间戳信息**。下面以 M1P LiDAR 为**例**。
 
 <div style={{display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'flex-start'}}>
   <figure style={{textAlign: 'center', margin: '0'}}>
-    <img src={require('./images/Fig6.png').default} alt="Wireshark view of M1P LiDAR UDP packet synchronization mode and status" style={{maxWidth: '420px', width: '100%', height: 'auto'}} />
-    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 7: Example of M1P DIFOP in manual</figcaption>
+    <img src={require('./images/Fig6.png').default} alt="Wireshark 中查看 M1P LiDAR UDP 数据包的同步模式与状态" style={{maxWidth: '420px', width: '100%', height: 'auto'}} />
+    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 7：手册中 M1P DIFOP 示例</figcaption>
   </figure>
   <figure style={{textAlign: 'center', margin: '0'}}>
-    <img src={require('./images/Fig7.JPEG').default} alt="Wireshark view of M1P LiDAR UDP packet timestamp information" style={{maxWidth: '380px', width: '100%', height: 'auto'}} />
-    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 8: Example of M1P DIFOP in Wireshark</figcaption>
+    <img src={require('./images/Fig7.JPEG').default} alt="Wireshark 中查看 M1P LiDAR UDP 数据包的时间戳信息" style={{maxWidth: '380px', width: '100%', height: 'auto'}} />
+    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 8：Wireshark 中 M1P DIFOP 示例</figcaption>
   </figure>
 </div>
 
-***Note****: 0x03 corresponds to gPTP time synchronization mode; 0x01 corresponds to the time synchronization success status bit. The flag bit will only change when time is being provided (i.e., during time synchronization).*
+***注意****：0x03 对应 gPTP 时间同步模式；0x01 对应时间同步成功状态位。该标志位仅在提供时间（即时间同步进行中）时才会改变。*
 
-## 4. Precautions
+## 4. 注意事项
 
-i. Connect the LiDAR directly to the master clock source to eliminate interference from intermediate links.
+i. 将 LiDAR 直接连接到主时钟源，以消除中间环节的干扰。
 
-ii. Confirm that the time synchronization mode of the LiDAR is consistent with the master clock source.
+ii. 确认 LiDAR 的时间同步模式与主时钟源一致。
 
-iii. Verify that the master clock source is properly sending time synchronization packets.
+iii. 验证主时钟源正常发送时间同步数据包。
 
-iv. If synchronization still fails after the above steps, please contact RoboSense technical support.
+iv. 如果经过上述步骤后同步仍然失败，请联系 RoboSense 技术支持。
 
-**Note:** If the customer experiences normal synchronization when the host is directly connected to the LiDAR but fails when connecting through a switch, it is usually necessary to configure the packet forwarding settings on the corresponding ports of the switch. Please consult the relevant supplier for details.
+**注意：** 如果客户在主机直连 LiDAR 时同步正常，但通过交换机连接时同步失败，通常需要在交换机相应端口上配置数据包转发设置。详情请咨询相关供应商。

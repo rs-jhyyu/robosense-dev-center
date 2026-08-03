@@ -1,45 +1,45 @@
 ---
-title: FAQ
+title: 常见问题
 sidebar_position: 4
 ---
 
-# FAQ
-Here are some common usage issues. If you encounter them, you can troubleshoot them on your own.
+# 常见问题
+以下是一些常见的使用问题。如果你遇到这些问题，可以自行排查。
 
-## Q1: Cannot Launch RSView
-Make sure the firewall of your device is **turned off**.
+## Q1：无法启动 RSView
+请确保你设备的防火墙已**关闭**。
 
-![Firewall](./images/firewall.png)
-
----
-## Q2: Error Message "No module named rsview"
-Check whether the program path contains **invalid characters**. The RSView program path must not contain any invalid characters and does not support Chinese characters. It is recommended to use a file path composed of English letters and numbers only.
+![防火墙](./images/firewall.png)
 
 ---
-## Q3: Fail to Play/Load Pointcloud
-Check whether the user running RSView has **administrator privileges** on the current computer. It is recommended to run the program with administrator privileges.
-
-![Run as Admin](./images/run_as_admin.png)
+## Q2：错误提示 "No module named rsview"
+检查程序路径中是否包含**无效字符**。RSView 程序路径不得包含任何无效字符，且不支持中文字符。建议使用仅由英文字母和数字组成的文件路径。
 
 ---
-## Q4: Program Crashed When Reading Pcap File
-Check whether the data packet path contains **invalid characters**. The PCAP file name and path read by RSView must not contain any invalid characters and do not support Chinese characters. It is recommended to use file names and paths composed of English letters and numbers only.
+## Q3：无法播放/加载点云
+检查运行 RSView 的用户在当前计算机上是否具有**管理员权限**。建议以管理员权限运行程序。
+
+![以管理员身份运行](./images/run_as_admin.png)
 
 ---
-### Q5: No Pointcloud is Displayed
-1. Check if the LiDAR harnesses&accessories are connected properly
-2. Check whether the LiDAR model and port configuration in RSView are correct. In the Wireshark capture interface, check the Info column. The default MSOP port is **6699**, and the default DIFOP port is **7788**. Under normal operation, the number of MSOP packets should be greater than DIFOP packets. You can roughly verify this by packet count, or use filter expressions in Wireshark to filter and view the corresponding ports.
-    - Note: for EM series, the default DIFOP port is **7766**
-3. Check whether two instances of RSView are running. If two instances are opened at the same time, port conflicts may occur, which can prevent the second RSView instance from displaying point clouds correctly.
+## Q4：读取 Pcap 文件时程序崩溃
+检查数据包路径中是否包含**无效字符**。RSView 读取的 PCAP 文件名和路径不得包含任何无效字符，且不支持中文字符。建议使用仅由英文字母和数字组成的文件名和路径。
 
 ---
-## Q6: Windows DLL System Error
-![DLL Error](./images/dll_error.png)
-
-Please contact Robosense technical support for the **dependency packet**, then copy all files in the packet to C://Windows/System32
+### Q5：不显示任何点云
+1. 检查 LiDAR 线束及配件是否连接正常
+2. 检查 RSView 中的 LiDAR 型号和端口配置是否正确。在 Wireshark 抓包界面中，查看 Info 列。默认 MSOP 端口为 **6699**，默认 DIFOP 端口为 **7788**。正常运行时，MSOP 数据包的数量应大于 DIFOP 数据包。你可以通过数据包数量进行大致验证，或在 Wireshark 中使用过滤表达式过滤并查看对应端口。
+    - 注意：对于 EM 系列，默认 DIFOP 端口为 **7766**
+3. 检查是否同时运行了两个 RSView 实例。如果同时打开两个实例，可能会发生端口冲突，从而导致第二个 RSView 实例无法正确显示点云。
 
 ---
-## Q7: Fail to Save PCD When Playing Online Pointcloud
-![Fail to Save PCD](./images/fail_to_save_pcd.png)
+## Q6：Windows DLL 系统错误
+![DLL 错误](./images/dll_error.png)
 
-Real-time online data does not support saving in .pcd format. You need to first capture a .pcap file using Wireshark, then play the .pcap file in RSView. Fast-forward to the desired frame position and save it as a .pcd file (make sure to pause playback before saving the .pcap file).
+请联系 Robosense 技术支持获取**依赖包**，然后将包中的所有文件复制到 C://Windows/System32
+
+---
+## Q7：播放在线点云时无法保存 PCD
+![无法保存 PCD](./images/fail_to_save_pcd.png)
+
+实时在线数据不支持保存为 .pcd 格式。你需要先使用 Wireshark 抓取一个 .pcap 文件，然后在 RSView 中播放该 .pcap 文件。快进到所需的帧位置并将其保存为 .pcd 文件（在保存 .pcap 文件前务必暂停播放）。
