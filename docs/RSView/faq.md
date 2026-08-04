@@ -26,7 +26,7 @@ Check whether the user running RSView has **administrator privileges** on the cu
 Check whether the data packet path contains **invalid characters**. The PCAP file name and path read by RSView must not contain any invalid characters and do not support Chinese characters. It is recommended to use file names and paths composed of English letters and numbers only.
 
 ---
-### Q5: No Pointcloud is Displayed
+## Q5: No Pointcloud is Displayed
 1. Check if the LiDAR harnesses&accessories are connected properly
 2. Check whether the LiDAR model and port configuration in RSView are correct. In the Wireshark capture interface, check the Info column. The default MSOP port is **6699**, and the default DIFOP port is **7788**. Under normal operation, the number of MSOP packets should be greater than DIFOP packets. You can roughly verify this by packet count, or use filter expressions in Wireshark to filter and view the corresponding ports.
     - Note: for EM series, the default DIFOP port is **7766**

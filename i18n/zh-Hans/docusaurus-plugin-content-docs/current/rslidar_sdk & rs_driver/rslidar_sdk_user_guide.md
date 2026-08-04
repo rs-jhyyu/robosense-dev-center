@@ -119,6 +119,8 @@ user@user:~/workspace$ ros2 launch rslidar_sdk start.py
 
 ---
 
+<a id="lidar-connection"></a>
+
 ## 激光雷达连接
 
 下载并安装 **Wireshark** 以查看网络端口数据包。

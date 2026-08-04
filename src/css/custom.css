@@ -4,29 +4,74 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* RoboSense brand palette: orange-red / black / white.
+   The primary is an orange-leaning red used for links, buttons and accents;
+   the navbar and footer use near-black to keep things clean. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #e8482b;
+  --ifm-color-primary-dark: #dd3b1e;
+  --ifm-color-primary-darker: #d1381c;
+  --ifm-color-primary-darkest: #ac2e17;
+  --ifm-color-primary-light: #eb5f45;
+  --ifm-color-primary-lighter: #ed6b53;
+  --ifm-color-primary-lightest: #f28d7b;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Brand ink used for navbar / footer / hero. */
+  --rs-ink: #1a1a1a;
+  --rs-ink-dark: #121212;
+
+  /* Dark navbar with white text. */
+  --ifm-navbar-background-color: var(--rs-ink);
+  --ifm-navbar-link-color: rgba(255, 255, 255, 0.9);
+  --ifm-navbar-link-hover-color: #ffffff;
+
+  /* Dark footer (black, not slate). */
+  --ifm-footer-background-color: var(--rs-ink-dark);
+  --ifm-footer-color: rgba(255, 255, 255, 0.75);
+  --ifm-footer-link-color: rgba(255, 255, 255, 0.75);
+  --ifm-footer-title-color: #ffffff;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Slightly brighter orange-red in dark mode for readability. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #ff6a4d;
+  --ifm-color-primary-dark: #ff4f2c;
+  --ifm-color-primary-darker: #ff421c;
+  --ifm-color-primary-darkest: #e5330f;
+  --ifm-color-primary-light: #ff8570;
+  --ifm-color-primary-lighter: #ff9280;
+  --ifm-color-primary-lightest: #ffb3a6;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
+
+  --ifm-navbar-background-color: #121212;
+  --ifm-footer-background-color: #0d0d0d;
+}
+
+/* Keep navbar controls legible on the dark bar. */
+.navbar__title,
+.navbar .navbar__link {
+  color: rgba(255, 255, 255, 0.9);
+}
+.navbar .navbar__link:hover,
+.navbar .navbar__link--active {
+  color: #ffffff;
+}
+
+/* Light/dark toggle icon must stay visible on the dark navbar even when not
+   hovered (the default icon color is too dark against black). */
+.navbar [class*='colorModeToggle'] button,
+.navbar [class*='toggleButton'] {
+  color: rgba(255, 255, 255, 0.9);
+}
+.navbar [class*='colorModeToggle'] svg {
+  color: rgba(255, 255, 255, 0.9);
+}
+.navbar [class*='colorModeToggle'] button:hover,
+.navbar [class*='toggleButton']:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
 }
 
 /* shell-session: color the prompt (user@host:path$) differently from the command */
@@ -44,5 +89,38 @@
    while keeping their routes reachable via in-page links. */
 .menu__list-item.sidebar-hidden {
   display: none;
+}
+
+/* Doc page sidebar: keep it the same white as the content area; only the
+   active item carries an orange-red accent. */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Active item: subtle orange-red tint plus a red left accent bar. */
+.menu__link--active:not(.menu__link--sublist),
+.menu__link--active:not(.menu__link--sublist):hover {
+  color: var(--ifm-color-primary);
+  background-color: rgba(232, 72, 43, 0.1);
+  border-left: 3px solid var(--ifm-color-primary);
+  font-weight: 600;
+}
+.menu__link:hover,
+.menu__caret:hover,
+.menu__list-item-collapsible:hover {
+  background-color: rgba(232, 72, 43, 0.06);
+}
+
+/* Footer: solid black (overrides Infima's slate dark default) with a thin
+   orange-red top accent, tying it into the orange-red / black / white theme. */
+.footer {
+  background-color: #121212;
+  border-top: 3px solid var(--ifm-color-primary);
+}
+[data-theme='dark'] .footer {
+  background-color: #0d0d0d;
+}
+.footer .footer__link-item:hover {
+  color: var(--ifm-color-primary-light);
 }
 

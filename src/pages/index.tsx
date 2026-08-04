@@ -21,7 +21,7 @@ function HomepageHeader() {
           </Translate>
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/intro">
+          <Link className="button button--primary button--lg" to="/docs/intro">
             <Translate id="homepage.cta">Read the Docs</Translate>
           </Link>
         </div>

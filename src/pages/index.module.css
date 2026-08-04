@@ -10,9 +10,21 @@
   overflow: hidden;
   background: linear-gradient(
     135deg,
-    var(--ifm-color-primary-darkest) 0%,
-    var(--ifm-color-primary) 100%
+    #1a1a1a 0%,
+    #2a1512 55%,
+    var(--ifm-color-primary-darkest) 100%
   );
+}
+
+/* Thin brand orange-red accent line under the hero. */
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--ifm-color-primary);
 }
 
 .heroTitle {
