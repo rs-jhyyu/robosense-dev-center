@@ -95,7 +95,6 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: 'search',
           position: 'right',
@@ -127,12 +126,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/robosense',
-            },
-            {
               label: 'Website',
               href: 'https://www.robosense.cn/en/',
+            },
+            {
+              label: 'Manual Resources',
+              href: 'https://www.robosense.cn/resources',
             },
           ],
         },
@@ -140,12 +139,8 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/RoboSense-LiDAR/rslidar_sdk',
+              label: 'ROS SDK & Driver',
+              href: 'https://github.com/RoboSense-LiDAR/',
             },
           ],
         },

@@ -15,21 +15,17 @@
     "message": "教程",
     "description": "The label of footer link with label=Tutorial linking to /docs/intro"
   },
-  "link.item.label.LinkedIn": {
-    "message": "领英",
-    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/company/robosense"
-  },
   "link.item.label.Website": {
     "message": "官网",
     "description": "The label of footer link with label=Website linking to https://www.robosense.cn/en/"
   },
-  "link.item.label.Blog": {
-    "message": "博客",
-    "description": "The label of footer link with label=Blog linking to /blog"
+  "link.item.label.Manual Resources": {
+    "message": "手册/产品资料下载",
+    "description": "The label of footer link with label=Manual Resources linking to https://www.robosense.cn/resources"
   },
-  "link.item.label.GitHub": {
-    "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/RoboSense-LiDAR/rslidar_sdk"
+  "link.item.label.ROS SDK & Driver": {
+    "message": "ROS SDK & Driver",
+    "description": "The label of footer link with label=ROS SDK & Driver linking to https://github.com/RoboSense-LiDAR/"
   },
   "copyright": {
     "message": "Copyright © 2026 My Project, Inc. Built with Docusaurus.",

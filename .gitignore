@@ -1,6 +1,9 @@
 # Dependencies
 /node_modules
 
+# Portable Node runtime (local only)
+/.node
+
 # Production
 /build
 

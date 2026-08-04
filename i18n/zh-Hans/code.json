@@ -7,5 +7,41 @@
   },
   "homepage.metaTitle": {
     "message": "欢迎来到 RoboSense Development Center"
+  },
+  "homepage.cta": {
+    "message": "阅读文档"
+  },
+  "homepage.section.title": {
+    "message": "浏览文档"
+  },
+  "homepage.section.subtitle": {
+    "message": "开始使用速腾激光雷达所需的一切。"
+  },
+  "homepage.card.learnMore": {
+    "message": "了解更多 →"
+  },
+  "homepage.card.rsview.title": {
+    "message": "RSView"
+  },
+  "homepage.card.rsview.desc": {
+    "message": "可视化激光雷达点云、回放 PCAP 文件并实时查看数据。"
+  },
+  "homepage.card.sdk.title": {
+    "message": "rslidar_sdk & rs_driver"
+  },
+  "homepage.card.sdk.desc": {
+    "message": "通过 SDK 与驱动将速腾激光雷达集成到你的应用中。"
+  },
+  "homepage.card.timesync.title": {
+    "message": "时间同步"
+  },
+  "homepage.card.timesync.desc": {
+    "message": "配置 PTP、GPS 等时间源，让激光雷达保持时间同步。"
+  },
+  "homepage.card.assistant.title": {
+    "message": "雷达助手"
+  },
+  "homepage.card.assistant.desc": {
+    "message": "使用助手工具配置、升级并诊断你的激光雷达。"
   }
 }
