@@ -76,6 +76,29 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      // Local, offline full-text search. Builds a separate index per locale
+      // (en / zh-Hans), so the Chinese site searches Chinese content and the
+      // English site searches English content.
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        // Index docs only. Blog and standalone pages are not surfaced in the
+        // site navigation, so they are excluded from search.
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        // Enable both English and Chinese tokenizers.
+        language: ['en', 'zh'],
+        // Highlight the matched terms on the target page after navigation.
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 50,
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
