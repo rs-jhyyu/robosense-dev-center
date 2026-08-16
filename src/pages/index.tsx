@@ -21,7 +21,9 @@ function HomepageHeader() {
           </Translate>
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/intro">
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/Getting Started/intro">
             <Translate id="homepage.cta">Read the Docs</Translate>
           </Link>
         </div>
@@ -41,6 +43,15 @@ type FeatureItem = {
 
 const FEATURES: FeatureItem[] = [
   {
+    icon: '🔌',
+    titleId: 'homepage.card.gettingStarted.title',
+    title: 'Getting Started',
+    descId: 'homepage.card.gettingStarted.desc',
+    description:
+      'Wire up the LiDAR, configure the network, and capture your first packets.',
+    to: '/docs/Getting Started/intro',
+  },
+  {
     icon: '📡',
     titleId: 'homepage.card.rsview.title',
     title: 'RSView',
@@ -48,6 +59,15 @@ const FEATURES: FeatureItem[] = [
     description:
       'Visualize LiDAR point clouds, play back PCAP files, and inspect data in real time.',
     to: '/docs/RSView/quick_start',
+  },
+  {
+    icon: '🛠️',
+    titleId: 'homepage.card.tools.title',
+    title: 'Configuration Tools',
+    descId: 'homepage.card.tools.desc',
+    description:
+      'Set IP and ports, upgrade firmware, and diagnose the LiDAR from the web page or the desktop tools.',
+    to: '/docs/Configuration Tools/web_configuration',
   },
   {
     icon: '🧩',
@@ -59,22 +79,22 @@ const FEATURES: FeatureItem[] = [
     to: '/docs/rslidar_sdk & rs_driver/introduction',
   },
   {
-    icon: '🕐',
-    titleId: 'homepage.card.timesync.title',
-    title: 'Time Synchronization',
-    descId: 'homepage.card.timesync.desc',
+    icon: '⌨️',
+    titleId: 'homepage.card.api.title',
+    title: 'RS-LiDAR API',
+    descId: 'homepage.card.api.desc',
     description:
-      'Configure PTP, GPS, and other time sources to keep your LiDAR in sync.',
-    to: '/docs/Time Synchronization/time_synchronization_guide',
+      'Control and configure the LiDAR programmatically with the C++ control library.',
+    to: '/docs/RS-LiDAR API/rs_lidar_api',
   },
   {
-    icon: '🛠️',
-    titleId: 'homepage.card.assistant.title',
-    title: 'LidarAssistant',
-    descId: 'homepage.card.assistant.desc',
+    icon: '🕐',
+    titleId: 'homepage.card.features.title',
+    title: 'Feature Guides',
+    descId: 'homepage.card.features.desc',
     description:
-      'Configure, upgrade, and diagnose your LiDAR with the assistant tool.',
-    to: '/docs/LidarAssistant/E_Platform',
+      'Time synchronization, IMU data, and SLAM integration explained step by step.',
+    to: '/docs/Feature Guides/time_synchronization_guide',
   },
 ];
 
@@ -109,7 +129,7 @@ function HomepageFeatures() {
         </p>
         <div className="row">
           {FEATURES.map((item) => (
-            <div className="col col--3" key={item.titleId}>
+            <div className="col col--4" key={item.titleId}>
               <FeatureCard item={item} />
             </div>
           ))}

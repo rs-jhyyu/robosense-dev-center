@@ -4,12 +4,12 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "My Site Logo",
+    "message": "RoboSense Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Tutorial": {
-    "message": "教程",
-    "description": "Navbar item with label Tutorial"
+  "item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
   },
   "item.label.GitHub": {
     "message": "GitHub",

@@ -72,7 +72,7 @@ target_link_libraries(project ${rs_driver_LIBRARIES})
 
 ## 工具使用
 
-在使用与 `rs_driver` 相关的工具之前，用户同样需要确保激光雷达已正确连接到计算机。具体步骤请参考[激光雷达连接](./rslidar_sdk_user_guide.md#lidar-connection)章节。
+在使用与 `rs_driver` 相关的工具之前，用户同样需要确保激光雷达已正确连接到计算机。具体步骤请参考[激光雷达连接](./rslidar_sdk_user_guide.md#激光雷达连接)章节。
 
 ### 运行示例 demo
 

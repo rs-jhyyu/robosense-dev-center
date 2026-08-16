@@ -46,7 +46,7 @@ user@user:~$ sudo chkconfig iptables off
 
 During the use of the SDK, in addition to the angular velocity and linear velocity data contained in IMU-related topics, the specific values of the quaternion and offset in the Airy/Fairy IMU can also be printed via the SDK.
 
-See: [IMU Extrinsic Parameters Instructions](./imu_extrinsic_parameters.md).
+See: [IMU Data Acquisition and Parsing](../Feature Guides/imu_guide.md).
 
 ---
 
@@ -108,3 +108,241 @@ else if (!this->param_.dense_points)
     this->point_cloud_->points.emplace_back(point);
 }
 ```
+
+---
+
+## Q6: How to publish the IMU extrinsic parameters as a topic
+
+The IMU extrinsic calibration data of Airy/Fairy consists of a quaternion and an offset. Besides printing it to the terminal, it can also be published as a dedicated topic. For background, see [IMU Data Acquisition and Parsing](../Feature Guides/imu_guide.md).
+
+Implementation: open the `src/source/source_driver.hpp` file and insert the code below at the indicated positions. The implementation works with both ROS and ROS2, uses `std::call_once` to make sure the publisher is initialized only once, and publishes to the topic `rslidar_imu_calib`.
+
+```cpp
+#pragma once
+
+#include "source/source.hpp"
+
+#include <rs_driver/api/lidar_driver.hpp>
+#include <rs_driver/utility/sync_queue.hpp>
+// added
+#ifdef ROS_FOUND
+#include <ros/ros.h>
+#include <geometry_msgs/Pose.h>
+#elif defined(ROS2_FOUND)
+#include <rclcpp/rclcpp.hpp>
+#include <geometry_msgs/msg/pose.hpp>
+#endif
+//
+
+......
+
+void SourceDriver::processPointCloud()
+{
+  while (!to_exit_process_)
+  {
+    std::shared_ptr<LidarPointCloudMsg> msg = point_cloud_queue_.popWait(1000);
+    if (msg.get() == NULL)
+    {
+      continue;
+    }
+    sendPointCloud(msg);
+
+    // added
+    DeviceInfo deviceInfo;
+    if (!driver_ptr_->getDeviceInfo(deviceInfo))
+    {
+      static bool device_info_warned = false;
+      if (!device_info_warned)
+      {
+        RS_WARNING << "get device info failed" << RS_REND;
+        device_info_warned = true;
+      }
+    }
+    else
+    {
+    #if defined(ROS_FOUND) || defined(ROS2_FOUND)
+
+    #ifdef ROS_FOUND
+      using PoseMsg = geometry_msgs::Pose;
+      static ros::Publisher calib_pub;
+    #else
+      using PoseMsg = geometry_msgs::msg::Pose;
+      static std::shared_ptr<rclcpp::Node> calib_node;
+      static rclcpp::Publisher<PoseMsg>::SharedPtr calib_pub;
+    #endif
+
+      static std::once_flag init_flag;
+      std::call_once(init_flag, [] {
+    #ifdef ROS_FOUND
+        ros::NodeHandle nh;
+        calib_pub = nh.advertise<PoseMsg>("rslidar_imu_calib", 1, true);
+    #else
+        calib_node = rclcpp::Node::make_shared("rslidar_imu_calib_node");
+        rclcpp::QoS qos(rclcpp::KeepLast(1));
+        qos.transient_local();
+        calib_pub = calib_node->create_publisher<PoseMsg>("rslidar_imu_calib", qos);
+    #endif
+      });
+
+      PoseMsg pose;
+      pose.orientation.x = deviceInfo.qx;
+      pose.orientation.y = deviceInfo.qy;
+      pose.orientation.z = deviceInfo.qz;
+      pose.orientation.w = deviceInfo.qw;
+      pose.position.x    = deviceInfo.x;
+      pose.position.y    = deviceInfo.y;
+      pose.position.z    = deviceInfo.z;
+
+    #ifdef ROS_FOUND
+      calib_pub.publish(pose);
+    #else
+      calib_pub->publish(pose);
+    #endif
+
+    #endif
+    }
+    //
+
+    free_point_cloud_queue_.push(msg);
+  }
+}
+```
+
+:::note
+This method supports both Airy and Fairy.
+:::
+
+---
+
+## Q7: How to mask specified channels
+
+For mechanical LiDARs, specified channels can be masked by modifying the decoder source file that corresponds to the model. The usual access path is `/rslidar_sdk/src/rs_driver/src/rs_driver/driver/decoder`. Taking Airy as an example:
+
+### Masking discontinuous channels
+
+To mask discontinuous channels, list the ring numbers to be dropped in a `std::set<uint16_t> exclude` set.
+
+**ROS**
+
+```cpp
+// decoder_RSAIRY.cpp
+#pragma once
+#include <rs_driver/driver/decoder/decoder_mech.hpp>
+#include <iomanip>
+// include set in the header section
+#include <set>
+......
+for (uint16_t chan = 0; chan < this->const_param_.CHANNELS_PER_BLOCK; chan++)
+{
+  const RSAIRYChannel& channel = block.channels[chan];
+  uint16_t chan_id = chan;
+  if (lidarModel_ == RSAIRYLidarModel::RSAIRY_CHANNEL_96 && (blk % 2) == 1)
+  {
+    chan_id = chan + 48;
+  }
+
+  // mask the specified discontinuous channels
+  static const std::set<uint16_t> exclude = {0, 7, 15, 42, 88};  // fill in the rings to be masked
+  if (exclude.count(this->chan_angles_.toUserChan(chan_id))) continue;
+  //
+
+  double chan_ts = block_ts + this->mech_const_param_.CHAN_TSS[chan_id];
+  ......
+```
+
+**ROS2**
+
+```cpp
+// decoder_RSAIRY.cpp
+for (uint16_t chan = 0; chan < this->const_param_.CHANNELS_PER_BLOCK; chan++)
+{
+  const RSAIRYChannel& channel = block.channels[chan];
+  uint16_t chan_id = chan;
+  if (lidarModel_ == RSAIRYLidarModel::RSAIRY_CHANNEL_96 && (blk % 2) == 1)
+  {
+    chan_id = chan + 48;
+  }
+
+  // mask the specified discontinuous channels
+  uint16_t ring = this->chan_angles_.toUserChan(chan_id);
+  bool drop = (ring == 0 || ring == 7 || ring == 15 || ring == 42 || ring == 88);
+  //
+
+  double chan_ts = block_ts + this->mech_const_param_.CHAN_TSS[chan_id];
+  ......
+  float distance = u16Distance * this->const_param_.DISTANCE_RES;
+  // add the condition check for dropped points (the leading !drop && below is the addition)
+  if (!drop && this->distance_section_.in(distance) && this->scan_section_.in(angle_horiz_final))
+```
+
+### Masking continuous channels
+
+Masking a continuous range of channels only requires a range check such as `ring > 90`.
+
+**ROS**
+
+```cpp
+// decoder_RSAIRY.cpp
+#pragma once
+#include <rs_driver/driver/decoder/decoder_mech.hpp>
+#include <iomanip>
+......
+for (uint16_t chan = 0; chan < this->const_param_.CHANNELS_PER_BLOCK; chan++)
+{
+  const RSAIRYChannel& channel = block.channels[chan];
+  uint16_t chan_id = chan;
+  if (lidarModel_ == RSAIRYLidarModel::RSAIRY_CHANNEL_96 && (blk % 2) == 1)
+  {
+    chan_id = chan + 48;
+  }
+
+  // mask the specified continuous channels
+  {
+    uint16_t ring = this->chan_angles_.toUserChan(chan_id);
+    if (ring > 90) continue;   // fill in the continuous channel range to be masked
+  }
+
+  double chan_ts = block_ts + this->mech_const_param_.CHAN_TSS[chan_id];
+  ......
+```
+
+**ROS2**
+
+```cpp
+// decoder_RSAIRY.cpp
+#pragma once
+#include <rs_driver/driver/decoder/decoder_mech.hpp>
+#include <iomanip>
+......
+for (uint16_t chan = 0; chan < this->const_param_.CHANNELS_PER_BLOCK; chan++)
+{
+  const RSAIRYChannel& channel = block.channels[chan];
+  uint16_t chan_id = chan;
+  if (lidarModel_ == RSAIRYLidarModel::RSAIRY_CHANNEL_96 && (blk % 2) == 1)
+  {
+    chan_id = chan + 48;
+  }
+
+  // mask the specified continuous channels
+  uint16_t ring = this->chan_angles_.toUserChan(chan_id);
+  bool drop = (ring > 90);
+
+  double chan_ts = block_ts + this->mech_const_param_.CHAN_TSS[chan_id];
+  ......
+  float distance = u16Distance * this->const_param_.DISTANCE_RES;
+  // add the condition check for dropped points (the leading !drop && below is the addition)
+  if (!drop && this->distance_section_.in(distance) && this->scan_section_.in(angle_horiz_final))
+```
+
+---
+
+## Q8: Sudden reflectivity rendering changes in some frames during Rviz playback
+
+During point cloud playback, the reflectivity of a few frames occasionally changes abruptly.
+
+<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
+  <img src={require('./images/extra/4132839647b10110f88c9150953f94de.jpg').default} alt="The reflectivity rendering option in Rviz that needs to be disabled" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
+  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: The rendering option in Rviz that needs to be disabled</figcaption>
+</figure>
+
+This is usually an Rviz rendering issue rather than a problem with the LiDAR data. Disabling the rendering option indicated in the figure above in Rviz avoids the reflectivity jumps caused by abnormal reflectivity rendering.

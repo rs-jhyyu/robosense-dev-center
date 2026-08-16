@@ -119,9 +119,9 @@ user@user:~/workspace$ ros2 launch rslidar_sdk start.py
 
 ---
 
-<a id="lidar-connection"></a>
-
 ## 激光雷达连接
+
+> 本节仅介绍 Ubuntu 下的流程。Windows 主机 IP 配置、Wireshark 安装细节、保存 `.pcap` 文件，以及 `ping` 不通时的系统性排查，请参考[网络连接与 Wireshark 抓包](../Getting Started/network_and_wireshark.md)。
 
 下载并安装 **Wireshark** 以查看网络端口数据包。
 

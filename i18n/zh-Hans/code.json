@@ -6,7 +6,7 @@
     "message": "激光雷达资料与分步操作指南"
   },
   "homepage.metaTitle": {
-    "message": "欢迎来到 RoboSense Development Center"
+    "message": "欢迎来到速腾开发者中心"
   },
   "homepage.cta": {
     "message": "阅读文档"
@@ -20,28 +20,40 @@
   "homepage.card.learnMore": {
     "message": "了解更多 →"
   },
+  "homepage.card.gettingStarted.title": {
+    "message": "入门与连接"
+  },
+  "homepage.card.gettingStarted.desc": {
+    "message": "完成雷达接线、配置网络，并抓取第一批数据包。"
+  },
   "homepage.card.rsview.title": {
-    "message": "RSView"
+    "message": "上位机与可视化"
   },
   "homepage.card.rsview.desc": {
     "message": "可视化激光雷达点云、回放 PCAP 文件并实时查看数据。"
   },
+  "homepage.card.tools.title": {
+    "message": "雷达配置工具"
+  },
+  "homepage.card.tools.desc": {
+    "message": "通过 Web 端或桌面小工具修改 IP 与端口、升级固件并诊断雷达。"
+  },
   "homepage.card.sdk.title": {
-    "message": "rslidar_sdk & rs_driver"
+    "message": "驱动与 SDK"
   },
   "homepage.card.sdk.desc": {
     "message": "通过 SDK 与驱动将速腾激光雷达集成到你的应用中。"
   },
-  "homepage.card.timesync.title": {
-    "message": "时间同步"
+  "homepage.card.api.title": {
+    "message": "开发接口"
   },
-  "homepage.card.timesync.desc": {
-    "message": "配置 PTP、GPS 等时间源，让激光雷达保持时间同步。"
+  "homepage.card.api.desc": {
+    "message": "使用 C++ 控制库以编程方式控制并配置激光雷达。"
   },
-  "homepage.card.assistant.title": {
-    "message": "雷达助手"
+  "homepage.card.features.title": {
+    "message": "功能专题"
   },
-  "homepage.card.assistant.desc": {
-    "message": "使用助手工具配置、升级并诊断你的激光雷达。"
+  "homepage.card.features.desc": {
+    "message": "时间同步、IMU 数据获取与 SLAM 集成的分步说明。"
   }
 }

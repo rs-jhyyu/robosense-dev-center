@@ -121,6 +121,8 @@ user@user:~/workspace$ ros2 launch rslidar_sdk start.py
 
 ## LiDAR Connection
 
+> This section covers the Ubuntu workflow only. For Windows host configuration, Wireshark installation details, saving `.pcap` files, and systematic troubleshooting when `ping` fails, see [Network Connection and Wireshark Capture](../Getting Started/network_and_wireshark.md).
+
 Download and install **Wireshark** to view network port packets.
 
 ```shell-session

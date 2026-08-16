@@ -67,6 +67,11 @@
   padding: 4rem 0;
 }
 
+/* Cards wrap onto multiple rows, so each column needs vertical breathing room. */
+.features .col {
+  margin-bottom: 1.5rem;
+}
+
 .sectionTitle {
   text-align: center;
   font-size: 1.9rem;
