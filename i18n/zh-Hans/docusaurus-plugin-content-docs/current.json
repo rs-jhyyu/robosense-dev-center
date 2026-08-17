@@ -3,24 +3,28 @@
     "message": "下一版本",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.Airy API": {
-    "message": "Airy API",
-    "description": "The label for category Airy API in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.LidarAssistant": {
-    "message": "雷达助手",
-    "description": "The label for category LidarAssistant in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "入门与连接",
+    "description": "The label for category Getting Started in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.RSView": {
-    "message": "RSView",
+    "message": "上位机与可视化",
     "description": "The label for category RSView in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Time Synchronization": {
-    "message": "时间同步",
-    "description": "The label for category Time Synchronization in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Configuration Tools": {
+    "message": "雷达配置工具",
+    "description": "The label for category Configuration Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.rslidar_sdk & rs_driver": {
-    "message": "rslidar_sdk & rs_driver",
+    "message": "驱动与 SDK",
     "description": "The label for category rslidar_sdk & rs_driver in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.RS-LiDAR API": {
+    "message": "开发接口",
+    "description": "The label for category RS-LiDAR API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Feature Guides": {
+    "message": "功能专题",
+    "description": "The label for category Feature Guides in sidebar tutorialSidebar"
   }
 }
