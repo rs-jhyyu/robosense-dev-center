@@ -1,0 +1,156 @@
+/**
+ * Floating AI assistant, docked bottom-right on every page.
+ *
+ * Colors come from the shared RoboSense palette (orange-red / black / white)
+ * so the widget reads as part of the site rather than a bolted-on third party.
+ */
+
+.launcher {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 300;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.launcher:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.launcher:focus-visible {
+  outline: 3px solid rgba(232, 72, 43, 0.45);
+  outline-offset: 2px;
+}
+
+.panel {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 5.25rem;
+  z-index: 300;
+
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: min(620px, calc(100vh - 8rem));
+
+  border: 1px solid var(--rs-sidebar-border);
+  border-radius: 12px;
+  background: var(--rs-content-bg);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+
+  transform-origin: bottom right;
+  transition: opacity 0.18s ease, transform 0.18s ease,
+    visibility 0.18s ease;
+}
+
+.panel[data-open='false'] {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96) translateY(8px);
+  pointer-events: none;
+}
+
+.panel[data-open='true'] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  padding: 0.6rem 0.75rem 0.6rem 1rem;
+  background: var(--rs-ink);
+  color: #ffffff;
+}
+
+.panelTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.panelActions {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.panelAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.panelAction:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: 0;
+}
+
+/* On phones the panel takes the full width, leaving room for the launcher. */
+@media screen and (max-width: 600px) {
+  .panel {
+    right: 0.75rem;
+    left: 0.75rem;
+    bottom: 4.75rem;
+    width: auto;
+    height: min(70vh, calc(100vh - 7rem));
+  }
+
+  .launcher {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Respect users who ask for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .launcher,
+  .panel {
+    transition: none;
+  }
+}
+
+/* When printing, the widget is noise. */
+@media print {
+  .launcher,
+  .panel {
+    display: none;
+  }
+}

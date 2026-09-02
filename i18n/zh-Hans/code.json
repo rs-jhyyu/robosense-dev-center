@@ -1,4 +1,16 @@
 {
+  "assistant.title": {
+    "message": "AI 助手"
+  },
+  "assistant.open": {
+    "message": "向 AI 助手提问"
+  },
+  "assistant.close": {
+    "message": "关闭 AI 助手"
+  },
+  "assistant.openInNewTab": {
+    "message": "在新标签页中打开"
+  },
   "homepage.title": {
     "message": "速腾开发者中心"
   },

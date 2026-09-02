@@ -14,10 +14,19 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
+  // TODO: switch to a custom domain once one has been decided on.
+  // Three things have to change together, or the site will 404:
+  //   1. url      -> 'https://<the-new-domain>'
+  //   2. baseUrl  -> '/'  (a custom domain serves from the root, so the
+  //                        '/robosense-dev-center/' prefix has to go)
+  //   3. add static/CNAME containing just the domain, which is how GitHub
+  //      Pages recognises it
+  // Prerequisite outside this repo: a DNS record for the domain pointing at
+  // rs-jhyyu.github.io (CNAME for a subdomain, or A records to GitHub's IPs
+  // for an apex domain), plus Settings > Pages > Custom domain in GitHub.
+  // Note that every existing /robosense-dev-center/... link changes shape,
+  // so anything already shared with customers will need reissuing.
   url: 'https://rs-jhyyu.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/robosense-dev-center/',
 
   // GitHub pages deployment config.
