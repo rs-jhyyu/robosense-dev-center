@@ -13,9 +13,9 @@ sidebar_position: 5
 
 在 Rviz 中点击左栏的 topic 获取点云 topic 名称，也可以通过 `rostopic list` 指令列出当前所有 topic，从中找到需要录制的 topic。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/recording/image_1.png').default} alt="Rviz 左栏显示点云 topic 名称" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 1：在 Rviz 中获取点云 topic 名称</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/recording/image_1.png').default} alt="Rviz 左栏显示点云 topic 名称" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 1：在 Rviz 中获取点云 topic 名称</figcaption>
 </figure>
 
 ## 第二步：创建或进入用于保存点云文件的目录
@@ -40,9 +40,9 @@ rosrun pcl_ros pointcloud_to_pcd input:=<topic>
 rosrun pcl_ros pointcloud_to_pcd input:=/bp_points3
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/recording/image.png').default} alt="终端运行 pointcloud_to_pcd 并写出 PCD 文件" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 2：录制点云为 PCD 文件</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/recording/image.png').default} alt="终端运行 pointcloud_to_pcd 并写出 PCD 文件" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 2：录制点云为 PCD 文件</figcaption>
 </figure>
 
 输入指令回车后开始录制，按 `Ctrl+C` 终止录制即可保存文件。

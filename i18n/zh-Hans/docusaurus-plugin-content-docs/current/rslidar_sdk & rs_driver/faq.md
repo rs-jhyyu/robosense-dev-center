@@ -1,5 +1,6 @@
 ---
 title: FAQ
+sidebar_label: 驱动与 SDK 常见问题
 sidebar_position: 6
 ---
 # FAQ
@@ -340,9 +341,9 @@ for (uint16_t chan = 0; chan < this->const_param_.CHANNELS_PER_BLOCK; chan++)
 
 点云播放过程中，偶尔会出现某几帧反射率突然变化的现象。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/extra/4132839647b10110f88c9150953f94de.jpg').default} alt="Rviz 中需要关闭的反射率渲染选项" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Rviz 中需要关闭的渲染选项</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/extra/4132839647b10110f88c9150953f94de.jpg').default} alt="Rviz 中需要关闭的反射率渲染选项" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Rviz 中需要关闭的渲染选项</figcaption>
 </figure>
 
 这通常是 Rviz 渲染的问题，而非雷达数据异常。在 Rviz 中关闭上图指示的渲染选项，即可避免反射率异常渲染导致的反射率跳变。

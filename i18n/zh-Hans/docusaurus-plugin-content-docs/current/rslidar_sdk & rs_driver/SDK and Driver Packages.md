@@ -9,9 +9,9 @@ sidebar_position: 5
 | # | 版本 | 说明 | 下载 |
 | --- | --- | --- | --- |
 | 1 | rslidar_sdk v1.5.20 | 新增支持 **Fairy48、EMX、AiryLite_ETH** | [rslidar_sdk-v1.5.20.tar.xz](pathname:///downloads/SDK%26Driver/rslidar_sdk-v1.5.20.tar.xz) |
-| 2 | rslidar_sdk v1.5.19 | 基线版本 | [rslidar_sdk-v1.5.19.tar.gz](pathname:///downloads/rslidar_sdk-v1.5.19.tar.gz) |
-| 3 | 基于 rslidar_sdk v1.5.18 | 额外支持 **Fairy 48、AiryLite** | [rslidar_sdk.zip](pathname:///downloads/rslidar_sdk.zip) |
-| 4 | 基于 rslidar_sdk v1.5.18 | 额外支持 **Fairy 48、EMX、EM4** | [rslidar_sdk_emx_em4.zip](pathname:///downloads/rslidar_sdk_emx_em4.zip) |
-| 5 | 基于 rs_driver v1.5.18 | 额外支持 **EMX、EM4** | [rs_driver.zip](pathname:///downloads/rs_driver.zip) |
+| 2 | rslidar_sdk v1.5.19 | 基线版本 | [rslidar_sdk-v1.5.19.tar.gz](pathname:///downloads/SDK%26Driver/rslidar_sdk-v1.5.19.tar.gz) |
+| 3 | 基于 rslidar_sdk v1.5.18 | 额外支持 **Fairy 48、AiryLite** | [rslidar_sdk.zip](pathname:///downloads/SDK%26Driver/rslidar_sdk.zip) |
+| 4 | 基于 rslidar_sdk v1.5.18 | 额外支持 **Fairy 48、EMX、EM4** | [rslidar_sdk_emx_em4.zip](pathname:///downloads/SDK%26Driver/rslidar_sdk_emx_em4.zip) |
+| 5 | 基于 rs_driver v1.5.18 | 额外支持 **EMX、EM4** | [rs_driver.zip](pathname:///downloads/SDK%26Driver/rs_driver.zip) |
 
 > 若需将 SDK 用于默认仓库未覆盖的激光雷达产品，请联系 RoboSense 技术支持以获取相应版本的软件包。

@@ -15,9 +15,9 @@ The output of the Inertial Measurement Unit (IMU) in a RoboSense LiDAR is the at
 
 The origin of the LiDAR coordinate system is defined at the center of the LiDAR base. The IMU coordinate origin does not coincide with the LiDAR coordinate origin. Taking Airy as an example, the mounting direction is opposite to the LiDAR coordinate system: the X axis of the LiDAR coordinate system corresponds to the -Y axis of the IMU coordinate system, the Y axis of the LiDAR coordinate system corresponds to the -X axis of the IMU coordinate system, and the Z axis of the LiDAR coordinate system corresponds to the -Z axis of the IMU coordinate system. In the figure below, red is the LiDAR coordinate system and yellow is the IMU coordinate system.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/image.png').default} alt="Airy LiDAR cutaway view with the red LiDAR coordinate axes and the yellow IMU coordinate axes overlaid" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Airy LiDAR coordinate system and IMU coordinate system</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/image.png').default} alt="Airy LiDAR cutaway view with the red LiDAR coordinate axes and the yellow IMU coordinate axes overlaid" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Airy LiDAR coordinate system and IMU coordinate system</figcaption>
 </figure>
 
 ## 2. IMU Data Acquisition
@@ -28,23 +28,23 @@ The LiDAR communicates with the computer over Ethernet using the UDP protocol, a
 
 IMU data can be obtained by capturing UDP packets. In Wireshark, the captured UDP data can be filtered with `udp.port==6688` or `data.data[0:1]==AA`.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_3531e04b-c6cf-40f4-960e-b5b6dcd868bg.jpg').default} alt="Wireshark capture list filtered on the IMU UDP port" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Filtering IMU data stream packets in Wireshark</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_3531e04b-c6cf-40f4-960e-b5b6dcd868bg.jpg').default} alt="Wireshark capture list filtered on the IMU UDP port" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: Filtering IMU data stream packets in Wireshark</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_7a83b419-7fbe-45ec-a669-fbc9e35cdb3g.jpg').default} alt="Byte-level view of an IMU data stream packet in Wireshark" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: Content of a captured IMU data stream packet</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_7a83b419-7fbe-45ec-a669-fbc9e35cdb3g.jpg').default} alt="Byte-level view of an IMU data stream packet in Wireshark" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: Content of a captured IMU data stream packet</figcaption>
 </figure>
 
 ### 2.2 Acquisition through the ROS driver
 
 The official RoboSense SDK ([rslidar_sdk v1.5.18](https://github.com/RoboSense-LiDAR/rslidar_sdk/releases/tag/v1.5.18)) provides IMU data parsing. First set `ENABLE_IMU_DATA_PARSE` to `ON` in `CMakeLists.txt`. Then, with the LiDAR connected, run the launch/py file to publish the LiDAR IMU data topic.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_b79296e5-883a-496c-8cdc-94244fc8342g.jpg').default} alt="CMakeLists.txt with the ENABLE_IMU_DATA_PARSE option switched to ON" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: Enabling ENABLE_IMU_DATA_PARSE in CMakeLists.txt</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_b79296e5-883a-496c-8cdc-94244fc8342g.jpg').default} alt="CMakeLists.txt with the ENABLE_IMU_DATA_PARSE option switched to ON" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: Enabling ENABLE_IMU_DATA_PARSE in CMakeLists.txt</figcaption>
 </figure>
 
 The detailed steps are as follows.
@@ -69,9 +69,9 @@ rostopic list
 rostopic echo /rslidar_imu_data
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_562062c4-af24-41cb-9574-84ebd6ef31dg.jpg').default} alt="Terminal output of the rslidar_imu_data topic showing linear acceleration and angular velocity" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: Acquiring IMU data under ROS1</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_562062c4-af24-41cb-9574-84ebd6ef31dg.jpg').default} alt="Terminal output of the rslidar_imu_data topic showing linear acceleration and angular velocity" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 5: Acquiring IMU data under ROS1</figcaption>
 </figure>
 
 **ROS2**
@@ -104,9 +104,9 @@ IMU parameter configuration mainly covers the IMU port number, IMU data output r
 4. **Accel Range**: the maximum acceleration range of the accelerometer. Four options are available: [-2g, 2g] / [-4g, 4g] (default) / [-8g, 8g] / [-16g, 16g].
 5. **Gyro Range**: the range of the IMU gyroscope. Four options are available: [-250, 250] dps / [-500, 500] dps (default) / [-1000, 1000] dps / [-2000, 2000] dps.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_7251448e-08d6-4e36-89bf-de72bf25bf4g.jpg').default} alt="Airy web General Setting page showing Imu Ctrl, Imu Port Number, Imu Output Rate, Accel Range and Gyro Range fields" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: Airy IMU parameter configuration page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_7251448e-08d6-4e36-89bf-de72bf25bf4g.jpg').default} alt="Airy web General Setting page showing Imu Ctrl, Imu Port Number, Imu Output Rate, Accel Range and Gyro Range fields" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 6: Airy IMU parameter configuration page</figcaption>
 </figure>
 
 ## 3. IMU Data Parsing
@@ -147,9 +147,9 @@ Here `T_lidar_to_imu` is the transformation matrix, derived from the quaternion 
 
 The IMU calibration data unique to each LiDAR unit can be parsed and read from the DIFOP data. For the detailed parsing method, refer to the IMU calibration data section in the appendix of each LiDAR user manual.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vn_f4cbdc9c-121a-40c4-946d-3034e319bbfg.jpg').default} alt="IMU calibration data fields in the DIFOP protocol table of the user manual" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 7: IMU calibration data</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vn_f4cbdc9c-121a-40c4-946d-3034e319bbfg.jpg').default} alt="IMU calibration data fields in the DIFOP protocol table of the user manual" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 7: IMU calibration data</figcaption>
 </figure>
 
 **2. Printing from the ROS driver (rslidar_sdk)**
@@ -172,14 +172,14 @@ if(driver_ptr_->getDeviceInfo(deviceInfo))
 
 In rslidar_sdk [release v1.5.19](https://github.com/RoboSense-LiDAR/rslidar_sdk/releases/tag/v1.5.17) and later this code block has been removed, since it is developer-only code. After adding it, the driver must be rebuilt for it to take effect.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vk_d8b26a68-4228-4b14-8f7e-86531a6691dg.jpg').default} alt="Location of the IMU extrinsic printing code block in source_driver.hpp" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 8: Where to insert the extrinsic printing code in the driver source</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vk_d8b26a68-4228-4b14-8f7e-86531a6691dg.jpg').default} alt="Location of the IMU extrinsic printing code block in source_driver.hpp" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 8: Where to insert the extrinsic printing code in the driver source</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/image20.png').default} alt="Terminal output printing the qx, qy, qz, qw quaternion and the x, y, z translation of the IMU extrinsics" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 9: Calibration extrinsics printed by the ROS driver</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/image20.png').default} alt="Terminal output printing the qx, qy, qz, qw quaternion and the x, y, z translation of the IMU extrinsics" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 9: Calibration extrinsics printed by the ROS driver</figcaption>
 </figure>
 
 If all values return 0, the LiDAR device has not been registered with IMU parameters (early samples). Please contact RoboSense in this case.

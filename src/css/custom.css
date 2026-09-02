@@ -22,6 +22,13 @@
   --rs-ink: #1a1a1a;
   --rs-ink-dark: #121212;
 
+  /* Sidebar / content split. The sidebar sits on a light grey plate so it
+     reads as navigation, while the article stays on white. Shared by the
+     homepage title column and the doc page sidebar so both look the same. */
+  --rs-sidebar-bg: #f6f7f8;
+  --rs-sidebar-border: #e3e5e8;
+  --rs-content-bg: #ffffff;
+
   /* Dark navbar with white text. */
   --ifm-navbar-background-color: var(--rs-ink);
   --ifm-navbar-link-color: rgba(255, 255, 255, 0.9);
@@ -47,6 +54,11 @@
 
   --ifm-navbar-background-color: #121212;
   --ifm-footer-background-color: #0d0d0d;
+
+  /* Keep the same relationship in dark mode: sidebar darker than content. */
+  --rs-sidebar-bg: #1b1b1d;
+  --rs-sidebar-border: #33353a;
+  --rs-content-bg: #242526;
 }
 
 /* Keep navbar controls legible on the dark bar. */
@@ -85,16 +97,22 @@
   color: #8b949e !important;
 }
 
-/* Hide pages flagged with sidebar_class_name: sidebar-hidden from the sidebar
-   while keeping their routes reachable via in-page links. */
-.menu__list-item.sidebar-hidden {
-  display: none;
+/* Doc page sidebar: sits on a light grey plate so navigation is visually
+   separated from the article, which stays white. */
+.theme-doc-sidebar-container {
+  background-color: var(--rs-sidebar-bg);
+  border-right: 1px solid var(--rs-sidebar-border) !important;
 }
 
-/* Doc page sidebar: keep it the same white as the content area; only the
-   active item carries an orange-red accent. */
-.theme-doc-sidebar-container {
-  border-right: 1px solid var(--ifm-color-emphasis-200);
+/* The collapse button at the bottom of the sidebar shares the plate. */
+.theme-doc-sidebar-container [class*='sidebarViewport'],
+.theme-doc-sidebar-container [class*='collapseSidebarButton'] {
+  background-color: var(--rs-sidebar-bg);
+}
+
+/* Sub-category labels inside the sidebar, so the grouping reads clearly. */
+.menu__list-item-collapsible .menu__link--sublist {
+  font-weight: 600;
 }
 
 /* Active item: subtle orange-red tint plus a red left accent bar. */
@@ -122,5 +140,130 @@
 }
 .footer .footer__link-item:hover {
   color: var(--ifm-color-primary-light);
+}
+
+/* ==========================================================================
+   Figures
+
+   Replaces the inline styles that used to be repeated on every image in the
+   docs. Images are centered, capped at a readable width, and get a light
+   border so screenshots do not bleed into the white page background.
+   ========================================================================== */
+.doc-figure {
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.doc-figure-img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.doc-figure-caption {
+  display: block;
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.5rem;
+}
+
+/* Screenshots are captured on light UIs, so keep the white plate in dark mode
+   and soften the border instead of inverting it. */
+[data-theme='dark'] .doc-figure-img {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Figures placed side by side in a flex row. */
+.doc-figure-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+/* Images inside a figure that sets its own width (side-by-side comparisons,
+   in-table screenshots) keep that width but still get the shared framing. */
+.doc-figure-row img,
+.markdown td img {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.doc-figure--inline {
+  margin: 0;
+}
+
+/* Plain markdown images (![alt](src)) get the same treatment so the RSView
+   pages match the pages that use <figure>. */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Doc content readability
+   ========================================================================== */
+
+/* Give headings room to breathe and mark section starts with a hairline. */
+.markdown h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.markdown h3 {
+  margin-top: 2rem;
+}
+
+/* Tables: full width with subtle zebra striping and a tinted header, so the
+   long parameter tables in the SDK and API docs stay scannable. */
+.markdown table {
+  display: table;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.markdown table thead tr {
+  background-color: var(--ifm-color-emphasis-100);
+  border-bottom: 2px solid var(--ifm-color-primary);
+}
+
+.markdown table th {
+  font-weight: 600;
+  text-align: left;
+}
+
+.markdown table tbody tr:nth-child(even) {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Blockquotes and admonitions read better with a bit more spacing. */
+.markdown blockquote {
+  margin-bottom: 1.5rem;
+}
+
+.theme-admonition {
+  margin-bottom: 1.5rem;
+}
+
+/* Horizontal rules are used as section separators in several docs; make them
+   lighter so they divide without shouting. */
+.markdown hr {
+  margin: 2.5rem 0;
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* Table of contents on the right: align the active marker with the brand. */
+.table-of-contents__link--active,
+.table-of-contents__link--active code {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
 }
 

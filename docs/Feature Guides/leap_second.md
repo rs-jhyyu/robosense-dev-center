@@ -23,9 +23,9 @@ In linuxptp (ptp4l), this flag determines the timescale property of the clock:
 - `ptp.v2.an.origincurrentutcoffset` is the offset between TAI and UTC that the master clock reports to the slave clock.
 - When `ptpTimescale = 1`, the slave clock synchronizes by subtracting `ptp.v2.an.origincurrentutcoffset` from the master clock timestamp.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/leapsecond/image_2.jpg').default} alt="Wireshark dissection of a PTPv2 Announce message showing the PTP_TIMESCALE flag set to True and originCurrentUTCOffset equal to 37" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: PTP_TIMESCALE flag and originCurrentUTCOffset in an Announce message</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/leapsecond/image_2.jpg').default} alt="Wireshark dissection of a PTPv2 Announce message showing the PTP_TIMESCALE flag set to True and originCurrentUTCOffset equal to 37" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: PTP_TIMESCALE flag and originCurrentUTCOffset in an Announce message</figcaption>
 </figure>
 
 ## 3. Solutions
@@ -42,25 +42,25 @@ msg->header.flagField[1] = tp.flags;
 msg->header.flagField[1] &= ~PTP_TIMESCALE;
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/leapsecond/image_3.jpg').default} alt="linuxptp port.c source code with the PTP_TIMESCALE flag bit being cleared in the port_tx_announce function" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Forcing ptp_timescale to 0 in the linuxptp source</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/leapsecond/image_3.jpg').default} alt="linuxptp port.c source code with the PTP_TIMESCALE flag bit being cleared in the port_tx_announce function" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: Forcing ptp_timescale to 0 in the linuxptp source</figcaption>
 </figure>
 
 ### 3.2 Enable No Leap Second on the LiDAR web page
 
 On the LiDAR web page, go to the Setting interface and turn on **No Leap Second** so that the leap second is ignored.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/leapsecond/image.jpg').default} alt="LiDAR web Setting interface with the No Leap Second option highlighted" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: The No Leap Second option on the LiDAR web Setting page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/leapsecond/image.jpg').default} alt="LiDAR web Setting interface with the No Leap Second option highlighted" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: The No Leap Second option on the LiDAR web Setting page</figcaption>
 </figure>
 
 ### 3.3 Compensate 37s directly in the driver
 
 Add 37 seconds to the timestamp in the corresponding decoder of the driver, for example in `decoder_RSAIRY.hpp`.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/leapsecond/image_1.jpg').default} alt="Driver source file decoder_RSAIRY.hpp with 37 seconds added to the channel timestamp calculation" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: Compensating 37 seconds on the driver side</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/leapsecond/image_1.jpg').default} alt="Driver source file decoder_RSAIRY.hpp with 37 seconds added to the channel timestamp calculation" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: Compensating 37 seconds on the driver side</figcaption>
 </figure>

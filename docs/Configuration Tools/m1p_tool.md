@@ -10,9 +10,9 @@ Download the tool package:
 
 Note: the tool also runs on Ubuntu; you can directly run the `DiagCmdTool` executable.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_4.png').default} alt="Main window of the M1P tool showing all functional areas" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: M1P tool main window</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_4.png').default} alt="Main window of the M1P tool showing all functional areas" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: M1P tool main window</figcaption>
 </figure>
 
 ## 1. Connect the LiDAR
@@ -25,9 +25,9 @@ Note: the tool also runs on Ubuntu; you can directly run the `DiagCmdTool` execu
 
 ### Area 1: LiDAR Connection Area
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_9.png').default} alt="LiDAR connection area with Project Name and LiDAR IP fields" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: LiDAR connection area</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_9.png').default} alt="LiDAR connection area with Project Name and LiDAR IP fields" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: LiDAR connection area</figcaption>
 </figure>
 
 - **Project Name**: P0220, corresponding to M1P.
@@ -35,16 +35,16 @@ Note: the tool also runs on Ubuntu; you can directly run the `DiagCmdTool` execu
 
 ### Area 2: Firmware Flashing Area
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_1.png').default} alt="Firmware flashing area of the M1P tool" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: Firmware flashing area</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_1.png').default} alt="Firmware flashing area of the M1P tool" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: Firmware flashing area</figcaption>
 </figure>
 
 ### Area 3: LiDAR Parameter Configuration Area
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_2.png').default} alt="LiDAR parameter configuration area showing IP, port, MAC and SN fields" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: LiDAR parameter configuration area</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_2.png').default} alt="LiDAR parameter configuration area showing IP, port, MAC and SN fields" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: LiDAR parameter configuration area</figcaption>
 </figure>
 
 - **SrcIP**: read/write area for the LiDAR IP.
@@ -56,25 +56,25 @@ Note: the tool also runs on Ubuntu; you can directly run the `DiagCmdTool` execu
 
 ### Area 4: UDS Request Area
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_7.png').default} alt="UDS request area used to send UDS request messages" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: UDS request area</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_7.png').default} alt="UDS request area used to send UDS request messages" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 5: UDS request area</figcaption>
 </figure>
 
 - **UDS Request**: send a UDS request message, used to modify the time synchronization mode, the PHY chip mode and other functions.
 
 ## 3. Modify IP Parameters
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_5.png').default} alt="Modifying the LiDAR IP parameters in the tool" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: Modify IP parameters</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_5.png').default} alt="Modifying the LiDAR IP parameters in the tool" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 6: Modify IP parameters</figcaption>
 </figure>
 
 ## 4. Firmware Upgrade
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_6.png').default} alt="Firmware upgrade operation in the M1P tool" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 7: Firmware upgrade</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_6.png').default} alt="Firmware upgrade operation in the M1P tool" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 7: Firmware upgrade</figcaption>
 </figure>
 
 ## 5. DID Service
@@ -93,23 +93,23 @@ The UDS request area supports read and write operations for DIDs. The common DID
 
 1. Enter the LiDAR IP. After the connection succeeds, click **客户解锁1** and **客户解锁2**. Note that you must unlock once before every DID command, and send the DID command within 5 seconds of unlocking; if it times out, unlock again.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_3.png').default} alt="Clicking the two customer unlock buttons before sending a DID command" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 8: Customer unlock operation</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_3.png').default} alt="Clicking the two customer unlock buttons before sending a DID command" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 8: Customer unlock operation</figcaption>
 </figure>
 
 2. Enter `2EFE0B02` in the dialog box and click send to change the synchronization mode to PTP-E2E_L2 mode. The default is gPTP mode.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_8.png').default} alt="Sending the DID command that writes the time synchronization mode" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 9: Sending the DID write command</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_8.png').default} alt="Sending the DID command that writes the time synchronization mode" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 9: Sending the DID write command</figcaption>
 </figure>
 
 3. After the command is sent successfully, restart the LiDAR (note: you must power it off and restart it, otherwise the change does not take effect). Enter `22FE0B` in the dialog box again; if `62FE0B02` is returned, the modification succeeded.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image.png').default} alt="Reading back the time synchronization mode to verify the modification" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 10: Reading back to verify the result</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image.png').default} alt="Reading back the time synchronization mode to verify the modification" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 10: Reading back to verify the result</figcaption>
 </figure>
 
 ## 6. Notes

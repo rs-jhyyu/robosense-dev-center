@@ -1,6 +1,6 @@
 ---
 title: FastDDS 共享内存 (ROS2)
-sidebar_class_name: sidebar-hidden
+sidebar_label: ROS2 帧率下降解决（FastDDS 共享内存）
 ---
 # ROS2 下的 FastDDS 共享内存方案
 

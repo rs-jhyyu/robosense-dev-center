@@ -21,12 +21,10 @@ For AiryLite units using the 485 / serial interface instead of Ethernet, see [Ai
 
 | Section | What it covers |
 | --- | --- |
-| **Getting Started** | Physical and network connection, packet capture, serial (485) setup |
-| **RSView** | Point cloud visualization, playback, interaction, data export |
-| **Configuration Tools** | LiDAR web page, LidarAssistant (E / EM platforms), M1P tool, tool downloads |
-| **rslidar_sdk & rs_driver** | ROS / ROS2 driver and SDK: build, configure, run, troubleshoot |
-| **RS-LiDAR API** | C++ control library for programmatic configuration and firmware updates |
-| **Feature Guides** | Time synchronization, leap second offset, IMU data, FAST-LIO mapping |
+| **LiDAR Technology** | Scanning principles, point cloud characteristics, coordinate systems, product specifications (in preparation) |
+| **Operation Guides** | Physical and network connection, packet capture, serial (485) setup, RSView visualization and export, LiDAR web page, LidarAssistant (E / EM platforms), M1P tool, time synchronization |
+| **Developer Resources** | RS-LiDAR API control library, IMU data acquisition and parsing, ROS / ROS2 SDK and driver, FAST-LIO mapping |
+| **FAQ** | ROS2 frame rate drop, recording point clouds as PCD, SDK / driver and RSView troubleshooting |
 
 ## Additional resources
 

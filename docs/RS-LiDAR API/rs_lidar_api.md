@@ -33,9 +33,9 @@ The build script generates the following executables (if you have additional dev
 
 If you get a link error similar to the one below during the build:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img1.png').default} alt="Static library link error caused by an Ubuntu version mismatch" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Link error caused by an Ubuntu version mismatch</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img1.png').default} alt="Static library link error caused by an Ubuntu version mismatch" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Link error caused by an Ubuntu version mismatch</figcaption>
 </figure>
 
 This usually stems from Ubuntu version differences. You need to rebuild the static library on your local machine:
@@ -131,9 +131,9 @@ printf("getConfigParams() remoteIp is %d.%d.%d.%d\n", params.r4info.netInfo.remo
     params.r4info.netInfo.remoteIp[2], params.r4info.netInfo.remoteIp[3]);
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img5.png').default} alt="Terminal output showing the network parameters read from the LiDAR" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Result of reading the network parameters</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img5.png').default} alt="Terminal output showing the network parameters read from the LiDAR" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: Result of reading the network parameters</figcaption>
 </figure>
 
 #### Modifying the Network Parameters
@@ -246,9 +246,9 @@ You must first get the IMU parameters, modify the relevant values based on the r
 
 The terminal output looks like this:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img2.png').default} alt="Terminal output of reading and writing the IMU parameters" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: Terminal output of reading and writing the IMU parameters</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img2.png').default} alt="Terminal output of reading and writing the IMU parameters" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: Terminal output of reading and writing the IMU parameters</figcaption>
 </figure>
 
 The corresponding effect on the web configuration page:
@@ -293,9 +293,9 @@ typedef struct ImuParam
 
 The Airy LiDAR firmware is split into three components, which must be upgraded in sequence. **The firmware files must be placed in the same directory as the demo executable.**
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img6.png').default} alt="Firmware files placed in the same directory as the demo executable" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: Directory layout of the firmware files and the demo program</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img6.png').default} alt="Firmware files placed in the same directory as the demo executable" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: Directory layout of the firmware files and the demo program</figcaption>
 </figure>
 
 | Upgrade Command Enum | File Name Format | Description |
@@ -327,9 +327,9 @@ printf("OTA update finished.\n");
 
 You can query the progress during the upgrade via `getUpdateStatus()`. The terminal output after the upgrade completes is shown below:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img7.png').default} alt="Terminal output after all three firmware components have been upgraded in sequence" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: OTA upgrade result</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img7.png').default} alt="Terminal output after all three firmware components have been upgraded in sequence" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 5: OTA upgrade result</figcaption>
 </figure>
 
 ### Reading and Writing Advanced Parameters
@@ -433,9 +433,9 @@ else     { printf("setSomeSupplementParams() failed.\n"); }
 
 The terminal output after modifying the advanced parameters is shown below:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img8.png').default} alt="Terminal output of reading and writing the advanced parameters" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: Result of reading and writing the advanced parameters</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img8.png').default} alt="Terminal output of reading and writing the advanced parameters" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 6: Result of reading and writing the advanced parameters</figcaption>
 </figure>
 
 #### Single-Item Setters (Convenience Functions)

@@ -11,9 +11,9 @@ sidebar_position: 1
 
 Users can refer to the user manual to check the corresponding LiDAR time synchronization method. For **example**, the following are the product specifications of E1R, containing the time synchronization method it supports.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig0.PNG').default} alt="E1R product specification showing supported time synchronization methods" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Example of Configuration</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig0.PNG').default} alt="E1R product specification showing supported time synchronization methods" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Example of Configuration</figcaption>
 </figure>
 
 ### 1.2 How to configure the time synchronization method for the current LiDAR
@@ -22,9 +22,9 @@ Users can refer to the user manual to check the corresponding LiDAR time synchro
 
 After the user confirms that the LiDAR is connected to the host, enter the **LiDAR IP address (default address: 192.168.1.200)** in the web interface to access the LiDAR web page. Then go to **Setting → Time Sync** to view and configure the specific time synchronization mode (Mechanical LiDARs without a web interface only support GPS time synchronization).
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig1.PNG').default} alt="LiDAR web interface Time Sync configuration page" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Genaral Web Interface of Mechanical LiDAR</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig1.PNG').default} alt="LiDAR web interface Time Sync configuration page" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: Genaral Web Interface of Mechanical LiDAR</figcaption>
 </figure>
 
 #### Solid-State LiDAR
@@ -51,9 +51,9 @@ This SOP only provides a **Linuxptp** synchronization tutorial, which can be use
 
 i. According to the method shown in the figure below, complete the connection of the LiDAR with the host computer, synchronization box, and other devices.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig2.JPEG').default} alt="Connection diagram of LiDAR, host computer and synchronization box" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: Examples of connecting LiDAR for Time Synchronization</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig2.JPEG').default} alt="Connection diagram of LiDAR, host computer and synchronization box" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: Examples of connecting LiDAR for Time Synchronization</figcaption>
 </figure>
 
 ii. Users can use the ethtool command to view the network interface information of the host computer.
@@ -95,9 +95,9 @@ iv. Verify the time synchronization status of LiDAR. (Refer to the content in Se
 
 After RSView reads the LiDAR data, the LiDAR timestamp will be displayed in the bottom information bar. If the LiDAR timestamp matches the clock source time, it indicates that time synchronization is successful.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig3.PNG').default} alt="RSView bottom information bar showing the LiDAR timestamp" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: Schematic diagram of timestamp in RSView</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig3.PNG').default} alt="RSView bottom information bar showing the LiDAR timestamp" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: Schematic diagram of timestamp in RSView</figcaption>
 </figure>
 
 ### 3.2 SDK Verification
@@ -112,9 +112,9 @@ user@user:~$ rostopic echo /rslidar_points --noarr
 user@user:~$ ros2 topic echo /rslidar_points
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig4.png').default} alt="ROS topic timestamp output for time synchronization verification" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: Schematic diagram of point cloud topic timestamp</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig4.png').default} alt="ROS topic timestamp output for time synchronization verification" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 5: Schematic diagram of point cloud topic timestamp</figcaption>
 </figure>
 
 ***Note****: The time output in the message is in **`s.ns`** format. Users can search for an online timestamp tool to convert it into year-month-day hour:minute:second format for viewing.*
@@ -129,23 +129,23 @@ For mechanical LiDAR, users can check the LiDAR time synchronization status on t
 
 **PTP/gPTP synchronization status:** PTP Status status bit is Locked.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig5.JPEG').default} alt="Web Diagnostic interface showing time synchronization status bits" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: Schematic diagram of successful time synchronization</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig5.JPEG').default} alt="Web Diagnostic interface showing time synchronization status bits" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 6: Schematic diagram of successful time synchronization</figcaption>
 </figure>
 
 ### 3.4 UDP Packet Verification
 
 According to the analysis of the LiDAR UDP packets in the **[Device Information Output Protocol (DIFOP)]** section of the product manual, locate the corresponding bytes in **Wireshark** to view the current **LiDAR synchronization mode, synchronization status, and timestamp information**. The following uses the M1P LiDAR as an **example**.
 
-<div style={{display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'flex-start'}}>
-  <figure style={{textAlign: 'center', margin: '0'}}>
+<div className="doc-figure-row">
+  <figure className="doc-figure doc-figure--inline">
     <img src={require('./images/Fig6.png').default} alt="Wireshark view of M1P LiDAR UDP packet synchronization mode and status" style={{maxWidth: '420px', width: '100%', height: 'auto'}} />
-    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 7: Example of M1P DIFOP in manual</figcaption>
+    <figcaption className="doc-figure-caption">Figure 7: Example of M1P DIFOP in manual</figcaption>
   </figure>
-  <figure style={{textAlign: 'center', margin: '0'}}>
+  <figure className="doc-figure doc-figure--inline">
     <img src={require('./images/Fig7.JPEG').default} alt="Wireshark view of M1P LiDAR UDP packet timestamp information" style={{maxWidth: '380px', width: '100%', height: 'auto'}} />
-    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 8: Example of M1P DIFOP in Wireshark</figcaption>
+    <figcaption className="doc-figure-caption">Figure 8: Example of M1P DIFOP in Wireshark</figcaption>
   </figure>
 </div>
 

@@ -17,16 +17,16 @@ Airy 与 Fairy 激光雷达均内置 Web 端界面，可用于参数配置与固
 
 ### 2.1 Airy
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image_2.png').default} alt="浏览器中打开的 Airy 激光雷达 Web 端首页" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 1：Airy Web 端首页</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image_2.png').default} alt="浏览器中打开的 Airy 激光雷达 Web 端首页" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 1：Airy Web 端首页</figcaption>
 </figure>
 
 ### 2.2 Fairy
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image_3.png').default} alt="浏览器中打开的 Fairy 激光雷达 Web 端首页" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 2：Fairy Web 端首页</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image_3.png').default} alt="浏览器中打开的 Fairy 激光雷达 Web 端首页" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 2：Fairy Web 端首页</figcaption>
 </figure>
 
 ## 3. Web 端参数修改操作流程
@@ -37,16 +37,16 @@ Web 端参数修改分为 **General Setting（基本参数设定）**、**Perfor
 
 Airy：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image_3.png').default} alt="Airy General Setting 页面，展示基本网络与设备参数" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 3：Airy General Setting 页面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image_3.png').default} alt="Airy General Setting 页面，展示基本网络与设备参数" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 3：Airy General Setting 页面</figcaption>
 </figure>
 
 Fairy：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image.png').default} alt="Fairy General Setting 页面，展示基本网络与设备参数" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 4：Fairy General Setting 页面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image.png').default} alt="Fairy General Setting 页面，展示基本网络与设备参数" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 4：Fairy General Setting 页面</figcaption>
 </figure>
 
 按需求修改对应参数。具体参数配置规则及取值范围请参考对应机型的产品手册。
@@ -55,16 +55,16 @@ Fairy：
 
 Airy：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image_1.png').default} alt="Airy Performance Setting 页面，展示高级参数" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 5：Airy Performance Setting 页面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image_1.png').default} alt="Airy Performance Setting 页面，展示高级参数" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 5：Airy Performance Setting 页面</figcaption>
 </figure>
 
 Fairy：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image_2.png').default} alt="Fairy Performance Setting 页面，展示高级参数" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 6：Fairy Performance Setting 页面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image_2.png').default} alt="Fairy Performance Setting 页面，展示高级参数" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 6：Fairy Performance Setting 页面</figcaption>
 </figure>
 
 按需求修改对应参数。具体参数配置规则及取值范围请参考对应机型的产品手册。
@@ -73,16 +73,16 @@ Fairy：
 
 Airy：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image.png').default} alt="Airy Angle Pulse Setting 页面，用于角度脉冲触发配置" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 7：Airy Angle Pulse Setting 页面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image.png').default} alt="Airy Angle Pulse Setting 页面，用于角度脉冲触发配置" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 7：Airy Angle Pulse Setting 页面</figcaption>
 </figure>
 
 Fairy：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image_1.png').default} alt="Fairy Angle Pulse Setting 页面，用于角度脉冲触发配置" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 8：Fairy Angle Pulse Setting 页面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image_1.png').default} alt="Fairy Angle Pulse Setting 页面，用于角度脉冲触发配置" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 8：Fairy Angle Pulse Setting 页面</figcaption>
 </figure>
 
 按需求修改对应参数。具体参数配置规则及取值范围请参考对应机型的产品手册。
@@ -104,9 +104,9 @@ Fairy：
 
 ### 4.2 固件升级步骤
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/ae7a6bb201acddc8e9a1e359230b0756.jpg').default} alt="Web 端固件升级页面，显示文件选择与升级按钮" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 9：固件升级页面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/ae7a6bb201acddc8e9a1e359230b0756.jpg').default} alt="Web 端固件升级页面，显示文件选择与升级按钮" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 9：固件升级页面</figcaption>
 </figure>
 
 1. 点击**选择文件**，在弹出窗口选中固件升级包。

@@ -15,9 +15,9 @@ sidebar_position: 3
 
 激光雷达的坐标原点定义在激光雷达底座中心处，IMU 坐标原点与激光雷达坐标原点并不重合。以 Airy 为例，安装方向与雷达坐标系相反，其中雷达坐标系 X 轴对应 IMU 坐标系 -Y 轴，雷达坐标系 Y 轴对应 IMU 坐标系 -X 轴，雷达坐标系 Z 轴对应 IMU 坐标系 -Z 轴。如下图所示，红色为雷达坐标系，黄色为 IMU 坐标系。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/image.png').default} alt="Airy 雷达剖视图，红色为雷达坐标轴，黄色为 IMU 坐标轴" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 1：Airy 雷达坐标系及 IMU 坐标系示意图</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/image.png').default} alt="Airy 雷达剖视图，红色为雷达坐标轴，黄色为 IMU 坐标轴" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 1：Airy 雷达坐标系及 IMU 坐标系示意图</figcaption>
 </figure>
 
 ## 2. IMU 数据获取
@@ -28,23 +28,23 @@ sidebar_position: 3
 
 IMU 数据可通过抓取 UDP 数据包获取，对于抓取到的 UDP 数据可使用 `udp.port==6688` 或 `data.data[0:1]==AA` 在 Wireshark 软件中进行筛选过滤。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_3531e04b-c6cf-40f4-960e-b5b6dcd868bg.jpg').default} alt="Wireshark 报文列表按 IMU UDP 端口筛选的结果" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 2：在 Wireshark 中筛选 IMU 数据流报文</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_3531e04b-c6cf-40f4-960e-b5b6dcd868bg.jpg').default} alt="Wireshark 报文列表按 IMU UDP 端口筛选的结果" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 2：在 Wireshark 中筛选 IMU 数据流报文</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_7a83b419-7fbe-45ec-a669-fbc9e35cdb3g.jpg').default} alt="Wireshark 中 IMU 数据流报文的字节级内容" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 3：抓取到的 IMU 数据流报文内容</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_7a83b419-7fbe-45ec-a669-fbc9e35cdb3g.jpg').default} alt="Wireshark 中 IMU 数据流报文的字节级内容" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 3：抓取到的 IMU 数据流报文内容</figcaption>
 </figure>
 
 ### 2.2 ROS 驱动获取
 
 速腾官方提供的 SDK（[rslidar_sdk v1.5.18](https://github.com/RoboSense-LiDAR/rslidar_sdk/releases/tag/v1.5.18)）程序中提供了 IMU 数据解析功能。首先在 `CMakeLists.txt` 中设置 `ENABLE_IMU_DATA_PARSE` 为 `ON`，当连接激光雷达运行 launch/py 文件，即可发布激光雷达 IMU 数据 topic。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_b79296e5-883a-496c-8cdc-94244fc8342g.jpg').default} alt="CMakeLists.txt 中将 ENABLE_IMU_DATA_PARSE 选项设置为 ON" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 4：在 CMakeLists.txt 中开启 ENABLE_IMU_DATA_PARSE</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_b79296e5-883a-496c-8cdc-94244fc8342g.jpg').default} alt="CMakeLists.txt 中将 ENABLE_IMU_DATA_PARSE 选项设置为 ON" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 4：在 CMakeLists.txt 中开启 ENABLE_IMU_DATA_PARSE</figcaption>
 </figure>
 
 具体步骤如下。
@@ -69,9 +69,9 @@ rostopic list
 rostopic echo /rslidar_imu_data
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_562062c4-af24-41cb-9574-84ebd6ef31dg.jpg').default} alt="终端输出的 rslidar_imu_data topic 内容，包含线加速度与角速度" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 5：ROS1 获取 IMU 数据示意</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_562062c4-af24-41cb-9574-84ebd6ef31dg.jpg').default} alt="终端输出的 rslidar_imu_data topic 内容，包含线加速度与角速度" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 5：ROS1 获取 IMU 数据示意</figcaption>
 </figure>
 
 **ROS2**
@@ -104,9 +104,9 @@ IMU 相关参数配置主要涉及 IMU 端口号、IMU 数据输出频率、加�
 4. **Accel Range**：加速度计的最大加速度范围，有 [-2g, 2g] / [-4g, 4g]（默认）/ [-8g, 8g] / [-16g, 16g] 四种范围选择；
 5. **Gyro Range**：IMU 陀螺仪量程范围，有 [-250, 250] dps / [-500, 500] dps（默认）/ [-1000, 1000] dps / [-2000, 2000] dps 四种范围可选择。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vh_7251448e-08d6-4e36-89bf-de72bf25bf4g.jpg').default} alt="Airy 网页端 General Setting 页面中的 Imu Ctrl、Imu Port Number、Imu Output Rate、Accel Range 与 Gyro Range 配置项" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 6：Airy IMU 参数配置界面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vh_7251448e-08d6-4e36-89bf-de72bf25bf4g.jpg').default} alt="Airy 网页端 General Setting 页面中的 Imu Ctrl、Imu Port Number、Imu Output Rate、Accel Range 与 Gyro Range 配置项" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 6：Airy IMU 参数配置界面</figcaption>
 </figure>
 
 ## 3. IMU 数据解析
@@ -147,9 +147,9 @@ P_imu = T_lidar_to_imu · P_lidar
 
 在 DIFOP 数据中能够解析读取到每一台激光雷达独有的 IMU 标定数据。具体解析方法可以参考每一款雷达用户手册附录的 IMU 标定数据部分。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vn_f4cbdc9c-121a-40c4-946d-3034e319bbfg.jpg').default} alt="用户手册 DIFOP 协议表格中的 IMU 标定数据字段" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 7：IMU 标定数据</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vn_f4cbdc9c-121a-40c4-946d-3034e319bbfg.jpg').default} alt="用户手册 DIFOP 协议表格中的 IMU 标定数据字段" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 7：IMU 标定数据</figcaption>
 </figure>
 
 **2. ROS 驱动（rslidar_sdk）打印**
@@ -172,14 +172,14 @@ if(driver_ptr_->getDeviceInfo(deviceInfo))
 
 在 rslidar_sdk [release v1.5.19](https://github.com/RoboSense-LiDAR/rslidar_sdk/releases/tag/v1.5.17) 及之后的版本中，该代码块已被移除，因为它仅为开发者调试代码。加入代码后需要重新编译驱动才会生效。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/img_v3_02vk_d8b26a68-4228-4b14-8f7e-86531a6691dg.jpg').default} alt="source_driver.hpp 中 IMU 外参打印代码块的插入位置" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 8：外参打印代码在驱动源码中的插入位置</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/img_v3_02vk_d8b26a68-4228-4b14-8f7e-86531a6691dg.jpg').default} alt="source_driver.hpp 中 IMU 外参打印代码块的插入位置" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 8：外参打印代码在驱动源码中的插入位置</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/imu/image20.png').default} alt="终端打印出的 IMU 外参四元数 qx、qy、qz、qw 与平移量 x、y、z" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 9：标定外参 ROS 驱动打印示意图</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/imu/image20.png').default} alt="终端打印出的 IMU 外参四元数 qx、qy、qz、qw 与平移量 x、y、z" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 9：标定外参 ROS 驱动打印示意图</figcaption>
 </figure>
 
 如果所有数值都返回 0，说明该雷达设备未写入 IMU 标定参数（早期样机），遇到这种情况请联系速腾技术支持。

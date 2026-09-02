@@ -6,54 +6,138 @@
     "message": "激光雷达资料与分步操作指南"
   },
   "homepage.metaTitle": {
-    "message": "欢迎来到速腾开发者中心"
+    "message": "速腾开发者中心"
   },
   "homepage.cta": {
     "message": "阅读文档"
   },
-  "homepage.section.title": {
-    "message": "浏览文档"
+  "homepage.cta.resources": {
+    "message": "手册/产品资料下载"
   },
-  "homepage.section.subtitle": {
-    "message": "开始使用速腾激光雷达所需的一切。"
+  "homepage.cta.github": {
+    "message": "GitHub"
   },
-  "homepage.card.learnMore": {
-    "message": "了解更多 →"
+  "homepage.nav.heading": {
+    "message": "目录"
   },
-  "homepage.card.gettingStarted.title": {
+  "homepage.section.tech.title": {
+    "message": "激光雷达技术"
+  },
+  "homepage.section.tech.desc": {
+    "message": "扫描原理、点云特性、坐标系定义与产品性能规格，文档整理中。"
+  },
+  "homepage.link.tech.overview": {
+    "message": "板块简介"
+  },
+  "homepage.section.guides.title": {
+    "message": "操作指南"
+  },
+  "homepage.section.guides.desc": {
+    "message": "雷达连接、点云可视化、通过各类工具配置参数以及时间同步。"
+  },
+  "homepage.group.gettingStarted": {
     "message": "入门与连接"
   },
-  "homepage.card.gettingStarted.desc": {
-    "message": "完成雷达接线、配置网络，并抓取第一批数据包。"
+  "homepage.link.intro": {
+    "message": "简介"
   },
-  "homepage.card.rsview.title": {
+  "homepage.link.network": {
+    "message": "网络连接与 Wireshark 抓包"
+  },
+  "homepage.link.airylite485": {
+    "message": "AiryLite 485/串口版本使用指南"
+  },
+  "homepage.group.rsview": {
     "message": "上位机与可视化"
   },
-  "homepage.card.rsview.desc": {
-    "message": "可视化激光雷达点云、回放 PCAP 文件并实时查看数据。"
+  "homepage.link.rsviewQuickStart": {
+    "message": "快速开始"
   },
-  "homepage.card.tools.title": {
+  "homepage.link.pointcloudInteraction": {
+    "message": "点云交互"
+  },
+  "homepage.link.advancedOperations": {
+    "message": "高级操作"
+  },
+  "homepage.group.configTools": {
     "message": "雷达配置工具"
   },
-  "homepage.card.tools.desc": {
-    "message": "通过 Web 端或桌面小工具修改 IP 与端口、升级固件并诊断雷达。"
+  "homepage.link.webConfig": {
+    "message": "Web 端配置指南（Airy / Fairy）"
   },
-  "homepage.card.sdk.title": {
+  "homepage.link.ePlatform": {
+    "message": "E 平台"
+  },
+  "homepage.link.emPlatform": {
+    "message": "EM 平台"
+  },
+  "homepage.link.m1pTool": {
+    "message": "M1P 小工具操作指南"
+  },
+  "homepage.link.toolDownloads": {
+    "message": "工具下载"
+  },
+  "homepage.group.timeSync": {
+    "message": "时间同步"
+  },
+  "homepage.link.timeSync": {
+    "message": "时间同步指南"
+  },
+  "homepage.link.leapSecond": {
+    "message": "闰秒偏差（同步慢 37 秒）"
+  },
+  "homepage.section.dev.title": {
+    "message": "开发者资料汇总"
+  },
+  "homepage.section.dev.desc": {
+    "message": "控制 API、IMU 数据解析、ROS / ROS2 驱动与 SDK，以及 SLAM 集成。"
+  },
+  "homepage.link.api": {
+    "message": "RS-LiDAR API 使用指南"
+  },
+  "homepage.link.imu": {
+    "message": "IMU 数据获取与解析"
+  },
+  "homepage.link.fastlio": {
+    "message": "FAST-LIO 建图集成"
+  },
+  "homepage.group.sdkDriver": {
     "message": "驱动与 SDK"
   },
-  "homepage.card.sdk.desc": {
-    "message": "通过 SDK 与驱动将速腾激光雷达集成到你的应用中。"
+  "homepage.link.sdkIntro": {
+    "message": "简介"
   },
-  "homepage.card.api.title": {
-    "message": "开发接口"
+  "homepage.link.configGuide": {
+    "message": "配置指南"
   },
-  "homepage.card.api.desc": {
-    "message": "使用 C++ 控制库以编程方式控制并配置激光雷达。"
+  "homepage.link.sdk": {
+    "message": "rslidar_sdk 用户指南"
   },
-  "homepage.card.features.title": {
-    "message": "功能专题"
+  "homepage.link.driver": {
+    "message": "rs_driver 用户指南"
   },
-  "homepage.card.features.desc": {
-    "message": "时间同步、IMU 数据获取与 SLAM 集成的分步说明。"
+  "homepage.link.packages": {
+    "message": "SDK 与驱动软件包"
+  },
+  "homepage.link.oneClickInstall": {
+    "message": "一键安装脚本"
+  },
+  "homepage.section.faq.title": {
+    "message": "常见问题与解答"
+  },
+  "homepage.section.faq.desc": {
+    "message": "技术支持被问得最多的问题，附分步解决方案。"
+  },
+  "homepage.link.ros2Fps": {
+    "message": "ROS2 帧率下降解决（FastDDS 共享内存）"
+  },
+  "homepage.link.recordPcd": {
+    "message": "Rviz 中录制点云为 PCD"
+  },
+  "homepage.link.sdkFaq": {
+    "message": "驱动与 SDK 常见问题"
+  },
+  "homepage.link.rsviewFaq": {
+    "message": "RSView 常见问题"
   }
 }

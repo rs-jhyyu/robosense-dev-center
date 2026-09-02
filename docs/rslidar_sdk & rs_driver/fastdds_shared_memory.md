@@ -1,6 +1,6 @@
 ---
 title: FastDDS Shared Memory (ROS2)
-sidebar_class_name: sidebar-hidden
+sidebar_label: ROS2 Frame Rate Drop (FastDDS Shared Memory)
 ---
 # FastDDS Shared Memory Solution under ROS2
 

@@ -3,6 +3,14 @@
     "message": "下一版本",
     "description": "The label for version current"
   },
+  "sidebar.tutorialSidebar.category.LiDAR Technology": {
+    "message": "激光雷达技术",
+    "description": "The label for category LiDAR Technology in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Operation Guides": {
+    "message": "操作指南",
+    "description": "The label for category Operation Guides in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Getting Started": {
     "message": "入门与连接",
     "description": "The label for category Getting Started in sidebar tutorialSidebar"
@@ -15,16 +23,20 @@
     "message": "雷达配置工具",
     "description": "The label for category Configuration Tools in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Time Synchronization": {
+    "message": "时间同步",
+    "description": "The label for category Time Synchronization in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Developer Resources": {
+    "message": "开发者资料汇总",
+    "description": "The label for category Developer Resources in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.rslidar_sdk & rs_driver": {
     "message": "驱动与 SDK",
     "description": "The label for category rslidar_sdk & rs_driver in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.RS-LiDAR API": {
-    "message": "开发接口",
-    "description": "The label for category RS-LiDAR API in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Feature Guides": {
-    "message": "功能专题",
-    "description": "The label for category Feature Guides in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.FAQ": {
+    "message": "常见问题与解答",
+    "description": "The label for category FAQ in sidebar tutorialSidebar"
   }
 }

@@ -1,5 +1,6 @@
 ---
 title: FAQ
+sidebar_label: SDK & Driver FAQ
 sidebar_position: 6
 ---
 # FAQ
@@ -340,9 +341,9 @@ for (uint16_t chan = 0; chan < this->const_param_.CHANNELS_PER_BLOCK; chan++)
 
 During point cloud playback, the reflectivity of a few frames occasionally changes abruptly.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/extra/4132839647b10110f88c9150953f94de.jpg').default} alt="The reflectivity rendering option in Rviz that needs to be disabled" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: The rendering option in Rviz that needs to be disabled</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/extra/4132839647b10110f88c9150953f94de.jpg').default} alt="The reflectivity rendering option in Rviz that needs to be disabled" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: The rendering option in Rviz that needs to be disabled</figcaption>
 </figure>
 
 This is usually an Rviz rendering issue rather than a problem with the LiDAR data. Disabling the rendering option indicated in the figure above in Rviz avoids the reflectivity jumps caused by abnormal reflectivity rendering.

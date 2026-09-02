@@ -17,9 +17,9 @@ sidebar_position: 3
 
 > **注：** AiryLite 仅支持 12～16V 电压供电，请使用稳定 12V 电源供电，严禁使用 16V 及以上电源供电。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_9.png').default} alt="AiryLite 激光雷达通过转接板与主机 USB 连接的接线示意图" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 1：雷达连接示意图</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_9.png').default} alt="AiryLite 激光雷达通过转接板与主机 USB 连接的接线示意图" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 1：雷达连接示意图</figcaption>
 </figure>
 
 ### 1.2 获取雷达数据
@@ -28,26 +28,26 @@ sidebar_position: 3
 
 a. 下载串口驱动程序（[下载地址](https://www.wch.cn/downloads/CH343SER_EXE.html)），执行安装程序并完成安装。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_2.png').default} alt="CH343 串口驱动程序下载页面" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 2：下载串口驱动程序</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_2.png').default} alt="CH343 串口驱动程序下载页面" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 2：下载串口驱动程序</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_6.png').default} alt="运行 CH343 驱动安装程序" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 3：执行安装程序</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_6.png').default} alt="运行 CH343 驱动安装程序" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 3：执行安装程序</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/img_v3_02vl_c1a3d2ac-53ed-4d11-9c27-7870110b256g.png').default} alt="CH343 驱动安装窗口显示安装进行中" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 4：安装串口驱动</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/img_v3_02vl_c1a3d2ac-53ed-4d11-9c27-7870110b256g.png').default} alt="CH343 驱动安装窗口显示安装进行中" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 4：安装串口驱动</figcaption>
 </figure>
 
 b. 在正确完成 1.1 连接激光雷达并完成驱动安装后，查看设备管理器，确认驱动安装是否生效。若电脑识别到共 5 个端口，则表明数据链路接线正常。其中，SERIAL-A 与 SERIAL-D 为双高速串口。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_11.png').default} alt="Windows 设备管理器列出 5 个 COM 端口，包含 SERIAL-A 与 SERIAL-D" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 5：设备管理器查看端口</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_11.png').default} alt="Windows 设备管理器列出 5 个 COM 端口，包含 SERIAL-A 与 SERIAL-D" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 5：设备管理器查看端口</figcaption>
 </figure>
 
 #### 1.2.2 Ubuntu 系统
@@ -74,9 +74,9 @@ c. 监听串口（需在 USB 线插入前启动监控指令）。其中编号最
 user:~$ udevadm monitor --udev| grep -E 'UDEV.*\(tty\)'
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_3.png').default} alt="udevadm monitor 终端输出中显示 ttyCH343USB 串口节点" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 6：高速串口为 ttyCH343USB0 和 ttyCH343USB3</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_3.png').default} alt="udevadm monitor 终端输出中显示 ttyCH343USB 串口节点" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 6：高速串口为 ttyCH343USB0 和 ttyCH343USB3</figcaption>
 </figure>
 
 d. 给串口赋予读写权限：
@@ -93,18 +93,18 @@ user:~$ sudo chmod 666 /dev/ttyCH343*
 
 a. 打开 Sensor Network Config，按图示填入监听到的串口名称（参照章节 1.2.1 步骤 b），波特率为 4M（4000000），填完后点击 OK；
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_1.png').default} alt="RSView 的 Sensor Network Config 对话框中填入串口名称与波特率" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 7：填写配置参数</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_1.png').default} alt="RSView 的 Sensor Network Config 对话框中填入串口名称与波特率" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 7：填写配置参数</figcaption>
 </figure>
 
 b. 在工具栏项点击雷达图标打开在线雷达。也可以选择菜单项 File -> Open Sensor 打开在线雷达。
 
 在 Sensor Type 栏选择对应的雷达类型 0352_4M，点击 OK。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_10.png').default} alt="Windows 下 RSView 的 Sensor Type 选择对话框中选中 0352_4M" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 8：选择雷达类型</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_10.png').default} alt="Windows 下 RSView 的 Sensor Type 选择对话框中选中 0352_4M" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 8：选择雷达类型</figcaption>
 </figure>
 
 ### 2.2 Ubuntu 系统下使用 RSView
@@ -113,16 +113,16 @@ a. 在工具栏项点击雷达图标打开在线雷达。也可以选择菜单�
 
 在 Sensor Type 栏选择对应的雷达类型 0352_4M，点击 OK。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_8.png').default} alt="Ubuntu 下 RSView 的 Sensor Type 选择对话框中选中 0352_4M" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 9：选择雷达类型</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_8.png').default} alt="Ubuntu 下 RSView 的 Sensor Type 选择对话框中选中 0352_4M" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 9：选择雷达类型</figcaption>
 </figure>
 
 b. 自动跳入打开 Sensor Network Config 界面，按图示填入监听到的串口名称（参照章节 1.2.2 步骤 c），波特率为 4M（4000000），填完后点击 OK；
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_12.png').default} alt="Ubuntu 下 RSView 的 Sensor Network Config 对话框中填入串口名称与波特率" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 10：填写配置参数</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_12.png').default} alt="Ubuntu 下 RSView 的 Sensor Network Config 对话框中填入串口名称与波特率" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 10：填写配置参数</figcaption>
 </figure>
 
 ## 三、驱动使用
@@ -143,9 +143,9 @@ B. 驱动串口号（如上 1.2.2 章节）；
 
 C. 波特率（默认双 4M）。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_7.png').default} alt="config.yaml 内容中的 msg_source、串口与波特率配置项" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 11：常用驱动参数配置</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_7.png').default} alt="config.yaml 内容中的 msg_source、串口与波特率配置项" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 11：常用驱动参数配置</figcaption>
 </figure>
 
 ## 四、常见问题排查
@@ -156,14 +156,14 @@ C. 波特率（默认双 4M）。
 
 程序无法打开（需关闭防火墙）以及启动报错 `No module named rsview`（程序路径不得含有非法字符）这两类问题，请参考 [RSView FAQ](../RSView/faq.md)。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image.png').default} alt="Windows 防火墙设置页面中所有防火墙均已关闭" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 12：关闭防火墙</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image.png').default} alt="Windows 防火墙设置页面中所有防火墙均已关闭" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 12：关闭防火墙</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/img_v3_02102_067e8142-39ab-4615-8ba4-f832656ec1dg.png').default} alt="Windows 下因 RSView 程序路径含非法字符导致的报错信息" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 13：因路径含有非法字符报错</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/img_v3_02102_067e8142-39ab-4615-8ba4-f832656ec1dg.png').default} alt="Windows 下因 RSView 程序路径含非法字符导致的报错信息" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 13：因路径含有非法字符报错</figcaption>
 </figure>
 
 #### 4.1.2 RSView 无点云
@@ -174,30 +174,30 @@ C. 波特率（默认双 4M）。
 
 2. 根据章节 1.1 连接激光雷达完成线束连接，转接板有灯光亮起，并且雷达有激光发出，说明**给电成功且雷达启动**。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/img_v3_02uh_d43fd878-3e57-4a58-8035-8655cfabd7bg.webp').default} alt="通过相机观察到激光雷达有激光发出" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 14：雷达有激光发出</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/img_v3_02uh_d43fd878-3e57-4a58-8035-8655cfabd7bg.webp').default} alt="通过相机观察到激光雷达有激光发出" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 14：雷达有激光发出</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_4.png').default} alt="转接板指示灯亮起" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 15：转接板灯光亮起</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_4.png').default} alt="转接板指示灯亮起" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 15：转接板灯光亮起</figcaption>
 </figure>
 
 3. 打开设备管理器，电脑识别到端口（共 5 个）“COM + 数字”，表明**数据链路接线正常**。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/img_v3_02uh_806fd32d-7dbf-487a-8644-9b4d3606de1g.jpg').default} alt="设备管理器端口列表，确认数据链路接线正常" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 16：确认数据链路接线正常</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/img_v3_02uh_806fd32d-7dbf-487a-8644-9b4d3606de1g.jpg').default} alt="设备管理器端口列表，确认数据链路接线正常" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 16：确认数据链路接线正常</figcaption>
 </figure>
 
 4. 打开串口监控程序 XCOM，先在串口选择窗口选择设备管理器 A 和 D 对应的 9114 串口，勾选 16 进制显示，再点击串口操作 - 打开串口，观察数据流是否滚动。
 
 > **注意：** 请勿长时间打开串口监控，容易造成电脑卡顿。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/img_v3_02uh_7088f327-d2fe-407b-b5d4-ca30a8d31c4g.png').default} alt="XCOM 串口监控中滚动显示来自激光雷达的十六进制数据" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 17：查看主机是否接收到串口数据</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/img_v3_02uh_7088f327-d2fe-407b-b5d4-ca30a8d31c4g.png').default} alt="XCOM 串口监控中滚动显示来自激光雷达的十六进制数据" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 17：查看主机是否接收到串口数据</figcaption>
 </figure>
 
 5. 以管理员身份运行 RSView 并参照章节 2.1 Windows 系统下使用 RSView 完成相关配置。
@@ -210,9 +210,9 @@ C. 波特率（默认双 4M）。
 
 启动报错 `No module named rsview`：请检查程序路径是否含有非法字符，详见 [RSView FAQ](../RSView/faq.md)。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/img_v3_02102_067e8142-39ab-4615-8ba4-f832656ec1dg_1.png').default} alt="Ubuntu 下因 RSView 程序路径含非法字符导致的报错信息" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 18：因路径含有非法字符报错</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/img_v3_02102_067e8142-39ab-4615-8ba4-f832656ec1dg_1.png').default} alt="Ubuntu 下因 RSView 程序路径含非法字符导致的报错信息" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 18：因路径含有非法字符报错</figcaption>
 </figure>
 
 #### 4.2.2 RSView 无点云
@@ -223,14 +223,14 @@ C. 波特率（默认双 4M）。
 
 2. 根据章节 1.1 连接激光雷达完成线束连接，转接板有灯光亮起，并且雷达有激光发出，说明**给电成功且雷达启动**。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/img_v3_02uh_d43fd878-3e57-4a58-8035-8655cfabd7bg_1.webp').default} alt="通过相机观察到激光雷达有激光发出" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 19：雷达有激光发出</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/img_v3_02uh_d43fd878-3e57-4a58-8035-8655cfabd7bg_1.webp').default} alt="通过相机观察到激光雷达有激光发出" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 19：雷达有激光发出</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_5.png').default} alt="转接板指示灯亮起" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 20：转接板灯光亮起</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_5.png').default} alt="转接板指示灯亮起" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 20：转接板灯光亮起</figcaption>
 </figure>
 
 3. 确认串口权限：
@@ -249,9 +249,9 @@ user:~$ ls -al /dev/ttyCH343*
 
 1. 检查串口驱动是否已编译成功。若正确编译会在 driver 目录下生成 ch343.ko 驱动文件。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/airylite485/image_noext.png').default} alt="终端中列出 driver 目录下生成的 ch343.ko 驱动文件" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 21：生成的 ch343.ko 驱动文件</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/airylite485/image_noext.png').default} alt="终端中列出 driver 目录下生成的 ch343.ko 驱动文件" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 21：生成的 ch343.ko 驱动文件</figcaption>
 </figure>
 
 2. 通过 lsusb 指令检查该设备是否已插入并正常工作。

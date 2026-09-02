@@ -33,9 +33,9 @@ user@user:~/linux-lib-namespace/linux-build/example$ sh build.sh
 
 如果编译时出现类似下图的链接错误：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img1.png').default} alt="Ubuntu 版本不匹配导致的静态库链接错误" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Ubuntu 版本不匹配导致的链接错误</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img1.png').default} alt="Ubuntu 版本不匹配导致的静态库链接错误" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Ubuntu 版本不匹配导致的链接错误</figcaption>
 </figure>
 
 这通常源于 Ubuntu 版本差异，需要在本机重新编译静态库：
@@ -131,9 +131,9 @@ printf("getConfigParams() remoteIp is %d.%d.%d.%d\n", params.r4info.netInfo.remo
     params.r4info.netInfo.remoteIp[2], params.r4info.netInfo.remoteIp[3]);
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img5.png').default} alt="终端打印的雷达网络参数读取结果" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: 网络参数读取结果</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img5.png').default} alt="终端打印的雷达网络参数读取结果" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: 网络参数读取结果</figcaption>
 </figure>
 
 #### 修改网络参数
@@ -246,9 +246,9 @@ printf("getImuParams() imu.lpf = %d\n",  imu.lpf);
 
 终端运行结果如下：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img2.png').default} alt="IMU 参数读写的终端输出" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: IMU 参数读写的终端输出</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img2.png').default} alt="IMU 参数读写的终端输出" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: IMU 参数读写的终端输出</figcaption>
 </figure>
 
 Web 端配置页面上的对照效果：
@@ -293,9 +293,9 @@ typedef struct ImuParam
 
 Airy 雷达固件分为三个组件，升级时需依次执行。**固件文件需与 demo 可执行程序放在同一目录下**。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img6.png').default} alt="固件文件与 demo 可执行程序放在同一目录下" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: 固件文件与 demo 程序的目录结构</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img6.png').default} alt="固件文件与 demo 可执行程序放在同一目录下" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: 固件文件与 demo 程序的目录结构</figcaption>
 </figure>
 
 | 升级指令枚举 | 文件名格式 | 说明 |
@@ -327,9 +327,9 @@ printf("OTA update finished.\n");
 
 升级过程中可通过 `getUpdateStatus()` 查询进度。升级完成后的终端输出如下：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img7.png').default} alt="三个固件组件依次升级完成的终端输出" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: OTA 升级结果</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img7.png').default} alt="三个固件组件依次升级完成的终端输出" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 5: OTA 升级结果</figcaption>
 </figure>
 
 ### 进阶参数读写
@@ -433,9 +433,9 @@ else     { printf("setSomeSupplementParams() failed.\n"); }
 
 进阶参数修改后的终端输出如下：
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/img8.png').default} alt="进阶参数读写的终端输出" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: 进阶参数读写结果</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/img8.png').default} alt="进阶参数读写的终端输出" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 6: 进阶参数读写结果</figcaption>
 </figure>
 
 #### 单项设置接口（便捷函数）

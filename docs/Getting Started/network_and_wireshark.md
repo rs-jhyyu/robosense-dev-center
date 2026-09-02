@@ -29,9 +29,9 @@ First, find the Product Manual that matches the RoboSense LiDAR you own and look
 
 The figure below illustrates the connection method using a screenshot from the Helios32 LiDAR Product Manual. Other LiDAR models follow the same principle.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image2.png').default} alt="Connection diagram showing LiDAR, interface box, power adapter and host computer" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Connection diagram from the Helios32 Product Manual</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image2.png').default} alt="Connection diagram showing LiDAR, interface box, power adapter and host computer" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Connection diagram from the Helios32 Product Manual</figcaption>
 </figure>
 
 ### 2.2 Configuring the Host Ethernet Adapter
@@ -42,21 +42,21 @@ By default, the LiDAR leaves the factory with the Source IP Address set to 192.1
 
 - Open Control Panel > Network and Internet > Network and Sharing Center > Change adapter settings, then right-click the Ethernet adapter connected to the LiDAR and select Properties, as shown below.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image3.png').default} alt="Windows Network and Sharing Center with Change adapter settings highlighted" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Opening Change adapter settings</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image3.png').default} alt="Windows Network and Sharing Center with Change adapter settings highlighted" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: Opening Change adapter settings</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image4.png').default} alt="Right-click menu on the Ethernet adapter with Properties selected" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: Opening the properties of the Ethernet adapter connected to the LiDAR</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image4.png').default} alt="Right-click menu on the Ethernet adapter with Properties selected" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: Opening the properties of the Ethernet adapter connected to the LiDAR</figcaption>
 </figure>
 
 - Double-click Internet Protocol Version 4 (TCP/IPv4) and select Use the following IP address to change the static route of the Ethernet adapter. If the LiDAR is in its factory default state, set the host IP address to 192.168.1.102 and the subnet mask to 255.255.255.0. If it is not, use the method described in the Capturing LiDAR Data section of this document.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image5.jpeg').default} alt="TCP/IPv4 properties dialog with a static IP address and subnet mask entered" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: Setting a static IP address and subnet mask for the host</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image5.jpeg').default} alt="TCP/IPv4 properties dialog with a static IP address and subnet mask entered" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: Setting a static IP address and subnet mask for the host</figcaption>
 </figure>
 
 #### 2.2.2 Linux (Ubuntu)
@@ -65,21 +65,21 @@ Follow these steps:
 
 - Open Settings > Network to enter the network configuration page, then configure the host IP address and subnet mask of the Ethernet adapter;
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image6.png').default} alt="Ubuntu Settings Network page listing the wired connection" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: Ubuntu network configuration page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image6.png').default} alt="Ubuntu Settings Network page listing the wired connection" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 5: Ubuntu network configuration page</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image7.png').default} alt="Ubuntu IPv4 settings with Manual addressing, host IP and netmask entered" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: Configuring the host IP address and subnet mask on Ubuntu</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image7.png').default} alt="Ubuntu IPv4 settings with Manual addressing, host IP and netmask entered" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 6: Configuring the host IP address and subnet mask on Ubuntu</figcaption>
 </figure>
 
 - Toggle the connection off and then on again so that the network configuration takes effect.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image8.png').default} alt="Ubuntu wired connection toggle switch used to reapply the configuration" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 7: Toggling the connection off and on to apply the configuration</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image8.png').default} alt="Ubuntu wired connection toggle switch used to reapply the configuration" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 7: Toggling the connection off and on to apply the configuration</figcaption>
 </figure>
 
 For a device in its factory default state, the LiDAR should now be communicating normally with the host. You can confirm this by running the following command in cmd or a terminal:
@@ -106,44 +106,44 @@ sudo apt-get install wireshark
 
 - On Windows, download the installer and follow the steps below.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image9.png').default} alt="Wireshark installer welcome page on Windows" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 8: Running the Wireshark installer on Windows</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image9.png').default} alt="Wireshark installer welcome page on Windows" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 8: Running the Wireshark installer on Windows</figcaption>
 </figure>
 
 - During installation, keep all plugins selected, especially Npcap 1.86 shown in the figure below.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image10.png').default} alt="Wireshark installer component list with all plugins selected" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 9: Keeping all plugins selected during installation</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image10.png').default} alt="Wireshark installer component list with all plugins selected" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 9: Keeping all plugins selected during installation</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image11.png').default} alt="Wireshark installer page with the Npcap component checked" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 10: Making sure Npcap is installed</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image11.png').default} alt="Wireshark installer page with the Npcap component checked" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 10: Making sure Npcap is installed</figcaption>
 </figure>
 
 #### 3.1.2 Capturing LiDAR Data
 
 Right-click Wireshark and select Run as administrator to launch it. On the home page, under Capture, select the Ethernet port that the LiDAR is connected to.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image12.png').default} alt="Wireshark start page listing available capture interfaces" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 11: Selecting the Ethernet interface connected to the LiDAR</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image12.png').default} alt="Wireshark start page listing available capture interfaces" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 11: Selecting the Ethernet interface connected to the LiDAR</figcaption>
 </figure>
 
 Double-click that interface to start capturing data. If you have configured the factory default IP correctly as described in Configuring the Host Ethernet Adapter, you should see UDP data captured in real time, as shown below.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image13.png').default} alt="Wireshark packet list showing UDP packets from the LiDAR" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 12: UDP data from the LiDAR captured in real time</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image13.png').default} alt="Wireshark packet list showing UDP packets from the LiDAR" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 12: UDP data from the LiDAR captured in real time</figcaption>
 </figure>
 
 If the network configuration of your LiDAR has already been modified and you are not sure which host IP to use, type `arp` in the filter box on the capture page. You will then see the address resolution packets exchanged between the LiDAR and the host. Change the host IP to the Destination IP that the LiDAR is looking for. Ethernet communication will then be established correctly, and the UDP data sent by the LiDAR will appear on the capture page as well.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image14.png').default} alt="Wireshark filtered by arp showing the destination IP requested by the LiDAR" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 13: Using the arp filter to find the destination IP requested by the LiDAR</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image14.png').default} alt="Wireshark filtered by arp showing the destination IP requested by the LiDAR" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 13: Using the arp filter to find the destination IP requested by the LiDAR</figcaption>
 </figure>
 
 #### 3.1.3 Recording LiDAR Data Packets (Packet Capture)
@@ -156,24 +156,24 @@ Once the data is being received normally by the PC, you can use Wireshark to cap
 
 - Click the Save capture file button, rename the file, and set the save type to pcap format.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image15.png').default} alt="Wireshark toolbar with the blue Start capturing packets button highlighted" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 14: Start capturing packets</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image15.png').default} alt="Wireshark toolbar with the blue Start capturing packets button highlighted" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 14: Start capturing packets</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image16.png').default} alt="Wireshark toolbar with the red Stop capturing packets button highlighted" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 15: Stop capturing packets</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image16.png').default} alt="Wireshark toolbar with the red Stop capturing packets button highlighted" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 15: Stop capturing packets</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image17.png').default} alt="Wireshark toolbar with the Save capture file button highlighted" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 16: Saving the capture file</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image17.png').default} alt="Wireshark toolbar with the Save capture file button highlighted" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 16: Saving the capture file</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image18.png').default} alt="Wireshark save dialog with the file type set to pcap" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 17: Setting the save type to pcap</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image18.png').default} alt="Wireshark save dialog with the file type set to pcap" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 17: Setting the save type to pcap</figcaption>
 </figure>
 
 The saved .pcap file is the LiDAR data file. You can replay and inspect the point cloud in RSView, the host software provided by RoboSense. For detailed instructions on RSView, see the RSView documentation.
@@ -184,19 +184,19 @@ The saved .pcap file is the LiDAR data file. You can replay and inspect the poin
 
 Open Settings > Network and Internet, select the Ethernet adapter connected to the LiDAR, set IP assignment to Manual, and enter the expected LiDAR destination IP under IPv4, as shown in the figures.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image19.jpeg').default} alt="Windows 11 Network and Internet settings page with the Ethernet adapter selected" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 18: Opening the Ethernet adapter settings on Windows 11</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image19.jpeg').default} alt="Windows 11 Network and Internet settings page with the Ethernet adapter selected" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 18: Opening the Ethernet adapter settings on Windows 11</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image20.jpeg').default} alt="Windows 11 IP assignment set to Manual" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 19: Setting IP assignment to Manual</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image20.jpeg').default} alt="Windows 11 IP assignment set to Manual" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 19: Setting IP assignment to Manual</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image21.jpeg').default} alt="Windows 11 IPv4 configuration with the LiDAR destination IP entered" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 20: Entering the LiDAR destination IP under IPv4</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image21.jpeg').default} alt="Windows 11 IPv4 configuration with the LiDAR destination IP entered" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 20: Entering the LiDAR destination IP under IPv4</figcaption>
 </figure>
 
 ### 4.2 The LiDAR IP Cannot Be Pinged
@@ -211,21 +211,21 @@ If the LiDAR IP cannot be pinged from cmd or a terminal, troubleshoot as follows
 
 - Check the advanced Ethernet settings: in the Ethernet Properties dialog, click Configure > Advanced and check whether VLAN ID is enabled. For a device shipped with default settings it should be disabled. Also check Speed & Duplex; Auto Negotiation is recommended. Finally, disable the Energy Efficient Ethernet and Green Ethernet options.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image22.png').default} alt="Ethernet adapter Advanced properties tab showing the VLAN ID setting" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 21: Checking the VLAN ID setting in the advanced Ethernet properties</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image22.png').default} alt="Ethernet adapter Advanced properties tab showing the VLAN ID setting" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 21: Checking the VLAN ID setting in the advanced Ethernet properties</figcaption>
 </figure>
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image23.png').default} alt="Ethernet adapter Advanced properties tab showing Speed and Duplex and power saving options" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 22: Checking Speed &amp; Duplex and disabling the power saving options</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image23.png').default} alt="Ethernet adapter Advanced properties tab showing Speed and Duplex and power saving options" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 22: Checking Speed &amp; Duplex and disabling the power saving options</figcaption>
 </figure>
 
 ### 4.3 Capture Error on Ubuntu
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/network/image24.png').default} alt="Ubuntu terminal showing a Wireshark permission error when capturing" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 23: Error reported when capturing on Ubuntu without sufficient privileges</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/network/image24.png').default} alt="Ubuntu terminal showing a Wireshark permission error when capturing" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 23: Error reported when capturing on Ubuntu without sufficient privileges</figcaption>
 </figure>
 
 Check whether Wireshark was launched with sudo privileges:

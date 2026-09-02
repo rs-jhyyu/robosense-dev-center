@@ -1,5 +1,6 @@
 ---
 title: FAQ
+sidebar_label: RSView FAQ
 sidebar_position: 4
 ---
 

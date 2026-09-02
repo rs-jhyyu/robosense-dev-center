@@ -11,9 +11,9 @@ sidebar_position: 1
 
 用户可以参考用户手册查看对应 LiDAR 的时间同步方式。**例如**，以下是 E1R 的产品规格书，其中包含它所支持的时间同步方式。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig0.PNG').default} alt="E1R 产品规格书，展示所支持的时间同步方式" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 1：配置示例</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig0.PNG').default} alt="E1R 产品规格书，展示所支持的时间同步方式" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 1：配置示例</figcaption>
 </figure>
 
 ### 1.2 如何为当前 LiDAR 配置时间同步方式
@@ -22,9 +22,9 @@ sidebar_position: 1
 
 在用户确认 LiDAR 已连接到主机后，在浏览器中输入 **LiDAR IP 地址（默认地址：192.168.1.200）** 以访问 LiDAR 网页。然后进入 **Setting → Time Sync** 查看并配置具体的时间同步模式（不带网页界面的机械式 LiDAR 仅支持 GPS 时间同步）。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig1.PNG').default} alt="LiDAR 网页界面的 Time Sync 配置页面" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 2：机械式 LiDAR 的通用网页界面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig1.PNG').default} alt="LiDAR 网页界面的 Time Sync 配置页面" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 2：机械式 LiDAR 的通用网页界面</figcaption>
 </figure>
 
 #### 固态 LiDAR
@@ -51,9 +51,9 @@ sidebar_position: 1
 
 i. 按照下图所示的方法，完成 LiDAR 与上位机、同步盒及其他设备的连接。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig2.JPEG').default} alt="LiDAR、上位机与同步盒的连接示意图" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 3：LiDAR 时间同步连接示例</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig2.JPEG').default} alt="LiDAR、上位机与同步盒的连接示意图" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 3：LiDAR 时间同步连接示例</figcaption>
 </figure>
 
 ii. 用户可以使用 ethtool 命令查看上位机的网卡信息。
@@ -95,9 +95,9 @@ iv. 验证 LiDAR 的时间同步状态。（参考本 SOP 第 3 节的内容。�
 
 RSView 读取 LiDAR 数据后，LiDAR 时间戳将显示在底部信息栏中。如果 LiDAR 时间戳与时钟源时间一致，则表明时间同步成功。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig3.PNG').default} alt="RSView 底部信息栏显示 LiDAR 时间戳" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 4：RSView 中时间戳示意图</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig3.PNG').default} alt="RSView 底部信息栏显示 LiDAR 时间戳" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 4：RSView 中时间戳示意图</figcaption>
 </figure>
 
 ### 3.2 SDK 验证
@@ -112,9 +112,9 @@ user@user:~$ rostopic echo /rslidar_points --noarr
 user@user:~$ ros2 topic echo /rslidar_points
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig4.png').default} alt="用于时间同步验证的 ROS 话题时间戳输出" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 5：点云话题时间戳示意图</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig4.png').default} alt="用于时间同步验证的 ROS 话题时间戳输出" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 5：点云话题时间戳示意图</figcaption>
 </figure>
 
 ***注意****：消息中输出的时间为 **`s.ns`** 格式。用户可以搜索在线时间戳工具，将其转换为年-月-日 时:分:秒的格式进行查看。*
@@ -129,23 +129,23 @@ user@user:~$ ros2 topic echo /rslidar_points
 
 **PTP/gPTP 同步状态：** PTP Status 状态位为 Locked。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/Fig5.JPEG').default} alt="网页 Diagnostic 界面显示时间同步状态位" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 6：时间同步成功示意图</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/Fig5.JPEG').default} alt="网页 Diagnostic 界面显示时间同步状态位" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 6：时间同步成功示意图</figcaption>
 </figure>
 
 ### 3.4 UDP 数据包验证
 
 根据产品手册 **[设备信息输出协议（DIFOP）]** 部分对 LiDAR UDP 数据包的解析，在 **Wireshark** 中定位相应的字节，即可查看当前 **LiDAR 同步模式、同步状态和时间戳信息**。下面以 M1P LiDAR 为**例**。
 
-<div style={{display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'flex-start'}}>
-  <figure style={{textAlign: 'center', margin: '0'}}>
+<div className="doc-figure-row">
+  <figure className="doc-figure doc-figure--inline">
     <img src={require('./images/Fig6.png').default} alt="Wireshark 中查看 M1P LiDAR UDP 数据包的同步模式与状态" style={{maxWidth: '420px', width: '100%', height: 'auto'}} />
-    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 7：手册中 M1P DIFOP 示例</figcaption>
+    <figcaption className="doc-figure-caption">图 7：手册中 M1P DIFOP 示例</figcaption>
   </figure>
-  <figure style={{textAlign: 'center', margin: '0'}}>
+  <figure className="doc-figure doc-figure--inline">
     <img src={require('./images/Fig7.JPEG').default} alt="Wireshark 中查看 M1P LiDAR UDP 数据包的时间戳信息" style={{maxWidth: '380px', width: '100%', height: 'auto'}} />
-    <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 8：Wireshark 中 M1P DIFOP 示例</figcaption>
+    <figcaption className="doc-figure-caption">图 8：Wireshark 中 M1P DIFOP 示例</figcaption>
   </figure>
 </div>
 

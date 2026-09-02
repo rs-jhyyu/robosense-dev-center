@@ -17,16 +17,16 @@ Make sure the network connection between the LiDAR and the computer is working, 
 
 ### 2.1 Airy
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image_2.png').default} alt="Airy LiDAR web interface home page opened in a browser" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Airy web interface home page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image_2.png').default} alt="Airy LiDAR web interface home page opened in a browser" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Airy web interface home page</figcaption>
 </figure>
 
 ### 2.2 Fairy
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image_3.png').default} alt="Fairy LiDAR web interface home page opened in a browser" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Fairy web interface home page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image_3.png').default} alt="Fairy LiDAR web interface home page opened in a browser" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: Fairy web interface home page</figcaption>
 </figure>
 
 ## 3. Modifying Parameters on the Web Interface
@@ -37,16 +37,16 @@ Parameter modification on the web interface is divided into three modules: **Gen
 
 Airy:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image_3.png').default} alt="Airy General Setting page listing basic network and device parameters" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 3: Airy General Setting page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image_3.png').default} alt="Airy General Setting page listing basic network and device parameters" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 3: Airy General Setting page</figcaption>
 </figure>
 
 Fairy:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image.png').default} alt="Fairy General Setting page listing basic network and device parameters" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 4: Fairy General Setting page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image.png').default} alt="Fairy General Setting page listing basic network and device parameters" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: Fairy General Setting page</figcaption>
 </figure>
 
 Modify the corresponding parameters as required. For the configuration rules and value ranges of each parameter, please refer to the product manual of the corresponding model.
@@ -55,16 +55,16 @@ Modify the corresponding parameters as required. For the configuration rules and
 
 Airy:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image_1.png').default} alt="Airy Performance Setting page with advanced parameters" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 5: Airy Performance Setting page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image_1.png').default} alt="Airy Performance Setting page with advanced parameters" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 5: Airy Performance Setting page</figcaption>
 </figure>
 
 Fairy:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image_2.png').default} alt="Fairy Performance Setting page with advanced parameters" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 6: Fairy Performance Setting page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image_2.png').default} alt="Fairy Performance Setting page with advanced parameters" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 6: Fairy Performance Setting page</figcaption>
 </figure>
 
 Modify the corresponding parameters as required. For the configuration rules and value ranges of each parameter, please refer to the product manual of the corresponding model.
@@ -73,16 +73,16 @@ Modify the corresponding parameters as required. For the configuration rules and
 
 Airy:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/image.png').default} alt="Airy Angle Pulse Setting page for angle pulse trigger configuration" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 7: Airy Angle Pulse Setting page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/image.png').default} alt="Airy Angle Pulse Setting page for angle pulse trigger configuration" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 7: Airy Angle Pulse Setting page</figcaption>
 </figure>
 
 Fairy:
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web-fairy/image_1.png').default} alt="Fairy Angle Pulse Setting page for angle pulse trigger configuration" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 8: Fairy Angle Pulse Setting page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web-fairy/image_1.png').default} alt="Fairy Angle Pulse Setting page for angle pulse trigger configuration" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 8: Fairy Angle Pulse Setting page</figcaption>
 </figure>
 
 Modify the corresponding parameters as required. For the configuration rules and value ranges of each parameter, please refer to the product manual of the corresponding model.
@@ -104,9 +104,9 @@ Modify the corresponding parameters as required. For the configuration rules and
 
 ### 4.2 Upgrade Steps
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/web/ae7a6bb201acddc8e9a1e359230b0756.jpg').default} alt="Web interface firmware upgrade page showing the file selection and update buttons" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 9: Firmware upgrade page</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/web/ae7a6bb201acddc8e9a1e359230b0756.jpg').default} alt="Web interface firmware upgrade page showing the file selection and update buttons" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 9: Firmware upgrade page</figcaption>
 </figure>
 
 1. Click **Choose File** and select the firmware upgrade package in the pop-up window.

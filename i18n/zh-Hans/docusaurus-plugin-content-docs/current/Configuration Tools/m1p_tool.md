@@ -10,9 +10,9 @@ sidebar_position: 4
 
 注：小工具支持 Ubuntu 下使用，可直接运行 `DiagCmdTool` 可执行文件。
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_4.png').default} alt="M1P 小工具主界面，展示各功能区域" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 1：M1P 小工具主界面</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_4.png').default} alt="M1P 小工具主界面，展示各功能区域" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 1：M1P 小工具主界面</figcaption>
 </figure>
 
 ## 1. 连接雷达
@@ -25,9 +25,9 @@ sidebar_position: 4
 
 ### 区域 1：雷达连接区
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_9.png').default} alt="雷达连接区，包含 Project Name 与 LiDAR IP 输入框" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 2：雷达连接区</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_9.png').default} alt="雷达连接区，包含 Project Name 与 LiDAR IP 输入框" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 2：雷达连接区</figcaption>
 </figure>
 
 - **Project Name**：P0220，对应 M1P。
@@ -35,16 +35,16 @@ sidebar_position: 4
 
 ### 区域 2：固件刷写区
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_1.png').default} alt="M1P 小工具的固件刷写区" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 3：固件刷写区</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_1.png').default} alt="M1P 小工具的固件刷写区" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 3：固件刷写区</figcaption>
 </figure>
 
 ### 区域 3：雷达参数配置区
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_2.png').default} alt="雷达参数配置区，展示 IP、端口、MAC 与 SN 字段" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 4：雷达参数配置区</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_2.png').default} alt="雷达参数配置区，展示 IP、端口、MAC 与 SN 字段" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 4：雷达参数配置区</figcaption>
 </figure>
 
 - **SrcIP**：雷达 IP 读写区域。
@@ -56,25 +56,25 @@ sidebar_position: 4
 
 ### 区域 4：UDS 请求区
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_7.png').default} alt="UDS 请求区，用于发送 UDS 请求报文" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 5：UDS 请求区</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_7.png').default} alt="UDS 请求区，用于发送 UDS 请求报文" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 5：UDS 请求区</figcaption>
 </figure>
 
 - **UDS Request**：发送 UDS 请求报文，用于修改时间同步模式、PHY 芯片模式等功能。
 
 ## 3. 修改 IP 参数
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_5.png').default} alt="在小工具中修改雷达 IP 参数" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 6：修改 IP 参数</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_5.png').default} alt="在小工具中修改雷达 IP 参数" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 6：修改 IP 参数</figcaption>
 </figure>
 
 ## 4. 固件升级
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_6.png').default} alt="M1P 小工具中的固件升级操作" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 7：固件升级</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_6.png').default} alt="M1P 小工具中的固件升级操作" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 7：固件升级</figcaption>
 </figure>
 
 ## 5. DID 服务
@@ -93,23 +93,23 @@ UDS 请求区支持 DID 的读写操作，常见 DID 命令如下：
 
 1. 输入雷达 IP，连接成功后，点击"客户解锁1"和"客户解锁2"，注意每次发送 DID 指令前都要解锁一次，并且要在解锁 5 秒之内发送 DID 指令，超时需要重新解锁；
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_3.png').default} alt="发送 DID 指令前依次点击两个客户解锁按钮" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 8：客户解锁操作</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_3.png').default} alt="发送 DID 指令前依次点击两个客户解锁按钮" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 8：客户解锁操作</figcaption>
 </figure>
 
 2. 在对话框输入 `2EFE0B02`，点击"发送"，即可修改同步模式为 PTP-E2E_L2 模式，默认是 gPTP 模式；
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image_8.png').default} alt="发送写入时间同步模式的 DID 指令" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 9：发送 DID 写入指令</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image_8.png').default} alt="发送写入时间同步模式的 DID 指令" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 9：发送 DID 写入指令</figcaption>
 </figure>
 
 3. 发送成功后重启雷达（记住：一定要断电重启，否则不生效），再次在对话框输入 `22FE0B`，如果显示 `62FE0B02`，则修改成功；
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/m1p/image.png').default} alt="回读时间同步模式以确认修改结果" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>图 10：回读确认结果</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/m1p/image.png').default} alt="回读时间同步模式以确认修改结果" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 10：回读确认结果</figcaption>
 </figure>
 
 ## 6. 注意事项

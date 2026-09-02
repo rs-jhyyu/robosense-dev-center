@@ -13,9 +13,9 @@ Looking for other ways to export data? See [Advanced Operations](./advanced_oper
 
 In Rviz, click the topic in the left panel to read the point cloud topic name. Alternatively, run `rostopic list` to list all current topics and locate the one you want to record.
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/recording/image_1.png').default} alt="Rviz left panel showing the point cloud topic name" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 1: Reading the point cloud topic name in Rviz</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/recording/image_1.png').default} alt="Rviz left panel showing the point cloud topic name" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 1: Reading the point cloud topic name in Rviz</figcaption>
 </figure>
 
 ## Step 2: Create or enter the target directory
@@ -40,9 +40,9 @@ Using the topic obtained in Step 1 as an example:
 rosrun pcl_ros pointcloud_to_pcd input:=/bp_points3
 ```
 
-<figure style={{textAlign: 'center', margin: '0 0 1rem'}}>
-  <img src={require('./images/recording/image.png').default} alt="Terminal running pointcloud_to_pcd and writing PCD files" style={{maxWidth: '600px', width: '100%', height: 'auto'}} />
-  <figcaption style={{fontSize: '0.85em', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.4rem'}}>Figure 2: Recording point clouds to PCD files</figcaption>
+<figure className="doc-figure">
+  <img src={require('./images/recording/image.png').default} alt="Terminal running pointcloud_to_pcd and writing PCD files" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 2: Recording point clouds to PCD files</figcaption>
 </figure>
 
 Recording starts as soon as you press Enter. Press `Ctrl+C` to stop recording and save the files.

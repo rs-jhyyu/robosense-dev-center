@@ -1,13 +1,130 @@
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
+ *
+ * Layout follows the Livox wiki: a fixed title column on the left listing every
+ * section, and the document index in the main area on the right.
+ *
+ * The title column uses the same grey plate and border as the doc page sidebar
+ * (--rs-sidebar-bg / --rs-sidebar-border, defined in custom.css), so the
+ * homepage and the doc pages share one visual language. Colors stay on the
+ * RoboSense orange-red / black / white palette.
  */
 
-.heroBanner {
-  padding: 5rem 0 4rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.page {
+  display: flex;
+  align-items: stretch;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  background: var(--rs-content-bg);
+}
+
+/* ---------- Left title column ---------- */
+
+.titleColumn {
+  flex: 0 0 300px;
+  width: 300px;
+  border-right: 1px solid var(--rs-sidebar-border);
+  background: var(--rs-sidebar-bg);
+}
+
+.titleColumnInner {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  overflow-y: auto;
+  padding: 1.5rem 0.75rem 2rem;
+}
+
+.titleColumnHeading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  padding: 0 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--rs-sidebar-border);
+  margin-bottom: 0.75rem;
+}
+
+.titleList,
+.titleSubList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.titleListItem {
+  margin-bottom: 1rem;
+}
+
+/* Top-level section, matching the weight of a sidebar category. */
+.titleListLink {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  border-radius: 4px;
+}
+
+.titleListLink:hover {
+  color: var(--ifm-color-primary);
+  background: rgba(232, 72, 43, 0.08);
+  text-decoration: none;
+}
+
+/* Sub-category, matching a nested category in the sidebar. */
+.titleGroup {
+  margin-top: 0.25rem;
+}
+
+.titleGroupLabel {
+  padding: 0.3rem 0.5rem 0.2rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.titleSubLink {
+  display: block;
+  padding: 0.3rem 0.5rem 0.3rem 1.6rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-700);
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Documents directly under a section (no sub-category) sit one level in. */
+.titleSubLinkFlat {
+  padding-left: 1rem;
+}
+
+.titleSubLink:hover {
+  color: var(--ifm-color-primary);
+  background: rgba(232, 72, 43, 0.06);
+  border-left-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* ---------- Main content ---------- */
+
+.content {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: var(--rs-content-bg);
+}
+
+.contentInner {
+  max-width: 900px;
+  padding: 2.5rem 3rem 4rem;
+}
+
+.hero {
+  padding: 2rem 2.25rem;
+  margin-bottom: 2.5rem;
+  border-radius: 12px;
+  border-bottom: 3px solid var(--ifm-color-primary);
   background: linear-gradient(
     135deg,
     #1a1a1a 0%,
@@ -16,119 +133,141 @@
   );
 }
 
-/* Thin brand orange-red accent line under the hero. */
-.heroBanner::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  background: var(--ifm-color-primary);
-}
-
 .heroTitle {
   color: #ffffff;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
 .heroSubtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.3rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 3rem 1.5rem;
-  }
-
-  .heroTitle {
-    font-size: 2rem;
-  }
-
-  .heroSubtitle {
-    font-size: 1.1rem;
-  }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* Features section */
-.features {
-  padding: 4rem 0;
-}
-
-/* Cards wrap onto multiple rows, so each column needs vertical breathing room. */
-.features .col {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
   margin-bottom: 1.5rem;
 }
 
-.sectionTitle {
-  text-align: center;
-  font-size: 1.9rem;
+.heroLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Outline buttons sit on the dark hero, so they need light text. */
+.heroLinks :global(.button--outline.button--secondary) {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.heroLinks :global(.button--outline.button--secondary):hover {
+  color: #1a1a1a;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.docSection {
+  padding-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.docSectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-.sectionSubtitle {
-  text-align: center;
-  color: var(--ifm-color-emphasis-600);
-  margin-bottom: 3rem;
+.docSectionIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 1.75rem;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 12px;
-  background: var(--ifm-background-surface-color);
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    border-color 0.2s ease;
-  text-decoration: none;
-  color: inherit;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  border-color: var(--ifm-color-primary);
-  text-decoration: none;
-  color: inherit;
-}
-
-.cardIcon {
-  font-size: 2rem;
-  line-height: 1;
+.docSectionDesc {
+  color: var(--ifm-color-emphasis-700);
   margin-bottom: 1rem;
 }
 
-.cardTitle {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--ifm-heading-color);
+.docGroup {
+  margin-bottom: 1rem;
 }
 
-.cardDescription {
-  font-size: 0.95rem;
-  color: var(--ifm-color-emphasis-700);
-  margin-bottom: 0;
+.docGroupLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.4rem;
 }
 
-.cardArrow {
-  margin-top: auto;
-  padding-top: 1rem;
+.docSectionLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.docSectionLinks > li + li {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.docSectionLink {
+  display: block;
+  padding: 0.75rem 1.1rem;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-surface-color);
+  transition: background 0.15s ease, color 0.15s ease,
+    padding-left 0.15s ease;
+}
+
+.docSectionLink:hover {
   color: var(--ifm-color-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
+  background: rgba(232, 72, 43, 0.06);
+  padding-left: 1.4rem;
+  text-decoration: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media screen and (max-width: 996px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .titleColumn {
+    flex: 1 1 auto;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--rs-sidebar-border);
+  }
+
+  .titleColumnInner {
+    position: static;
+    max-height: none;
+  }
+
+  /* On narrow screens the full tree makes the column too tall; the section
+     anchors are enough to navigate. */
+  .titleGroup {
+    display: none;
+  }
+
+  .contentInner {
+    padding: 1.5rem 1.25rem 3rem;
+  }
+
+  .heroTitle {
+    font-size: 1.7rem;
+  }
 }
