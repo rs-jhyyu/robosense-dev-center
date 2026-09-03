@@ -346,4 +346,4 @@ for (uint16_t chan = 0; chan < this->const_param_.CHANNELS_PER_BLOCK; chan++)
   <figcaption className="doc-figure-caption">Figure 1: Rviz 中需要关闭的渲染选项</figcaption>
 </figure>
 
-这通常是 Rviz 渲染的问题，而非雷达数据异常。在 Rviz 中关闭上图指示的渲染选项，即可避免反射率异常渲染导致的反射率跳变。
+这通常是 Rviz 渲染的问题，而非激光雷达数据异常。在 Rviz 中关闭上图指示的渲染选项，即可避免反射率异常渲染导致的反射率跳变。

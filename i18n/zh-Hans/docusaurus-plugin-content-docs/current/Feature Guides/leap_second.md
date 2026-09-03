@@ -47,13 +47,13 @@ msg->header.flagField[1] &= ~PTP_TIMESCALE;
   <figcaption className="doc-figure-caption">图 2：在 linuxptp 源码中强制 ptp_timescale 为 0</figcaption>
 </figure>
 
-### 3.2 在雷达网页端打开 No Leap Second
+### 3.2 在激光雷达网页端打开 No Leap Second
 
-在雷达网页端的 Setting 界面打开 **No Leap Second**，忽略闰秒。
+在激光雷达网页端的 Setting 界面打开 **No Leap Second**，忽略闰秒。
 
 <figure className="doc-figure">
-  <img src={require('./images/leapsecond/image.jpg').default} alt="雷达网页 Setting 界面中高亮的 No Leap Second 选项" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 3：雷达网页 Setting 页面中的 No Leap Second 选项</figcaption>
+  <img src={require('./images/leapsecond/image.jpg').default} alt="激光雷达网页 Setting 界面中高亮的 No Leap Second 选项" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 3：激光雷达网页 Setting 页面中的 No Leap Second 选项</figcaption>
 </figure>
 
 ### 3.3 在驱动端直接补偿 37s

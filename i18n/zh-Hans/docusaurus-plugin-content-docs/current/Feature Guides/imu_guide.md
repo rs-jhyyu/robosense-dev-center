@@ -9,22 +9,22 @@ sidebar_position: 3
 
 ### 1.1 IMU 数据
 
-速腾激光雷达惯性测量单元（IMU）输出的为产品内部的 IMU 姿态信息，可用于客户产品外参的调整。当前仅 Airy、AiryLite、Safety Airy、Fairy、E1/E1R 五款雷达出厂自带 IMU 数据，并已完成了 IMU 与激光雷达的外参标定。
+速腾激光雷达惯性测量单元（IMU）输出的为产品内部的 IMU 姿态信息，可用于客户产品外参的调整。当前仅 Airy、AiryLite、Safety Airy、Fairy、E1/E1R 五款激光雷达出厂自带 IMU 数据，并已完成了 IMU 与激光雷达的外参标定。
 
-### 1.2 雷达及 IMU 坐标系
+### 1.2 激光雷达及 IMU 坐标系
 
-激光雷达的坐标原点定义在激光雷达底座中心处，IMU 坐标原点与激光雷达坐标原点并不重合。以 Airy 为例，安装方向与雷达坐标系相反，其中雷达坐标系 X 轴对应 IMU 坐标系 -Y 轴，雷达坐标系 Y 轴对应 IMU 坐标系 -X 轴，雷达坐标系 Z 轴对应 IMU 坐标系 -Z 轴。如下图所示，红色为雷达坐标系，黄色为 IMU 坐标系。
+激光雷达的坐标原点定义在激光雷达底座中心处，IMU 坐标原点与激光雷达坐标原点并不重合。以 Airy 为例，安装方向与激光雷达坐标系相反，其中激光雷达坐标系 X 轴对应 IMU 坐标系 -Y 轴，激光雷达坐标系 Y 轴对应 IMU 坐标系 -X 轴，激光雷达坐标系 Z 轴对应 IMU 坐标系 -Z 轴。如下图所示，红色为激光雷达坐标系，黄色为 IMU 坐标系。
 
 <figure className="doc-figure">
-  <img src={require('./images/imu/image.png').default} alt="Airy 雷达剖视图，红色为雷达坐标轴，黄色为 IMU 坐标轴" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 1：Airy 雷达坐标系及 IMU 坐标系示意图</figcaption>
+  <img src={require('./images/imu/image.png').default} alt="Airy 激光雷达剖视图，红色为激光雷达坐标轴，黄色为 IMU 坐标轴" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 1：Airy 激光雷达坐标系及 IMU 坐标系示意图</figcaption>
 </figure>
 
 ## 2. IMU 数据获取
 
 ### 2.1 IMU 数据流协议输出
 
-雷达与电脑之间的通信采用以太网介质，使用 UDP 协议，以 IMU 数据流协议进行输出，速腾激光雷达 IMU 数据出厂默认端口号均为 6688。
+激光雷达与电脑之间的通信采用以太网介质，使用 UDP 协议，以 IMU 数据流协议进行输出，速腾激光雷达 IMU 数据出厂默认端口号均为 6688。
 
 IMU 数据可通过抓取 UDP 数据包获取，对于抓取到的 UDP 数据可使用 `udp.port==6688` 或 `data.data[0:1]==AA` 在 Wireshark 软件中进行筛选过滤。
 
@@ -96,7 +96,7 @@ ros2 topic echo /rslidar_imu_data
 
 ### 2.3 IMU 参数配置
 
-IMU 相关参数配置主要涉及 IMU 端口号、IMU 数据输出频率、加速度计量程、陀螺仪量程参数设置。具体方法为正确连接雷达后，直接在浏览器网页端输入雷达 IP（默认为 `192.168.1.200`），在 **General Setting** 进行 IMU 相关参数设置。
+IMU 相关参数配置主要涉及 IMU 端口号、IMU 数据输出频率、加速度计量程、陀螺仪量程参数设置。具体方法为正确连接激光雷达后，直接在浏览器网页端输入激光雷达 IP（默认为 `192.168.1.200`），在 **General Setting** 进行 IMU 相关参数设置。
 
 1. **ImuCtrl**：确定是否开启对 IMU 功能的控制接口，有 `OFF` 和 `ON`（默认）两种状态；
 2. **ImuPort**：可更改 IMU 的通信端口，值范围为 1025~65535；
@@ -135,7 +135,7 @@ IMU 相关参数配置主要涉及 IMU 端口号、IMU 数据输出频率、加�
 
 ### 4.2 标定外参获取
 
-速腾激光雷达与 IMU 之间的外参标定是把 LiDAR 坐标系对齐到 IMU 坐标系下，标出来是一个表征旋转和位移的矩阵，保证算法能够根据 IMU 的位姿推算雷达位姿，如下所示：
+速腾激光雷达与 IMU 之间的外参标定是把 LiDAR 坐标系对齐到 IMU 坐标系下，标出来是一个表征旋转和位移的矩阵，保证算法能够根据 IMU 的位姿推算激光雷达位姿，如下所示：
 
 ```text
 P_imu = T_lidar_to_imu · P_lidar
@@ -145,7 +145,7 @@ P_imu = T_lidar_to_imu · P_lidar
 
 **1. 产品信息输出协议（DIFOP）**
 
-在 DIFOP 数据中能够解析读取到每一台激光雷达独有的 IMU 标定数据。具体解析方法可以参考每一款雷达用户手册附录的 IMU 标定数据部分。
+在 DIFOP 数据中能够解析读取到每一台激光雷达独有的 IMU 标定数据。具体解析方法可以参考每一款激光雷达用户手册附录的 IMU 标定数据部分。
 
 <figure className="doc-figure">
   <img src={require('./images/imu/img_v3_02vn_f4cbdc9c-121a-40c4-946d-3034e319bbfg.jpg').default} alt="用户手册 DIFOP 协议表格中的 IMU 标定数据字段" className="doc-figure-img" />
@@ -182,7 +182,7 @@ if(driver_ptr_->getDeviceInfo(deviceInfo))
   <figcaption className="doc-figure-caption">图 9：标定外参 ROS 驱动打印示意图</figcaption>
 </figure>
 
-如果所有数值都返回 0，说明该雷达设备未写入 IMU 标定参数（早期样机），遇到这种情况请联系速腾技术支持。
+如果所有数值都返回 0，说明该激光雷达设备未写入 IMU 标定参数（早期样机），遇到这种情况请联系速腾技术支持。
 
 四元数对应 `extrinsic_Q`，xyz 平移量对应 `extrinsic_T`。要使四元数生效，`extrinsic_R` 需全部为 0。在 SLAM 算法的 `.yaml` 文件中，写法如下：
 
@@ -229,7 +229,7 @@ extrinsic_R: [ 0.0, -1.0, 0.0,
 
 ## 5. 常见问题
 
-**1. 雷达静止时，为何角速度值不为 0？**
+**1. 激光雷达静止时，为何角速度值不为 0？**
 
 因为温度、噪声、安装误差甚至地球自转等原因，会使 IMU 在静止时也会产生一定的角速度，所以我们会进行补零偏误差，这个过程由算法自动补正，保证 IMU 数据的准确性。
 

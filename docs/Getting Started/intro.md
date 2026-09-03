@@ -21,7 +21,7 @@ For AiryLite units using the 485 / serial interface instead of Ethernet, see [Ai
 
 | Section | What it covers |
 | --- | --- |
-| **LiDAR Technology** | Scanning principles, point cloud characteristics, coordinate systems, product specifications (in preparation) |
+| **LiDAR Technology** | LiDAR terminology — ranging principle, accuracy vs. precision, FOV, angular resolution, range capability — and explanations of commonly seen phenomena such as point cloud mirroring and high-reflectivity blooming |
 | **Operation Guides** | Physical and network connection, packet capture, serial (485) setup, RSView visualization and export, LiDAR web page, LidarAssistant (E / EM platforms), M1P tool, time synchronization |
 | **Developer Resources** | RS-LiDAR API control library, IMU data acquisition and parsing, ROS / ROS2 SDK and driver, FAST-LIO mapping |
 | **FAQ** | ROS2 frame rate drop, recording point clouds as PCD, SDK / driver and RSView troubleshooting |

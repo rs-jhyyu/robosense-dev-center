@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # 工具下载
 
-以下提供预编译的雷达配置工具软件包。
+以下提供预编译的激光雷达配置工具软件包。
 
 ## LidarAssistant
 

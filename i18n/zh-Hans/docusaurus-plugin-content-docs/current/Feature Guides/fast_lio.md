@@ -9,7 +9,7 @@ sidebar_position: 4
 
 适配后的工程包下载：[FAST_LIO_ROBOSENSE.zip](pathname:///downloads/FAST-LIO/FAST_LIO_ROBOSENSE.zip)
 
-使用 Airy 雷达在办公室场景下录制的建图效果示例：[ariy_office_slam.mp4](pathname:///downloads/FAST-LIO/ariy_office_slam.mp4)
+使用 Airy 激光雷达在办公室场景下录制的建图效果示例：[ariy_office_slam.mp4](pathname:///downloads/FAST-LIO/ariy_office_slam.mp4)
 
 ## 2. 环境依赖
 
@@ -37,13 +37,13 @@ user@user:~/FAST_LIO$ roslaunch fast_lio mapping_rsairy.launch
 
 ```yaml
 common:
-    lid_topic:                        # 雷达点云话题
+    lid_topic:                        # 激光雷达点云话题
     imu_topic:                        # IMU 数据话题
     time_sync_en: false               # 无法使用外部标定时打开
-    time_offset_lidar_to_imu: 0.0     # 雷达话题与 IMU 话题时间差
+    time_offset_lidar_to_imu: 0.0     # 激光雷达话题与 IMU 话题时间差
 preprocess:
-    lidar_type: 5               # 5 为 ROBOSENSE 雷达
-    scan_line: 96               # 雷达激光线数量
+    lidar_type: 5               # 5 为 ROBOSENSE 激光雷达
+    scan_line: 96               # 激光雷达激光线数量
     scan_rate: 10               # 点云帧率，Hz
     timestamp_unit: 0           # 点云时间戳单位：0 秒、1 毫秒、2 微秒、3 纳秒
     blind: 2                    # 盲区距离，米

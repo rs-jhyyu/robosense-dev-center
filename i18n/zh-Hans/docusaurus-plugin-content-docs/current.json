@@ -20,7 +20,7 @@
     "description": "The label for category RSView in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Configuration Tools": {
-    "message": "雷达配置工具",
+    "message": "激光雷达配置工具",
     "description": "The label for category Configuration Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Time Synchronization": {

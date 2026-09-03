@@ -15,23 +15,23 @@ sidebar_position: 4
   <figcaption className="doc-figure-caption">图 1：M1P 小工具主界面</figcaption>
 </figure>
 
-## 1. 连接雷达
+## 1. 连接激光雷达
 
 1. 激光雷达与电脑完成物理连接（航插线、网线、电源线连接正常），设备通电并正常启动。
-2. 默认情况下，将电脑本地 IP 配置为雷达目的 IP；**出厂默认目的 IP 为 192.168.1.102，默认雷达 IP 为 192.168.1.200，子网掩码 255.255.255.0**。
-3. 关闭电脑防火墙及其他可能阻止网络通信的安全软件，打开小工具，在下图**区域 1** 所示的 LiDAR IP 处输入当前雷达 IP，点击"建立连接"按钮进行连接。
+2. 默认情况下，将电脑本地 IP 配置为激光雷达目的 IP；**出厂默认目的 IP 为 192.168.1.102，默认激光雷达 IP 为 192.168.1.200，子网掩码 255.255.255.0**。
+3. 关闭电脑防火墙及其他可能阻止网络通信的安全软件，打开小工具，在下图**区域 1** 所示的 LiDAR IP 处输入当前激光雷达 IP，点击"建立连接"按钮进行连接。
 
 ## 2. 工具界面区域介绍
 
-### 区域 1：雷达连接区
+### 区域 1：激光雷达连接区
 
 <figure className="doc-figure">
-  <img src={require('./images/m1p/image_9.png').default} alt="雷达连接区，包含 Project Name 与 LiDAR IP 输入框" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 2：雷达连接区</figcaption>
+  <img src={require('./images/m1p/image_9.png').default} alt="激光雷达连接区，包含 Project Name 与 LiDAR IP 输入框" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 2：激光雷达连接区</figcaption>
 </figure>
 
 - **Project Name**：P0220，对应 M1P。
-- **LiDAR IP**：雷达 IP 地址填写在此处，用于连接雷达。
+- **LiDAR IP**：激光雷达 IP 地址填写在此处，用于连接激光雷达。
 
 ### 区域 2：固件刷写区
 
@@ -40,19 +40,19 @@ sidebar_position: 4
   <figcaption className="doc-figure-caption">图 3：固件刷写区</figcaption>
 </figure>
 
-### 区域 3：雷达参数配置区
+### 区域 3：激光雷达参数配置区
 
 <figure className="doc-figure">
-  <img src={require('./images/m1p/image_2.png').default} alt="雷达参数配置区，展示 IP、端口、MAC 与 SN 字段" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 4：雷达参数配置区</figcaption>
+  <img src={require('./images/m1p/image_2.png').default} alt="激光雷达参数配置区，展示 IP、端口、MAC 与 SN 字段" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 4：激光雷达参数配置区</figcaption>
 </figure>
 
-- **SrcIP**：雷达 IP 读写区域。
+- **SrcIP**：激光雷达 IP 读写区域。
 - **DstIP**：目的 IP 读写区域（电脑 IP 和目的 IP 需要保持一致）。
 - **MSOP Port**：MSOP 端口号。
 - **DIFOP Port**：DIFOP 端口号。
-- **MAC**：雷达 MAC 地址（默认无法修改）。
-- **SN**：雷达 SN 号码（默认无法修改）。
+- **MAC**：激光雷达 MAC 地址（默认无法修改）。
+- **SN**：激光雷达 SN 号码（默认无法修改）。
 
 ### 区域 4：UDS 请求区
 
@@ -66,7 +66,7 @@ sidebar_position: 4
 ## 3. 修改 IP 参数
 
 <figure className="doc-figure">
-  <img src={require('./images/m1p/image_5.png').default} alt="在小工具中修改雷达 IP 参数" className="doc-figure-img" />
+  <img src={require('./images/m1p/image_5.png').default} alt="在小工具中修改激光雷达 IP 参数" className="doc-figure-img" />
   <figcaption className="doc-figure-caption">图 6：修改 IP 参数</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ UDS 请求区支持 DID 的读写操作，常见 DID 命令如下：
 
 ### 例：使用 DID 修改时间同步模式
 
-1. 输入雷达 IP，连接成功后，点击"客户解锁1"和"客户解锁2"，注意每次发送 DID 指令前都要解锁一次，并且要在解锁 5 秒之内发送 DID 指令，超时需要重新解锁；
+1. 输入激光雷达 IP，连接成功后，点击"客户解锁1"和"客户解锁2"，注意每次发送 DID 指令前都要解锁一次，并且要在解锁 5 秒之内发送 DID 指令，超时需要重新解锁；
 
 <figure className="doc-figure">
   <img src={require('./images/m1p/image_3.png').default} alt="发送 DID 指令前依次点击两个客户解锁按钮" className="doc-figure-img" />
@@ -105,7 +105,7 @@ UDS 请求区支持 DID 的读写操作，常见 DID 命令如下：
   <figcaption className="doc-figure-caption">图 9：发送 DID 写入指令</figcaption>
 </figure>
 
-3. 发送成功后重启雷达（记住：一定要断电重启，否则不生效），再次在对话框输入 `22FE0B`，如果显示 `62FE0B02`，则修改成功；
+3. 发送成功后重启激光雷达（记住：一定要断电重启，否则不生效），再次在对话框输入 `22FE0B`，如果显示 `62FE0B02`，则修改成功；
 
 <figure className="doc-figure">
   <img src={require('./images/m1p/image.png').default} alt="回读时间同步模式以确认修改结果" className="doc-figure-img" />
@@ -114,7 +114,7 @@ UDS 请求区支持 DID 的读写操作，常见 DID 命令如下：
 
 ## 6. 注意事项
 
-1. 工具连接雷达之后，所有参数务必**先读后写**，避免工具中默认值覆盖掉原有参数。
+1. 工具连接激光雷达之后，所有参数务必**先读后写**，避免工具中默认值覆盖掉原有参数。
 2. MSOP、DIFOP 两个端口号取值均为 1025~65535，且不可设置为相同数值，避免端口冲突。
-3. **雷达 IP 和目的 IP 必须保持在同一网段**，否则会导致设备无法正常连接。
-4. 使用工具修改完雷达参数后，雷达需断电重启，参数方可生效。
+3. **激光雷达 IP 和目的 IP 必须保持在同一网段**，否则会导致设备无法正常连接。
+4. 使用工具修改完激光雷达参数后，激光雷达需断电重启，参数方可生效。

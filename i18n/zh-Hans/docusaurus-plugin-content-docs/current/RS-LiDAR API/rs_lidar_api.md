@@ -26,8 +26,8 @@ user@user:~/linux-lib-namespace/linux-build/example$ sh build.sh
 
 | 编译产物 | 用途 |
 | --- | --- |
-| `airy` | Airy 雷达控制程序 |
-| `helios` | Helios 系列雷达控制程序 |
+| `airy` | Airy 激光雷达控制程序 |
+| `helios` | Helios 系列激光雷达控制程序 |
 
 ### 常见编译问题
 
@@ -57,7 +57,7 @@ user@user:~/linux-lib-namespace/linux-build/example$ sh build.sh
 
 ### 连接与初始化
 
-一切操作的前提：调用 `init()` 建立与雷达的控制连接。
+一切操作的前提：调用 `init()` 建立与激光雷达的控制连接。
 
 ```cpp
 #include "lidar_ctrl_driver.hpp"
@@ -67,9 +67,9 @@ using namespace robosense::lidar;
 std::shared_ptr<LidarCtrlDriver> pCtrl = std::make_shared<LidarCtrlDriver>();
 
 RSCtrlDriverParam param;
-param.device_address = "192.168.1.200";   // 雷达 IP
+param.device_address = "192.168.1.200";   // 激光雷达 IP
 param.device_port    = 6699;              // 控制端口（通常与 MSOP 一致）
-param.lidar_type     = CRS_AIRY;          // 雷达类型枚举
+param.lidar_type     = CRS_AIRY;          // 激光雷达类型枚举
 
 if (pCtrl->init(param))
 {
@@ -85,10 +85,10 @@ else
 
 ### 固件信息查询
 
-最常用的诊断操作，读取雷达各组件固件版本和 SDK 库版本。
+最常用的诊断操作，读取激光雷达各组件固件版本和 SDK 库版本。
 
 ```cpp
-// 读取雷达固件版本
+// 读取激光雷达固件版本
 VersionRst ver;
 if (pCtrl->getVersions(ver))
 {
@@ -115,7 +115,7 @@ printf("lib version: %s\n", libver);
 
 ### 网络参数读写
 
-网络参数是雷达部署中最常修改的配置项，包括雷达 IP、目的 IP、MSOP/DIFOP 端口号等。
+网络参数是激光雷达部署中最常修改的配置项，包括激光雷达 IP、目的 IP、MSOP/DIFOP 端口号等。
 
 #### 读取当前网络参数
 
@@ -132,7 +132,7 @@ printf("getConfigParams() remoteIp is %d.%d.%d.%d\n", params.r4info.netInfo.remo
 ```
 
 <figure className="doc-figure">
-  <img src={require('./images/img5.png').default} alt="终端打印的雷达网络参数读取结果" className="doc-figure-img" />
+  <img src={require('./images/img5.png').default} alt="终端打印的激光雷达网络参数读取结果" className="doc-figure-img" />
   <figcaption className="doc-figure-caption">Figure 2: 网络参数读取结果</figcaption>
 </figure>
 
@@ -179,7 +179,7 @@ bool rst = pCtrl->setIpPort(ip, mask, port);
 
 | 字段 | 含义 |
 | --- | --- |
-| `ip[4]` | 雷达自身 IP |
+| `ip[4]` | 激光雷达自身 IP |
 | `mask[4]` | 子网掩码 |
 | `gateway[4]` | 网关地址 |
 | `remoteIp[4]` | 目的 IP（点云数据发送目标） |
@@ -291,7 +291,7 @@ typedef struct ImuParam
 
 ### 固件升级（OTA）
 
-Airy 雷达固件分为三个组件，升级时需依次执行。**固件文件需与 demo 可执行程序放在同一目录下**。
+Airy 激光雷达固件分为三个组件，升级时需依次执行。**固件文件需与 demo 可执行程序放在同一目录下**。
 
 <figure className="doc-figure">
   <img src={require('./images/img6.png').default} alt="固件文件与 demo 可执行程序放在同一目录下" className="doc-figure-img" />
@@ -416,7 +416,7 @@ set_suparam.gapFilling = get_suparam.gapFilling;
 set_suparam.msopPort1 = get_suparam.msopPort1;
 ```
 
-继承完成后再修改目标字段并写入。注意**严禁修改** `u8PlasticFreqSaved` 和 `u16PlasticFreq`（出厂标定值，改错会导致雷达异常）。
+继承完成后再修改目标字段并写入。注意**严禁修改** `u8PlasticFreqSaved` 和 `u16PlasticFreq`（出厂标定值，改错会导致激光雷达异常）。
 
 ```cpp
 set_suparam.u16FrameStartAngle = 180;    // 缺口角起始角度 180°
@@ -520,11 +520,11 @@ demo 代码中使用 `#if 0` / `#if 1` 预编译指令控制各个功能是否�
 
 ### 严禁修改 u8PlasticFreqSaved 和 u16PlasticFreq
 
-`u8PlasticFreqSaved` 和 `u16PlasticFreq` 两个字段是出厂时写入的频率标定参数，修改后会导致雷达性能异常。在 `setSomeSupplementParams()` 调用中必须保持其原始值。
+`u8PlasticFreqSaved` 和 `u16PlasticFreq` 两个字段是出厂时写入的频率标定参数，修改后会导致激光雷达性能异常。在 `setSomeSupplementParams()` 调用中必须保持其原始值。
 
 ### 网络参数修改后建议重启
 
-`setLidarNetInfo()` 写入新网络参数后，需要重启雷达才能生效（下方函数默认生效）：
+`setLidarNetInfo()` 写入新网络参数后，需要重启激光雷达才能生效（下方函数默认生效）：
 
 ```cpp
 pCtrl->setLidarNetInfo(net_params);
@@ -540,7 +540,7 @@ pCtrl->rebootLidar();
 
 [linux-lib-namespace.zip](pathname:///downloads/API/linux-lib-namespace.zip)
 
-早期机械式雷达 API（Helios / Ruby / Bpearl）：
+早期机械式激光雷达 API（Helios / Ruby / Bpearl）：
 
 [linux-lib-namespace-20240819.tar.gz](pathname:///downloads/API/linux-lib-namespace-20240819.tar.gz)
 

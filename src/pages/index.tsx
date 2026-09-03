@@ -41,7 +41,7 @@ function useSections(): Section[] {
       description: translate({
         id: 'homepage.section.tech.desc',
         message:
-          'Scanning principles, point cloud characteristics, coordinate systems, and product specifications. Coming soon.',
+          'Scanning principles, point cloud characteristics, coordinate systems, and product specifications, including the terminology used in the datasheets and explanations of commonly seen phenomena.',
       }),
       groups: [
         {
@@ -52,6 +52,20 @@ function useSections(): Section[] {
                 message: 'Overview',
               }),
               to: '/docs/LiDAR Technology/lidar_technology',
+            },
+            {
+              label: translate({
+                id: 'homepage.link.tech.terminology',
+                message: 'LiDAR Terminology',
+              }),
+              to: '/docs/LiDAR Technology/lidar_terminology',
+            },
+            {
+              label: translate({
+                id: 'homepage.link.tech.phenomena',
+                message: 'Common Phenomena Explained',
+              }),
+              to: '/docs/LiDAR Technology/common_phenomena',
             },
           ],
         },

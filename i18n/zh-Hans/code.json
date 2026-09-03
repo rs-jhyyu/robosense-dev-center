@@ -36,16 +36,22 @@
     "message": "激光雷达技术"
   },
   "homepage.section.tech.desc": {
-    "message": "扫描原理、点云特性、坐标系定义与产品性能规格，文档整理中。"
+    "message": "扫描原理、点云特性、坐标系定义与产品性能规格，涵盖激光雷达常用名词解析与常见现象解释。"
   },
   "homepage.link.tech.overview": {
     "message": "板块简介"
+  },
+  "homepage.link.tech.terminology": {
+    "message": "基础名词解析"
+  },
+  "homepage.link.tech.phenomena": {
+    "message": "常见现象解释"
   },
   "homepage.section.guides.title": {
     "message": "操作指南"
   },
   "homepage.section.guides.desc": {
-    "message": "雷达连接、点云可视化、通过各类工具配置参数以及时间同步。"
+    "message": "激光雷达连接、点云可视化、通过各类工具配置参数以及时间同步。"
   },
   "homepage.group.gettingStarted": {
     "message": "入门与连接"
@@ -72,7 +78,7 @@
     "message": "高级操作"
   },
   "homepage.group.configTools": {
-    "message": "雷达配置工具"
+    "message": "激光雷达配置工具"
   },
   "homepage.link.webConfig": {
     "message": "Web 端配置指南（Airy / Fairy）"

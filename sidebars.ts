@@ -6,7 +6,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  * The sidebar is defined manually so the docs are grouped by what the reader is
  * trying to do, rather than by the folder they happen to live in:
  *
- *   1. LiDAR Technology       - product / technology background (placeholder for now)
+ *   1. LiDAR Technology       - terminology and common phenomena explained
  *   2. Operation Guides       - connect, operate, and configure with the tools
  *   3. Developer Resources    - API, IMU, SDK / driver, SLAM integration
  *   4. FAQ                    - the questions support gets asked most often
@@ -24,7 +24,10 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'LiDAR Technology/lidar_technology',
       },
-      items: [],
+      items: [
+        'LiDAR Technology/lidar_terminology',
+        'LiDAR Technology/common_phenomena',
+      ],
     },
     {
       type: 'category',

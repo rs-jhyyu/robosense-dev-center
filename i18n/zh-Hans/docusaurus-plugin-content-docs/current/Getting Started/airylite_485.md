@@ -19,10 +19,10 @@ sidebar_position: 3
 
 <figure className="doc-figure">
   <img src={require('./images/airylite485/image_9.png').default} alt="AiryLite 激光雷达通过转接板与主机 USB 连接的接线示意图" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 1：雷达连接示意图</figcaption>
+  <figcaption className="doc-figure-caption">图 1：激光雷达连接示意图</figcaption>
 </figure>
 
-### 1.2 获取雷达数据
+### 1.2 获取激光雷达数据
 
 #### 1.2.1 Windows 系统
 
@@ -98,24 +98,24 @@ a. 打开 Sensor Network Config，按图示填入监听到的串口名称（参�
   <figcaption className="doc-figure-caption">图 7：填写配置参数</figcaption>
 </figure>
 
-b. 在工具栏项点击雷达图标打开在线雷达。也可以选择菜单项 File -> Open Sensor 打开在线雷达。
+b. 在工具栏项点击激光雷达图标打开在线激光雷达。也可以选择菜单项 File -> Open Sensor 打开在线激光雷达。
 
-在 Sensor Type 栏选择对应的雷达类型 0352_4M，点击 OK。
+在 Sensor Type 栏选择对应的激光雷达类型 0352_4M，点击 OK。
 
 <figure className="doc-figure">
   <img src={require('./images/airylite485/image_10.png').default} alt="Windows 下 RSView 的 Sensor Type 选择对话框中选中 0352_4M" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 8：选择雷达类型</figcaption>
+  <figcaption className="doc-figure-caption">图 8：选择激光雷达类型</figcaption>
 </figure>
 
 ### 2.2 Ubuntu 系统下使用 RSView
 
-a. 在工具栏项点击雷达图标打开在线雷达。也可以选择菜单项 File -> Open Sensor 打开在线雷达。
+a. 在工具栏项点击激光雷达图标打开在线激光雷达。也可以选择菜单项 File -> Open Sensor 打开在线激光雷达。
 
-在 Sensor Type 栏选择对应的雷达类型 0352_4M，点击 OK。
+在 Sensor Type 栏选择对应的激光雷达类型 0352_4M，点击 OK。
 
 <figure className="doc-figure">
   <img src={require('./images/airylite485/image_8.png').default} alt="Ubuntu 下 RSView 的 Sensor Type 选择对话框中选中 0352_4M" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 9：选择雷达类型</figcaption>
+  <figcaption className="doc-figure-caption">图 9：选择激光雷达类型</figcaption>
 </figure>
 
 b. 自动跳入打开 Sensor Network Config 界面，按图示填入监听到的串口名称（参照章节 1.2.2 步骤 c），波特率为 4M（4000000），填完后点击 OK；
@@ -172,11 +172,11 @@ C. 波特率（默认双 4M）。
 
 1. 排查前请先确保已正确参照章节 2.1 Windows 系统下使用 RSView 完成配置；若 RSView 仍无点云输出，参考以下步骤进行排查。
 
-2. 根据章节 1.1 连接激光雷达完成线束连接，转接板有灯光亮起，并且雷达有激光发出，说明**给电成功且雷达启动**。
+2. 根据章节 1.1 连接激光雷达完成线束连接，转接板有灯光亮起，并且激光雷达有激光发出，说明**给电成功且激光雷达启动**。
 
 <figure className="doc-figure">
   <img src={require('./images/airylite485/img_v3_02uh_d43fd878-3e57-4a58-8035-8655cfabd7bg.webp').default} alt="通过相机观察到激光雷达有激光发出" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 14：雷达有激光发出</figcaption>
+  <figcaption className="doc-figure-caption">图 14：激光雷达有激光发出</figcaption>
 </figure>
 
 <figure className="doc-figure">
@@ -221,11 +221,11 @@ C. 波特率（默认双 4M）。
 
 1. 排查前请先确保已正确参照章节 2.2 Ubuntu 系统下使用 RSView 完成配置；若 RSView 仍无点云输出，参考以下步骤进行排查。
 
-2. 根据章节 1.1 连接激光雷达完成线束连接，转接板有灯光亮起，并且雷达有激光发出，说明**给电成功且雷达启动**。
+2. 根据章节 1.1 连接激光雷达完成线束连接，转接板有灯光亮起，并且激光雷达有激光发出，说明**给电成功且激光雷达启动**。
 
 <figure className="doc-figure">
   <img src={require('./images/airylite485/img_v3_02uh_d43fd878-3e57-4a58-8035-8655cfabd7bg_1.webp').default} alt="通过相机观察到激光雷达有激光发出" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 19：雷达有激光发出</figcaption>
+  <figcaption className="doc-figure-caption">图 19：激光雷达有激光发出</figcaption>
 </figure>
 
 <figure className="doc-figure">

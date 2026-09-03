@@ -58,6 +58,6 @@ user@user:~/workspace$ roslaunch rslidar_sdk start.launch            # 启动驱
 脚本执行完成后，仍需确认以下几项：
 
 1. 修改 `config.yaml`：`lidar_type` / `msop_port` / `difop_port`。
-2. 配置网卡 IP 为雷达的目的 IP，例如 `sudo ifconfig eno1 192.168.1.102`。
+2. 配置网卡 IP 为激光雷达的目的 IP，例如 `sudo ifconfig eno1 192.168.1.102`。
 3. 关闭防火墙：`sudo ufw disable`。
 4. 用 Wireshark 验证可以收到 MSOP/DIFOP 报文。
