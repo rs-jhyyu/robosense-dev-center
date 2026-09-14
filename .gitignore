@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Download archives are published as GitHub Release assets (tag: downloads-v1)
+# instead of being committed, so the repo does not carry ~518MB of binaries and
+# the site does not consume the Git LFS bandwidth quota.
+/static/downloads/**/*.zip
+/static/downloads/**/*.7z
+/static/downloads/**/*.mp4
+/static/downloads/**/*.tar.gz
+/static/downloads/**/*.tar.xz

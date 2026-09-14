@@ -538,9 +538,9 @@ pCtrl->rebootLidar();
 
 Latest API version:
 
-[linux-lib-namespace.zip](pathname:///downloads/API/linux-lib-namespace.zip)
+[linux-lib-namespace.zip](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/linux-lib-namespace.zip)
 
 API for earlier mechanical LiDARs (Helios / Ruby / Bpearl):
 
-[linux-lib-namespace-20240819.tar.gz](pathname:///downloads/API/linux-lib-namespace-20240819.tar.gz)
+[linux-lib-namespace-20240819.tar.gz](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/linux-lib-namespace-20240819.tar.gz)
 

@@ -5,8 +5,8 @@ sidebar_position: 4
 
 工具包下载：
 
-- [M1P_Tool_Win.7z](pathname:///downloads/LidarAssistant/M1P_Tool_Win.7z)
-- [M1P_Tool_Ubuntu.zip](pathname:///downloads/LidarAssistant/M1P_Tool_Ubuntu.zip)
+- [M1P_Tool_Win.7z](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/M1P_Tool_Win.7z)
+- [M1P_Tool_Ubuntu.zip](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/M1P_Tool_Ubuntu.zip)
 
 注：小工具支持 Ubuntu 下使用，可直接运行 `DiagCmdTool` 可执行文件。
 

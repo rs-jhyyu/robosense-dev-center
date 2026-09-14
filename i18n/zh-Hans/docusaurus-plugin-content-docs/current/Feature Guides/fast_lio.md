@@ -7,9 +7,9 @@ sidebar_position: 4
 
 ## 1. 工程包
 
-适配后的工程包下载：[FAST_LIO_ROBOSENSE.zip](pathname:///downloads/FAST-LIO/FAST_LIO_ROBOSENSE.zip)
+适配后的工程包下载：[FAST_LIO_ROBOSENSE.zip](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/FAST_LIO_ROBOSENSE.zip)
 
-使用 Airy 激光雷达在办公室场景下录制的建图效果示例：[ariy_office_slam.mp4](pathname:///downloads/FAST-LIO/ariy_office_slam.mp4)
+使用 Airy 激光雷达在办公室场景下录制的建图效果示例：[ariy_office_slam.mp4](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/ariy_office_slam.mp4)
 
 ## 2. 环境依赖
 

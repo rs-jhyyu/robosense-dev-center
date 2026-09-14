@@ -20,11 +20,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          # The download archives under static/downloads are stored in Git LFS.
-          # Without this the checkout yields 133-byte pointer files and the
-          # published site serves those instead of the real archives.
-          lfs: true
 
       - uses: actions/setup-node@v4
         with:

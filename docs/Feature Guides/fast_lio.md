@@ -7,9 +7,9 @@ sidebar_position: 4
 
 ## 1. Project Package
 
-Download the adapted project package here: [FAST_LIO_ROBOSENSE.zip](pathname:///downloads/FAST-LIO/FAST_LIO_ROBOSENSE.zip)
+Download the adapted project package here: [FAST_LIO_ROBOSENSE.zip](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/FAST_LIO_ROBOSENSE.zip)
 
-A sample mapping result recorded in an office with an Airy LiDAR: [ariy_office_slam.mp4](pathname:///downloads/FAST-LIO/ariy_office_slam.mp4)
+A sample mapping result recorded in an office with an Airy LiDAR: [ariy_office_slam.mp4](https://github.com/rs-jhyyu/robosense-dev-center/releases/download/downloads-v1/ariy_office_slam.mp4)
 
 ## 2. Environment Requirements
 
