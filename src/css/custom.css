@@ -29,6 +29,11 @@
   --rs-sidebar-border: #e3e5e8;
   --rs-content-bg: #ffffff;
 
+  /* Shared display caps for every screenshot in the docs, so no image
+     dominates the page regardless of the resolution it was captured at. */
+  --rs-figure-max-width: 600px;
+  --rs-figure-max-height: 520px;
+
   /* Dark navbar with white text. */
   --ifm-navbar-background-color: var(--rs-ink);
   --ifm-navbar-link-color: rgba(255, 255, 255, 0.9);
@@ -148,6 +153,11 @@
    Replaces the inline styles that used to be repeated on every image in the
    docs. Images are centered, capped at a readable width, and get a light
    border so screenshots do not bleed into the white page background.
+
+   Both a width and a height cap are applied. Setting max-width and
+   max-height together (with width/height left on auto) lets the browser
+   scale the image down while preserving its aspect ratio, so a tall
+   portrait screenshot does not take over the whole viewport.
    ========================================================================== */
 .doc-figure {
   text-align: center;
@@ -155,9 +165,10 @@
 }
 
 .doc-figure-img {
-  max-width: 600px;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: min(100%, var(--rs-figure-max-width));
+  max-height: var(--rs-figure-max-height);
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 8px;
   background: #ffffff;
@@ -173,7 +184,10 @@
 
 /* Screenshots are captured on light UIs, so keep the white plate in dark mode
    and soften the border instead of inverting it. */
-[data-theme='dark'] .doc-figure-img {
+[data-theme='dark'] .doc-figure-img,
+[data-theme='dark'] .markdown p > img,
+[data-theme='dark'] .doc-figure-row img,
+[data-theme='dark'] .markdown td img {
   border-color: var(--ifm-color-emphasis-300);
 }
 
@@ -200,11 +214,23 @@
 }
 
 /* Plain markdown images (![alt](src)) get the same treatment so the RSView
-   pages match the pages that use <figure>. */
+   pages match the pages that use <figure>: centered, capped at the shared
+   figure size, and framed. Images inside tables or a doc-figure-row set
+   their own width, so they are excluded below. */
 .markdown img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
   border-radius: 8px;
+}
+
+.markdown p > img {
+  display: block;
+  width: auto;
+  max-width: min(100%, var(--rs-figure-max-width));
+  max-height: var(--rs-figure-max-height);
+  margin: 0 auto;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: #ffffff;
 }
 
 /* ==========================================================================

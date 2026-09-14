@@ -115,6 +115,29 @@ const config: Config = {
         src: 'img/robosense.png',
       },
       items: [
+        // The four top-level sections, in the same order as sidebars.ts.
+        // Each points at the first document of its category, matching the
+        // corresponding card on the homepage.
+        {
+          to: '/docs/LiDAR Technology/lidar_technology',
+          label: 'LiDAR Technology',
+          position: 'left',
+        },
+        {
+          to: '/docs/Getting Started/intro',
+          label: 'Operation Guides',
+          position: 'left',
+        },
+        {
+          to: '/docs/RS-LiDAR API/rs_lidar_api',
+          label: 'Developer Resources',
+          position: 'left',
+        },
+        {
+          to: '/docs/rslidar_sdk & rs_driver/fastdds_shared_memory',
+          label: 'FAQ',
+          position: 'left',
+        },
         {
           type: 'search',
           position: 'right',

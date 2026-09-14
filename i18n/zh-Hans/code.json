@@ -29,23 +29,11 @@
   "homepage.cta.github": {
     "message": "GitHub"
   },
-  "homepage.nav.heading": {
-    "message": "目录"
-  },
   "homepage.section.tech.title": {
     "message": "激光雷达技术"
   },
   "homepage.section.tech.desc": {
     "message": "扫描原理、点云特性、坐标系定义与产品性能规格，涵盖激光雷达常用名词解析与常见现象解释。"
-  },
-  "homepage.link.tech.overview": {
-    "message": "板块简介"
-  },
-  "homepage.link.tech.terminology": {
-    "message": "基础名词解析"
-  },
-  "homepage.link.tech.phenomena": {
-    "message": "常见现象解释"
   },
   "homepage.section.guides.title": {
     "message": "操作指南"
@@ -53,109 +41,16 @@
   "homepage.section.guides.desc": {
     "message": "激光雷达连接、点云可视化、通过各类工具配置参数以及时间同步。"
   },
-  "homepage.group.gettingStarted": {
-    "message": "入门与连接"
-  },
-  "homepage.link.intro": {
-    "message": "简介"
-  },
-  "homepage.link.network": {
-    "message": "网络连接与 Wireshark 抓包"
-  },
-  "homepage.link.airylite485": {
-    "message": "AiryLite 485/串口版本使用指南"
-  },
-  "homepage.group.rsview": {
-    "message": "上位机与可视化"
-  },
-  "homepage.link.rsviewQuickStart": {
-    "message": "快速开始"
-  },
-  "homepage.link.pointcloudInteraction": {
-    "message": "点云交互"
-  },
-  "homepage.link.advancedOperations": {
-    "message": "高级操作"
-  },
-  "homepage.group.configTools": {
-    "message": "激光雷达配置工具"
-  },
-  "homepage.link.webConfig": {
-    "message": "Web 端配置指南（Airy / Fairy）"
-  },
-  "homepage.link.ePlatform": {
-    "message": "E 平台"
-  },
-  "homepage.link.emPlatform": {
-    "message": "EM 平台"
-  },
-  "homepage.link.m1pTool": {
-    "message": "M1P 小工具操作指南"
-  },
-  "homepage.link.toolDownloads": {
-    "message": "工具下载"
-  },
-  "homepage.group.timeSync": {
-    "message": "时间同步"
-  },
-  "homepage.link.timeSync": {
-    "message": "时间同步指南"
-  },
-  "homepage.link.leapSecond": {
-    "message": "闰秒偏差（同步慢 37 秒）"
-  },
   "homepage.section.dev.title": {
     "message": "开发者资料汇总"
   },
   "homepage.section.dev.desc": {
     "message": "控制 API、IMU 数据解析、ROS / ROS2 驱动与 SDK，以及 SLAM 集成。"
   },
-  "homepage.link.api": {
-    "message": "RS-LiDAR API 使用指南"
-  },
-  "homepage.link.imu": {
-    "message": "IMU 数据获取与解析"
-  },
-  "homepage.link.fastlio": {
-    "message": "FAST-LIO 建图集成"
-  },
-  "homepage.group.sdkDriver": {
-    "message": "驱动与 SDK"
-  },
-  "homepage.link.sdkIntro": {
-    "message": "简介"
-  },
-  "homepage.link.configGuide": {
-    "message": "配置指南"
-  },
-  "homepage.link.sdk": {
-    "message": "rslidar_sdk 用户指南"
-  },
-  "homepage.link.driver": {
-    "message": "rs_driver 用户指南"
-  },
-  "homepage.link.packages": {
-    "message": "SDK 与驱动软件包"
-  },
-  "homepage.link.oneClickInstall": {
-    "message": "一键安装脚本"
-  },
   "homepage.section.faq.title": {
     "message": "常见问题与解答"
   },
   "homepage.section.faq.desc": {
     "message": "技术支持被问得最多的问题，附分步解决方案。"
-  },
-  "homepage.link.ros2Fps": {
-    "message": "ROS2 帧率下降解决（FastDDS 共享内存）"
-  },
-  "homepage.link.recordPcd": {
-    "message": "Rviz 中录制点云为 PCD"
-  },
-  "homepage.link.sdkFaq": {
-    "message": "驱动与 SDK 常见问题"
-  },
-  "homepage.link.rsviewFaq": {
-    "message": "RSView 常见问题"
   }
 }

@@ -7,6 +7,22 @@
     "message": "RoboSense Logo",
     "description": "The alt text of navbar logo"
   },
+  "item.label.LiDAR Technology": {
+    "message": "激光雷达技术",
+    "description": "Navbar item with label LiDAR Technology"
+  },
+  "item.label.Operation Guides": {
+    "message": "操作指南",
+    "description": "Navbar item with label Operation Guides"
+  },
+  "item.label.Developer Resources": {
+    "message": "开发者资料汇总",
+    "description": "Navbar item with label Developer Resources"
+  },
+  "item.label.FAQ": {
+    "message": "常见问题与解答",
+    "description": "Navbar item with label FAQ"
+  },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
