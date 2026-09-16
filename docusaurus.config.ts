@@ -26,8 +26,8 @@ const config: Config = {
   // for an apex domain), plus Settings > Pages > Custom domain in GitHub.
   // Note that every existing /robosense-dev-center/... link changes shape,
   // so anything already shared with customers will need reissuing.
-  url: 'https://rs-jhyyu.github.io',
-  baseUrl: '/robosense-dev-center/',
+  url: 'https://docs.robosense.cn',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
