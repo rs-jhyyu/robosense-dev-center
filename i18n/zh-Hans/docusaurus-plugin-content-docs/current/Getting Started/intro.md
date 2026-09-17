@@ -23,8 +23,8 @@ sidebar_position: 1
 | --- | --- |
 | **激光雷达技术** | 基础名词解析——测距原理、准度与精度、视场角、角分辨率、测距能力，以及点云镜像、高反膨胀等常见现象解释 |
 | **操作指南** | 物理连接与网络配置、抓包、串口（485）连接、RSView 可视化与导出、激光雷达 Web 端、LidarAssistant（E / EM 平台）、M1P 小工具、时间同步 |
-| **开发者资料汇总** | RS-LiDAR API 控制库、IMU 数据获取与解析、ROS / ROS2 驱动与 SDK、FAST-LIO 建图 |
-| **常见问题与解答** | ROS2 帧率下降、点云录制为 PCD、驱动 / SDK 与 RSView 排障 |
+| **开发者资料汇总** | RS-LiDAR API 控制库、IMU 数据获取与解析、FAST-LIO 建图、rslidar_sdk / rs_driver 的 ROS / ROS2 驱动 |
+| **常见问题与解答** | ROS2 下的 FastDDS 共享内存、点云录制为 PCD、驱动 / SDK 与 RSView 排障 |
 
 ## 更多资源
 

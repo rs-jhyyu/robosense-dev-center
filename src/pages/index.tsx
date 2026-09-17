@@ -31,7 +31,7 @@ function useSections(): Section[] {
       description: translate({
         id: 'homepage.section.tech.desc',
         message:
-          'Scanning principles, point cloud characteristics, coordinate systems, and product specifications, including the terminology used in the datasheets and explanations of commonly seen phenomena.',
+          'Datasheet terminology — dToF ranging principle, accuracy vs. precision, FOV, angular resolution, range capability, and intensity — plus explanations of common phenomena such as point cloud mirroring, high-reflectivity blooming, glass detection, and window contamination.',
       }),
       to: '/docs/LiDAR Technology/lidar_technology',
     },
@@ -44,7 +44,7 @@ function useSections(): Section[] {
       description: translate({
         id: 'homepage.section.guides.desc',
         message:
-          'Connect the LiDAR, visualize the point cloud, configure parameters with the tools, and synchronize time.',
+          'Ethernet and 485 connection, Wireshark capture, point cloud visualization and export in RSView, parameter configuration through the web page and the LidarAssistant / M1P tools, and time synchronization.',
       }),
       to: '/docs/Getting Started/intro',
     },
@@ -57,7 +57,7 @@ function useSections(): Section[] {
       description: translate({
         id: 'homepage.section.dev.desc',
         message:
-          'Control API, IMU data parsing, the ROS / ROS2 SDK and driver, and SLAM integration.',
+          'RS-LiDAR control API, IMU data acquisition and parsing, FAST-LIO mapping integration, and the rslidar_sdk / rs_driver ROS / ROS2 packages with their configuration and installation guides.',
       }),
       to: '/docs/RS-LiDAR API/rs_lidar_api',
     },
@@ -70,7 +70,7 @@ function useSections(): Section[] {
       description: translate({
         id: 'homepage.section.faq.desc',
         message:
-          'The issues support gets asked about most often, with step-by-step fixes.',
+          'FastDDS shared memory under ROS2, recording point clouds as PCD, and the troubleshooting questions support gets asked most often about the SDK / driver and RSView.',
       }),
       to: '/docs/rslidar_sdk & rs_driver/fastdds_shared_memory',
     },

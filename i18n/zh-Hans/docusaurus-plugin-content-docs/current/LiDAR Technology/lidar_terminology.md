@@ -57,10 +57,9 @@ R = c × Δt / 2
   <figcaption className="doc-figure-caption">图 3：绝对精度公式</figcaption>
 </figure>
 
-<figure className="doc-figure">
-  <img src={require('./images/terminology/image_5.png').default} alt="均值偏差计算公式" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 4：均值偏差</figcaption>
-</figure>
+- **μ**：平均测距偏差，用于表征绝对精度；
+- **R̄**：多次测距结果的平均值；
+- **R₍true₎**：真实距离或标准参考距离。
 
 μ 越趋于 0，准度越高。
 
@@ -68,15 +67,20 @@ R = c × Δt / 2
 
 Precision 描述相同条件下重复测量的稳定性，通常可使用标准差 σ 表征。σ 越小，说明测量数据的离散程度越小。
 
-<figure className="doc-figure">
-  <img src={require('./images/terminology/image_8.png').default} alt="相对精度计算公式" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 5：相对精度公式</figcaption>
-</figure>
+计算公式与说明如下：
 
 <figure className="doc-figure">
-  <img src={require('./images/terminology/image.png').default} alt="标准差计算公式" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 6：标准差</figcaption>
+  <img src={require('./images/terminology/image_8.png').default} alt="相对精度计算公式" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">图 4：相对精度公式</figcaption>
 </figure>
+
+- **σ**：标准差，用于表征多次测量结果的离散程度，也就是测量稳定性 / 重复性；
+- **Rᵢ**：第 i 次测量值；
+- **R̄**：所有测量值的平均值；
+- **Rᵢ − R̄**：第 i 次测量结果相对于平均值的偏差；
+- **(Rᵢ − R̄)²**：偏差平方，避免正负偏差相互抵消；
+- **Σ**：将所有测量结果的偏差平方求和；
+- **N**：测量次数。
 
 ### Accuracy / Precision 的直观理解
 
@@ -92,7 +96,7 @@ Precision 描述相同条件下重复测量的稳定性，通常可使用标准�
 
 <figure className="doc-figure">
   <img src={require('./images/terminology/image_7.png').default} alt="准度与精度对比示意图" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 7：准度 vs 精度</figcaption>
+  <figcaption className="doc-figure-caption">图 5：准度 vs 精度</figcaption>
 </figure>
 
 ## 视场角 FOV（Field of View）
@@ -103,7 +107,7 @@ FOV（Field of View，视场角）定义激光雷达有效点云在空间中的�
 
 <figure className="doc-figure">
   <img src={require('./images/terminology/image_2.png').default} alt="水平与垂直视场角示意图" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 8：视场角</figcaption>
+  <figcaption className="doc-figure-caption">图 6：视场角</figcaption>
 </figure>
 
 ## 角分辨率（Angular Resolution）
@@ -114,7 +118,7 @@ FOV 回答“看哪里、看多广”；Angular Resolution 回答“在这个视
 
 <figure className="doc-figure">
   <img src={require('./images/terminology/image_4.png').default} alt="角分辨率示意图" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">图 9：角分辨率</figcaption>
+  <figcaption className="doc-figure-caption">图 7：角分辨率</figcaption>
 </figure>
 
 ## 测距能力（Range Capability）

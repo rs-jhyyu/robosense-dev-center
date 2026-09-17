@@ -5,9 +5,8 @@ sidebar_position: 1
 
 # LiDAR Technology
 
-This section covers the product and technology background of RoboSense LiDAR:
-scanning principles, point cloud characteristics, coordinate systems, and the
-specifications of each product line.
+This section explains the technology background you need in order to read a
+RoboSense datasheet and to interpret what you see in a point cloud.
 
 This section includes:
 

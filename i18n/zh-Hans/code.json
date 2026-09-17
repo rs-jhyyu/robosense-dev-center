@@ -33,24 +33,24 @@
     "message": "激光雷达技术"
   },
   "homepage.section.tech.desc": {
-    "message": "扫描原理、点云特性、坐标系定义与产品性能规格，涵盖激光雷达常用名词解析与常见现象解释。"
+    "message": "规格书常用名词解析——dToF 测距原理、准度与精度、视场角、角分辨率、测距能力与反射强度，以及点云镜像、高反膨胀、玻璃目标识别、窗口片脏污等常见现象的解释。"
   },
   "homepage.section.guides.title": {
     "message": "操作指南"
   },
   "homepage.section.guides.desc": {
-    "message": "激光雷达连接、点云可视化、通过各类工具配置参数以及时间同步。"
+    "message": "网口与 485 连接、Wireshark 抓包、RSView 点云可视化与导出、通过网页端及 LidarAssistant / M1P 工具配置参数，以及时间同步。"
   },
   "homepage.section.dev.title": {
     "message": "开发者资料汇总"
   },
   "homepage.section.dev.desc": {
-    "message": "控制 API、IMU 数据解析、ROS / ROS2 驱动与 SDK，以及 SLAM 集成。"
+    "message": "RS-LiDAR 控制 API、IMU 数据获取与解析、FAST-LIO 建图集成，以及 rslidar_sdk / rs_driver 的 ROS / ROS2 驱动与配置、安装指南。"
   },
   "homepage.section.faq.title": {
     "message": "常见问题与解答"
   },
   "homepage.section.faq.desc": {
-    "message": "技术支持被问得最多的问题，附分步解决方案。"
+    "message": "ROS2 下的 FastDDS 共享内存、点云录制为 PCD，以及技术支持被问得最多的 SDK / 驱动与 RSView 排查问题。"
   }
 }

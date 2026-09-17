@@ -57,8 +57,7 @@ weather conditions, system signal-to-noise ratio, and system calibration.
 ### Absolute Accuracy
 
 Absolute accuracy is the deviation between the average of multiple LiDAR
-measurements and the true value of the target. It is also called 准度
-(accuracy) in Chinese.
+measurements and the true value of the target.
 
 <figure className="doc-figure">
   <img src={require('./images/terminology/image_1.png').default} alt="Illustration of absolute accuracy" className="doc-figure-img" />
@@ -72,10 +71,9 @@ The formula and its explanation are as follows:
   <figcaption className="doc-figure-caption">Figure 3: Absolute accuracy formula</figcaption>
 </figure>
 
-<figure className="doc-figure">
-  <img src={require('./images/terminology/image_5.png').default} alt="Formula for absolute accuracy deviation" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">Figure 4: Deviation of the mean value</figcaption>
-</figure>
+- **μ** — the mean ranging deviation, used to characterise absolute accuracy;
+- **R̄** — the average of the individual ranging results;
+- **R₍true₎** — the true distance, or the standard reference distance.
 
 The closer μ is to 0, the higher the accuracy.
 
@@ -85,15 +83,22 @@ Precision describes the stability of repeated measurements under the same
 conditions, usually characterised by the standard deviation σ. The smaller
 σ is, the smaller the dispersion of the measurements.
 
-<figure className="doc-figure">
-  <img src={require('./images/terminology/image_8.png').default} alt="Formula for relative precision" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">Figure 5: Relative precision formula</figcaption>
-</figure>
+The formula and its explanation are as follows:
 
 <figure className="doc-figure">
-  <img src={require('./images/terminology/image.png').default} alt="Formula for the standard deviation" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">Figure 6: Standard deviation</figcaption>
+  <img src={require('./images/terminology/image_8.png').default} alt="Formula for relative precision" className="doc-figure-img" />
+  <figcaption className="doc-figure-caption">Figure 4: Relative precision formula</figcaption>
 </figure>
+
+- **σ** — the standard deviation, used to characterise the dispersion of
+  multiple measurements, i.e. measurement stability / repeatability;
+- **Rᵢ** — the i-th measurement;
+- **R̄** — the average of all measurements;
+- **Rᵢ − R̄** — the deviation of the i-th measurement from the mean;
+- **(Rᵢ − R̄)²** — the squared deviation, which keeps positive and negative
+  deviations from cancelling each other out;
+- **Σ** — the sum of the squared deviations over all measurements;
+- **N** — the number of measurements.
 
 ### An Intuitive Reading of Accuracy and Precision
 
@@ -115,7 +120,7 @@ systematic deviation.
 
 <figure className="doc-figure">
   <img src={require('./images/terminology/image_7.png').default} alt="Illustration comparing accuracy and precision" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">Figure 7: Accuracy vs. precision</figcaption>
+  <figcaption className="doc-figure-caption">Figure 5: Accuracy vs. precision</figcaption>
 </figure>
 
 ## Field of View (FOV)
@@ -128,7 +133,7 @@ For example, the E1R LiDAR has an FOV of 120° × 90° (HFOV 120°, VFOV 90°).
 
 <figure className="doc-figure">
   <img src={require('./images/terminology/image_2.png').default} alt="Diagram of horizontal and vertical field of view" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">Figure 8: Field of view</figcaption>
+  <figcaption className="doc-figure-caption">Figure 6: Field of view</figcaption>
 </figure>
 
 ## Angular Resolution
@@ -144,7 +149,7 @@ of a higher point rate, more complex scan control, or a lower frame rate.
 
 <figure className="doc-figure">
   <img src={require('./images/terminology/image_4.png').default} alt="Diagram of angular resolution" className="doc-figure-img" />
-  <figcaption className="doc-figure-caption">Figure 9: Angular resolution</figcaption>
+  <figcaption className="doc-figure-caption">Figure 7: Angular resolution</figcaption>
 </figure>
 
 ## Range Capability
